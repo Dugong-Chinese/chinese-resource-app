@@ -15,7 +15,7 @@ class SimpleExample(Resource):
         return {"response": "Hello World!"}
 
     def post(self):
-        # get post data with request.get_json()
+        # get POST data with request.get_json()
         some_json = request.get_json()  # whatever was posted
         return {"you sent": some_json}
 
@@ -29,16 +29,11 @@ class ComplexExample(Resource):
         return {"result": num * 10}
 
 
-# link resources to URLs
+# link resources to their respective URLs
 api.add_resource(SimpleExample, "/test")
 # whatever you call the parameter will be the way that it needs to be invoked, for example here it would be e.g. ...?num=5
 api.add_resource(
     ComplexExample, "/multiply/<int:num>"
 )  # specify variable type (or typecast)
-
-
-# run code only if run directly, not on imports
-if __name__ == "__main__":
-    app.run(debug=True)  # shows incoming requests
 
 # you can start the server by cding to the directory and running python3 api.py; it will start on localhost:5000 (if not in use)

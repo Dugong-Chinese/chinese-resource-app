@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { Router, Switch, Redirect, Route } from "react-router-dom";
@@ -36,6 +36,13 @@ const theme = createMuiTheme({
 
 
 function App() {
+  const [result, setResult] = useState(0);
+  useEffect(() => {
+    fetch("/test").then(res => res.json()).then(data => {
+      setResult(data.response)
+    })
+  }, []);
+
   return (
     <div className="App">
       <Provider store={store}>
