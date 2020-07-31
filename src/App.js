@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [result, setResult] = useState(0);
+
+  useEffect(() => {
+    fetch("/test").then(res => res.json()).then(data => {
+      setResult(data.response)
+    })
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +25,8 @@ function App() {
         >
           Learn React
         </a>
+        <p>Note: the below is done with Flask:</p>
+        <p>{result}</p>
       </header>
     </div>
   );

@@ -36,9 +36,4 @@ api.add_resource(
     ComplexExample, "/multiply/<int:num>"
 )  # specify variable type (or typecast)
 
-
-# run code only if run directly, not on imports
-if __name__ == "__main__":
-    app.run(debug=True)  # shows incoming requests
-
 # you can start the server by cding to the directory and running python3 api.py; it will start on localhost:5000 (if not in use)
