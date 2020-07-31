@@ -29,7 +29,7 @@ class ComplexExample(Resource):
         return {"result": num * 10}
 
 
-# link resources to URLs
+# link resources to their respective URLs
 api.add_resource(SimpleExample, "/test")
 # whatever you call the parameter will be the way that it needs to be invoked, for example here it would be e.g. ...?num=5
 api.add_resource(
