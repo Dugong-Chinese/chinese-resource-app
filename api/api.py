@@ -15,7 +15,7 @@ class SimpleExample(Resource):
         return {"response": "Hello World!"}
 
     def post(self):
-        # get post data with request.get_json()
+        # get POST data with request.get_json()
         some_json = request.get_json()  # whatever was posted
         return {"you sent": some_json}
 
