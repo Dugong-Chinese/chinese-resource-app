@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Router, Switch, Redirect, Route } from "react-router-dom";
 
 import { Config } from '../../utils/Config';
+
+import HomeScreen from '../HomeScreen/HomeScreen';
 
 class AppScreen extends Component {
 
@@ -14,12 +17,13 @@ class AppScreen extends Component {
   render() {
     const { history } = this.props;
     return (
-      <Navbar collapseOnSelect expand="md" bg="danger" variant="dark">
+      <>
+      <Navbar style={{flex: 0} }sticky="top" collapseOnSelect expand="md" bg="danger" variant="dark">
         <Navbar.Brand href="#">{Config.appName}</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link onClick={() => { history.push('/search'); }} active={this.isNavLinkActive('/search')}>Search</Nav.Link>
+            <Nav.Link onClick={() => { history.push('/search'); }} active={this.isNavLinkActive('/search')}>Advanced Search</Nav.Link>
           </Nav>
           <Nav>
             <NavDropdown title="Profile" id="profile-actions-nav-dropdown">
@@ -41,8 +45,14 @@ class AppScreen extends Component {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-
-
+      
+      {/* navbar ends here, app container begins here */}
+      <div style={{flex: 1, overflow: 'scroll'}}>
+        <Switch>
+          <Route path="/" component={HomeScreen} />
+        </Switch>
+      </div>
+      </>
     )
   }
 
