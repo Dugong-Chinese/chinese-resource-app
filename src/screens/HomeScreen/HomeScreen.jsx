@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { Container, InputGroup, Form, FormControl, Button, Dropdown, DropdownButton, } from 'react-bootstrap';
 import { withStyles } from '@material-ui/core/styles';
 import { deepOrange, deepPurple } from '@material-ui/core/colors';
@@ -20,6 +20,14 @@ const useStyles = theme => ({
   },
 
 });
+
+const [result, setResult] = useState(0);
+
+useEffect(() => {
+  fetch("/test").then(res => res.json()).then(data => {
+    setResult(data.response)
+  })
+}, []);
 
 const AVAILABLE_DROPDOWN_SETTINGS = [
   { id: 'date', text: 'Date' },
@@ -54,7 +62,7 @@ class HomeScreen extends Component {
             <FormControl
               onChange={({ target }) => { this.setState({ _searchText: target.value }); }}
               placeholder="Search by name"
-              aria-label="Search by name"
+              aria-label="Search by name {result}"
             />
             <InputGroup.Append>
               <Button onClick={() => { this.setState({ searchText: this.state._searchText }); }} variant="outline-primary">Search</Button>
