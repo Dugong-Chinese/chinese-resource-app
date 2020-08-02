@@ -23,7 +23,7 @@ function App() {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
       }
-    }).then(res => res.text()).then(data => {
+    }).then(res => res.json()).then(data => {
       // setResult(data)
       console.log(data)
       console.log(data) // should show {result: 100}
