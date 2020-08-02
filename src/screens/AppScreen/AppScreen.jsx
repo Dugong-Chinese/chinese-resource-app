@@ -18,7 +18,7 @@ class AppScreen extends Component {
     const { history } = this.props;
     return (
       <>
-      <Navbar style={{flex: 0} }sticky="top" collapseOnSelect expand="md" bg="danger" variant="dark">
+      <Navbar sticky="top" collapseOnSelect expand="md" bg="danger" variant="dark">
         <Navbar.Brand href="#">{Config.appName}</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
