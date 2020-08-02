@@ -18,14 +18,13 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 function App() {
   const [result, setResult] = useState(0);
   useEffect(() => {
-    fetch("/api/multiply/10", {
+    fetch("http://localhost:5000/api/multiply/10", {
       headers : {
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      'Accept': 'application/json',
       }
     }).then(res => res.json()).then(data => {
       // setResult(data)
-      console.log(data)
       console.log(data) // should show {result: 100}
     })
   }, []);
