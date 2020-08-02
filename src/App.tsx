@@ -19,8 +19,8 @@ function App() {
   const [result, setResult] = useState(0);
   useEffect(() => {
     fetch("/api/multiply/10").then(res => res.json()).then(data => {
-      setResult(data.response)
-      console.log(data.response)
+      setResult(data)
+      console.log(data) // should show {result: 100}
     })
   }, []);
 
