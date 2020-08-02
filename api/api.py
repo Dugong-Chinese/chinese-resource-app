@@ -2,9 +2,9 @@ from flask import Flask, request
 from flask_restful import Resource, Api
 from flask_cors import CORS
 
-app = Flask(__name__, static_folder="../build", static_url_path="/")
+app = Flask(__name__)
 api = Api(app)
-cors = CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "https://test-mandarin-web-app.herokuapp.com"]}})
+#cors = CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "https://test-mandarin-web-app.herokuapp.com"]}})
 
 # GET request, no parameters
 class SimpleExample(Resource):
@@ -37,7 +37,6 @@ api.add_resource(
     ComplexExample, "/api/multiply/<int:num>"
 )  # specify variable type (or typecast)
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
+if __name__ == "__main__":
+    app.run()
 # you can start the server by cding to the directory and running python3 api.py; it will start on localhost:5000 (if not in use)
