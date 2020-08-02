@@ -36,6 +36,7 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
+    "postinstall": "npm run build",
     "start": "npm-run-all --parallel scriptstart api",
     "scriptstart": "react-scripts start",
     "api": "cd api && flask run",
