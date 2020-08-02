@@ -18,7 +18,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 function App() {
   const [result, setResult] = useState(0);
   useEffect(() => {
-    fetch("/api/multiply/10", {
+    fetch("https://test-mandarin-web-app.herokuapp.com/api/multiply/10", {
       headers : {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
