@@ -18,8 +18,9 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 function App() {
   const [result, setResult] = useState(0);
   useEffect(() => {
-    fetch("/test").then(res => res.json()).then(data => {
-      setResult(data.response)
+    fetch("/api/test").then(res => res.json()).then(data => {
+      setResult(data)
+      console.log(data)
     })
   }, []);
 
