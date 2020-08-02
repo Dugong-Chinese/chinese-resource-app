@@ -1,14 +1,16 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
+from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
 api = Api(app)
+db = SQLAlchemy(app)
+
 
 # GET request, no parameters
 class SimpleExample(Resource):
-    """
-    Demonstrates simple GET + POST requests.
-    """
+    """Demonstrates simple GET + POST requests."""
 
     def get(self):
         # simply have the function name be 'get' and return a dict with the name ("response") and the text that you will send
@@ -21,9 +23,7 @@ class SimpleExample(Resource):
 
 
 class ComplexExample(Resource):
-    """
-    Demonstrates a GET request with parameters.
-    """
+    """Demonstrates a GET request with parameters."""
 
     def get(self, num):  # unlimited number of arguments
         return {"result": num * 10}
@@ -36,4 +36,15 @@ api.add_resource(
     ComplexExample, "/api/multiply/<int:num>"
 )  # specify variable type (or typecast)
 
-# you can start the server by cding to the directory and running python3 api.py; it will start on localhost:5000 (if not in use)
+if __name__ == '__main__':
+    # Locally, create a sibling file to api.py, "local_settings.py"
+    # and put `debug = True` in it to run the API in debug mode.
+    # In production, this will automatically default to False.
+    try:
+        import api.local_settings
+        debug = api.local_settings.debug
+    except (ImportError, AttributeError):
+        debug = False
+    debug = bool(debug)
+
+    app.run(debug=debug)

@@ -1,5 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# virtual environment
+venv
+
+# local-only config
+/api/local_settings.py
+
 # dependencies
 /node_modules
 /.pnp
