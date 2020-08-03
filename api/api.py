@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask_restful import Resource, Api
 from flask_cors import CORS
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../build", static_url_path="/")
 api = Api(app)
 cors = CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "https://test-mandarin-web-app.herokuapp.com"]}})
 
