@@ -74,7 +74,7 @@ To make it as secure as we can, we need to set an app config key. This can be do
 ```
 app.config['SECRET_KEY'] = 'super-secret'
 ```
-*👀 Look at how secure that key is!*
+*Look at how secure that key is (hint: it's not)! We should move it onto an environment variable eventually.*
 
 Ideally, this would be an environment variable or the repo would be private so that it wouldn't be publicly accessible.
 
