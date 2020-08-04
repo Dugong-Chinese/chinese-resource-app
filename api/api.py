@@ -3,9 +3,14 @@ from flask_restful import Resource, Api, abort
 from functools import wraps
 from flask_cors import CORS
 
+# store reroutes in separate file
+from reroutes import reroutes, Index 
+
 app = Flask(__name__, static_folder="../build", static_url_path="/")
 api = Api(app)
-cors = CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000", "https://mandarin-web-app.herokuapp.com"]}})
+cors = CORS(app, resources={r"/api/*": {"origins": ["https://mandarin-web-app.herokuapp.com"]}})
+
+app.register_blueprint(reroutes)
 
 from flask_jwt import JWT, jwt_required, current_identity
 from werkzeug.security import safe_str_cmp
@@ -58,9 +63,7 @@ class SimpleExample(Resource):
 
     def get(self):
         # simply have the function name be 'get' and return a dict with the name ("response") and the text that you will send
-        # TODO: Syntax error, please fix
-        # return {"response": f"Hello {current_identity.username}!"}
-        return {"response": "Hello Fix me!"}
+        return {"response": f"Hello {current_identity.username}!"}
 
     def post(self):
         # get POST data with request.get_json()
@@ -70,21 +73,29 @@ class SimpleExample(Resource):
 
 class ComplexExample(Resource):
     """
-    Demonstrates a GET request with parameters.
+    Demonstrates a GET request with a custom route.
     """
 
     def get(self, num):  # unlimited number of arguments
         return {"result": num * 10}
 
-
-class Index(Resource):
+class ParamExample(Resource):
     """
-    Serves index from build folder
+    Demonstrates a GET request with parameters.
     """
-    def get(self):  # unlimited number of arguments
-        return app.send_static_file('index.html')
 
-#index route
+    def get(self):
+        """
+        Usage: /api/add?add1=5&add2=7 will return 12
+        """
+        # NOTE: come out as strings
+        args = request.args
+        add1 = args['add1']
+        add2 = args['add2']
+
+        return {"result": int(add1) + int(add2)}
+
+# reroute files below
 api.add_resource(Index, "/")
 
 # link resources to their respective URLs
@@ -93,6 +104,7 @@ api.add_resource(SimpleExample, "/api/test")
 api.add_resource(
     ComplexExample, "/api/multiply/<int:num>"
 )  # specify variable type (or typecast)
+api.add_resource(ParamExample, "/api/add")
 
 # if __name__ == "__main__":
 #     app.run()
