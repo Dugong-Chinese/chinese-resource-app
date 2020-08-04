@@ -34,7 +34,7 @@ function App() {
           // type: prefersDarkMode ? 'dark' : 'light',
         },
         typography: {
-          fontSize: 15.5,
+          fontSize: 14,
           fontFamily: [
             "Open Sans",
             "-apple-system",

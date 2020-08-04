@@ -47,11 +47,11 @@ class AppScreen extends Component {
       </Navbar>
       
       {/* navbar ends here, app container begins here */}
-      <div style={{flex: 1, overflow: 'scroll'}}>
+      {/* <div style={{flex: 0.95, overflow: 'scroll'}}> */}
         <Switch>
           <Route path="/" component={HomeScreen} />
         </Switch>
-      </div>
+      {/* </div> */}
       </>
     )
   }
