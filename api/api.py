@@ -58,7 +58,9 @@ class SimpleExample(Resource):
 
     def get(self):
         # simply have the function name be 'get' and return a dict with the name ("response") and the text that you will send
-        return {"response": f"Hello {current_identity.username}!"}
+        # TODO: Syntax error, please fix
+        # return {"response": f"Hello {current_identity.username}!"}
+        return {"response": "Hello Fix me!"}
 
     def post(self):
         # get POST data with request.get_json()
@@ -74,6 +76,16 @@ class ComplexExample(Resource):
     def get(self, num):  # unlimited number of arguments
         return {"result": num * 10}
 
+
+class Index(Resource):
+    """
+    Serves index from build folder
+    """
+    def get(self):  # unlimited number of arguments
+        return app.send_static_file('index.html')
+
+#index route
+api.add_resource(Index, "/")
 
 # link resources to their respective URLs
 api.add_resource(SimpleExample, "/api/test")
