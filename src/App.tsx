@@ -18,8 +18,10 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 function App() {
   const [result, setResult] = useState(0);
   useEffect(() => {
-    fetch("/test").then(res => res.json()).then(data => {
-      setResult(data.response)
+    fetch("/api/multiply/10").then(res => res.json()).then(data => {
+      setResult(data)
+      console.log(data)
+      // if you open up the console on the site you will see a Result object with result: 100, this means there was a success
     })
   }, []);
 
@@ -32,7 +34,7 @@ function App() {
           // type: prefersDarkMode ? 'dark' : 'light',
         },
         typography: {
-          fontSize: 15.5,
+          fontSize: 14,
           fontFamily: [
             "Open Sans",
             "-apple-system",

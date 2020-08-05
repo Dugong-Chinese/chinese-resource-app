@@ -2,6 +2,8 @@
 
 This is a web (and later potentially mobile) application that will serve to be the community-driven go-to site for finding Chinese resources.
 
+Please view more information about the API by navigating to the `/api` folder and reading that `README.md`.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

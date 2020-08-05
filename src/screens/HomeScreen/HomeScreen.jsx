@@ -5,18 +5,23 @@ import { deepOrange, deepPurple } from '@material-ui/core/colors';
 
 // for dev purposes
 import { LoremIpsum } from 'react-lorem-ipsum';
+import ResourceListingRow from "../../components/ResourceListingRow/ResourceListingRow";
 
 const useStyles = theme => ({
   searchBar: {
     flexDirection: 'row', display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'sticky', top: 0,
+    paddingRight: '15px',
+    // position: 'sticky', top: 0,
     backgroundColor: theme.palette.background.default
   },
 
   content: {
-    padding: theme.spacing(1),
+    // padding: theme.spacing(1),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
   },
 
 });
@@ -46,9 +51,11 @@ class HomeScreen extends Component {
   render() {
     const { classes } = this.props;
     const { sortBy } = this.state;
-    return (
-      <Container>
 
+
+
+    return (
+      <>
         <div className={classes.searchBar}>
           <InputGroup className="p-3" style={{ maxWidth: '30rem' }}>
             <FormControl
@@ -73,9 +80,9 @@ class HomeScreen extends Component {
         </div>
 
         <div className={classes.content}>
-          <LoremIpsum p={10} />
+          {Array.from(Array(6).keys()).map(x => <ResourceListingRow />)}
         </div>
-      </Container>
+      </>
     )
   }
 }
