@@ -1,0 +1,3012 @@
+[
+    {
+        "id": 1,
+        "link": "http://www.hsklevel.com",
+        "vocab_link": "",
+        "name": "HSK level - Online Chinese level test",
+        "tags": []
+    },
+    {
+        "id": 2,
+        "link": "https://studycli.org/",
+        "vocab_link": "",
+        "name": "The Chinese Language Institute (CLI)",
+        "tags": []
+    },
+    {
+        "id": 3,
+        "link": "https://www.optilingo.com/",
+        "vocab_link": "",
+        "name": "OptiLingo Language Learning (Chinese)",
+        "tags": []
+    },
+    {
+        "id": 4,
+        "link": "https://www.maayot.com/",
+        "vocab_link": "",
+        "name": "maayot \u2022 Bite-size daily Chinese Mandarin stories to your inbox",
+        "tags": []
+    },
+    {
+        "id": 5,
+        "link": "https://youtu.be/tdT-oFxc-C0",
+        "vocab_link": "",
+        "name": "A Chinese Typewriter in Silicon Valley: What 150 Years of Chinese Information Technology Can Teach the Alphabetic World",
+        "tags": []
+    },
+    {
+        "id": 6,
+        "link": "https://videos.learnchinese.club/",
+        "vocab_link": "",
+        "name": "Learn Chinese Club (YouTube videos)",
+        "tags": []
+    },
+    {
+        "id": 7,
+        "link": "https://www.zhihudigest.com/",
+        "vocab_link": "",
+        "name": "Zhihu Digest - The Top Questions from Zhihu in English",
+        "tags": []
+    },
+    {
+        "id": 8,
+        "link": "https://xkcd.in/",
+        "vocab_link": "",
+        "name": "XKCD\u4e2d\u6587\u7ad9\uff1a\u4e00\u4e2a\u5173\u4e8e\u6d6a\u6f2b\u3001\u9690\u55bb\u3001\u6570\u5b57\u3001\u4ee5\u53ca\u8bed\u8a00\u7684\u7ebf\u4e0a\u6f2b\u753b",
+        "tags": []
+    },
+    {
+        "id": 9,
+        "link": "https://ankiweb.net/shared/info/782551504",
+        "vocab_link": "",
+        "name": "Chinese Grammar Wiki Study Deck (Anki)",
+        "tags": []
+    },
+    {
+        "id": 10,
+        "link": "http://edsko.net/2019/06/08/hsk-handwriting/?fbclid=IwAR1oBElBPM7pDSqSyqtCgDfj1hkh0d8fZwwewYPratIOzp59zT7rxk0ftlA",
+        "vocab_link": "",
+        "name": "Handwriting samples for the HSK curriculum",
+        "tags": []
+    },
+    {
+        "id": 11,
+        "link": "http://corpus.zhonghuayuwen.org/CnCindex.aspx",
+        "vocab_link": "",
+        "name": "\u8bed\u6599\u5e93\u5728\u7ebf (chcorpus.org)",
+        "tags": []
+    },
+    {
+        "id": 12,
+        "link": "https://thetype.com/2017/08/11606/",
+        "vocab_link": "",
+        "name": "W\u01d2 \u00e0i p\u012bny\u012bn!",
+        "tags": []
+    },
+    {
+        "id": 13,
+        "link": "https://www.alllanguageresources.com/category/simsums-chinese/",
+        "vocab_link": "",
+        "name": "Non-fiction book summaries written in easier to understand Chinese (with audio)",
+        "tags": []
+    },
+    {
+        "id": 14,
+        "link": "http://technology.chtsai.org/syllable/",
+        "vocab_link": "",
+        "name": "Mandarin Syllable Frequency Counts for Chinese Characters",
+        "tags": []
+    },
+    {
+        "id": 15,
+        "link": "http://technology.chtsai.org/charfreq/sorted.html",
+        "vocab_link": "",
+        "name": "Frequency and Stroke Counts of Chinese Characters: Sorted  by Frequency",
+        "tags": []
+    },
+    {
+        "id": 16,
+        "link": "https://hanzicraft.com/lists/phonetic-sets",
+        "vocab_link": "",
+        "name": "Chinese Character Phonetic Sets (HanziCraft)",
+        "tags": []
+    },
+    {
+        "id": 17,
+        "link": "http://lingua.mtsu.edu/chinese-computing/statistics/char/list.php?Which=CL",
+        "vocab_link": "",
+        "name": "Classical Chinese Character Frequency List (\u53e4\u6c49\u8bed\u5355\u5b57\u9891\u7387\u5217\u8868)",
+        "tags": []
+    },
+    {
+        "id": 18,
+        "link": "http://lingua.mtsu.edu/chinese-computing/statistics/char/list.php?Which=MO",
+        "vocab_link": "",
+        "name": "Modern Chinese Character Frequency List (\u73b0\u4ee3\u6c49\u8bed\u5355\u5b57\u9891\u7387\u5217\u8868)",
+        "tags": []
+    },
+    {
+        "id": 19,
+        "link": "https://hanzicraft.com/lists/frequency",
+        "vocab_link": "",
+        "name": "Chinese Character Frequency List (HanziCraft)",
+        "tags": []
+    },
+    {
+        "id": 20,
+        "link": "http://corpus.leeds.ac.uk/frqc/internet-zh.num",
+        "vocab_link": "",
+        "name": "University of Leeds: Internet Word Frequencies",
+        "tags": []
+    },
+    {
+        "id": 21,
+        "link": "http://bcc.blcu.edu.cn/downloads/resources/BCC_LEX_Zh.zip",
+        "vocab_link": "",
+        "name": "BLCU balanced corpus frequency lists",
+        "tags": []
+    },
+    {
+        "id": 22,
+        "link": "http://www.mandarininstitute.org/K-5%20WFD",
+        "vocab_link": "",
+        "name": "K-5 Word Frequency Dictionary for Chinese L2 Learners",
+        "tags": []
+    },
+    {
+        "id": 23,
+        "link": "http://crr.ugent.be/programs-data/subtitle-frequencies/subtlex-ch",
+        "vocab_link": "",
+        "name": "SUBTLEX-CH: Chinese Word and Character Frequencies Based on Film Subtitles.",
+        "tags": []
+    },
+    {
+        "id": 24,
+        "link": "http://www.learningchinesethroughstories.com/",
+        "vocab_link": "",
+        "name": "\u542c\u6545\u4e8b\u5b66\u4e2d\u6587 (Learning Chinese through Stories)",
+        "tags": []
+    },
+    {
+        "id": 25,
+        "link": "https://teachyourselfmandarin.wordpress.com",
+        "vocab_link": "",
+        "name": "Teach Yourself Mandarin Blog",
+        "tags": []
+    },
+    {
+        "id": 26,
+        "link": "http://lingua.mtsu.edu/chinese-computing/vp/index.php",
+        "vocab_link": "",
+        "name": "Chinese Vocabulary Profiler (Chinese Text Computing)",
+        "tags": []
+    },
+    {
+        "id": 27,
+        "link": "https://resources.allsetlearning.com/chinese/pronunciation/Pinyin_chart",
+        "vocab_link": "",
+        "name": "Pinyin chart - Chinese Pronunciation Wiki",
+        "tags": []
+    },
+    {
+        "id": 28,
+        "link": "https://www.learningchinesethroughstories.com/",
+        "vocab_link": "",
+        "name": "\u542c\u6545\u4e8b\uff0c\u5b66\u4e2d\u6587Learning Chinese through Stories - \u4e3b\u9875 Home",
+        "tags": []
+    },
+    {
+        "id": 29,
+        "link": "https://www.clozemaster.com/",
+        "vocab_link": "",
+        "name": "Clozemaster",
+        "tags": []
+    },
+    {
+        "id": 30,
+        "link": "https://www.tofulearn.com/chinese",
+        "vocab_link": "",
+        "name": "TOFU Learn",
+        "tags": []
+    },
+    {
+        "id": 31,
+        "link": "https://l-lingo.com/",
+        "vocab_link": "",
+        "name": "L-Lingo",
+        "tags": []
+    },
+    {
+        "id": 32,
+        "link": "https://en.duolingo.com/course/zh-CN/en/Learn-Chinese-Online",
+        "vocab_link": "",
+        "name": "Duolingo: Learn Spanish, French and other languages for free",
+        "tags": []
+    },
+    {
+        "id": 33,
+        "link": "https://online.seterra.com/en/vgp/3206",
+        "vocab_link": "",
+        "name": "China: Provinces - Map Quiz Game",
+        "tags": []
+    },
+    {
+        "id": 34,
+        "link": "https://www.skishore.me/inkstone/",
+        "vocab_link": "",
+        "name": "Inkstone",
+        "tags": []
+    },
+    {
+        "id": 35,
+        "link": "https://tutormandarin.net",
+        "vocab_link": "",
+        "name": "TutorMandarin: Online Mandarin Tutor",
+        "tags": []
+    },
+    {
+        "id": 36,
+        "link": "https://www.mondlylanguages.com/",
+        "vocab_link": "",
+        "name": "Learn languages online for free with Mondly - Language learning made easy, fun and free",
+        "tags": []
+    },
+    {
+        "id": 37,
+        "link": "https://wordswing.com/cards/text-game/city/intro",
+        "vocab_link": "",
+        "name": "Into the Haze (\u8ff7\u96fe\u4e2d) - Text adventure game for Chinese learners",
+        "tags": []
+    },
+    {
+        "id": 38,
+        "link": "https://visualchinesesearch.com",
+        "vocab_link": "",
+        "name": "Visual Chinese Search",
+        "tags": []
+    },
+    {
+        "id": 39,
+        "link": "https://chdict.zydeo.net",
+        "vocab_link": "",
+        "name": "CHDICT Chinese-Hungarian dictionary",
+        "tags": []
+    },
+    {
+        "id": 40,
+        "link": "https://nativemonks.com/mandarin-classes",
+        "vocab_link": "",
+        "name": "Online Mandarin Chinese lessons",
+        "tags": []
+    },
+    {
+        "id": 41,
+        "link": "http://www.grimmstories.com/zh/grimm_tonghua/index",
+        "vocab_link": "",
+        "name": "Grimms' Fairy Tales in Chinese with English (and other) translations",
+        "tags": []
+    },
+    {
+        "id": 42,
+        "link": "http://www.sbs.com.au/yourlanguage/social-tags/happy-weekend-0",
+        "vocab_link": "",
+        "name": "SBS Happy Weekend ",
+        "tags": []
+    },
+    {
+        "id": 43,
+        "link": "https://www.youtube.com/channel/UCipQJmg3yqouy6MRtPv_0Bg/videos",
+        "vocab_link": "",
+        "name": "Little Fox Chinese ",
+        "tags": []
+    },
+    {
+        "id": 44,
+        "link": "http://www.listeningpractice.org/session.php",
+        "vocab_link": "",
+        "name": "Listening Practice",
+        "tags": []
+    },
+    {
+        "id": 45,
+        "link": "http://hanyu123.weebly.com/",
+        "vocab_link": "",
+        "name": "Mandarin Chinese Listening Training (\u6f22\u8a9e\u807d\u529b\u901a)",
+        "tags": []
+    },
+    {
+        "id": 46,
+        "link": "http://www.zizzle.io/",
+        "vocab_link": "",
+        "name": "Zizzle (app for learning Chinese characters)",
+        "tags": []
+    },
+    {
+        "id": 47,
+        "link": "https://floomli.com",
+        "vocab_link": "",
+        "name": "Floomli - language exchange network",
+        "tags": []
+    },
+    {
+        "id": 48,
+        "link": "http://www.chinesedrivingtest.com",
+        "vocab_link": "",
+        "name": "Chinese Driving Test",
+        "tags": []
+    },
+    {
+        "id": 49,
+        "link": "https://wordswing.com/cards/text-game/escape/intro",
+        "vocab_link": "",
+        "name": "Escape \u9003\u51fa\u53bb (text adventure game for Chinese learners)",
+        "tags": []
+    },
+    {
+        "id": 50,
+        "link": "https://themandarincornerblog.com/",
+        "vocab_link": "",
+        "name": "The Mandarin Corner (self-studying Mandarin language and culture)",
+        "tags": []
+    },
+    {
+        "id": 51,
+        "link": "https://www.reddit.com/r/chinesebookclub/",
+        "vocab_link": "",
+        "name": "\u8bfb\u4e2d\u6587\u4e66\u4ff1\u4e50\u90e8: Reading Chinese Books (Reddit)",
+        "tags": []
+    },
+    {
+        "id": 52,
+        "link": "http://www.17k.com/",
+        "vocab_link": "",
+        "name": "17K\u5c0f\u8bf4\u7f51 (Chinese web novel portal)",
+        "tags": []
+    },
+    {
+        "id": 53,
+        "link": "https://twitter.com/HanpingChengyu",
+        "vocab_link": "",
+        "name": "@HanpingChengyu Twitter account (animated Chinese Idiom per day)",
+        "tags": []
+    },
+    {
+        "id": 54,
+        "link": "http://www.goeastmandarin.com/blog/",
+        "vocab_link": "",
+        "name": "GoEast Language Centers (Blog, online/offline lessons)",
+        "tags": []
+    },
+    {
+        "id": 55,
+        "link": "https://zh-classical.wikipedia.org/wiki/%E6%96%87%E8%A8%80",
+        "vocab_link": "",
+        "name": "\u6587\u8a00 - \u7dad\u57fa\u5927\u5178 (Wikipedia about classical Chinese written in classical Chinese)",
+        "tags": []
+    },
+    {
+        "id": 56,
+        "link": "http://www.dailychinesesentence.com/",
+        "vocab_link": "",
+        "name": "Daily Chinese Sentence - Take daily steps toward learning fluent Chinese",
+        "tags": []
+    },
+    {
+        "id": 57,
+        "link": "http://www.livethelanguage.cn/how-to-learn-chinese/",
+        "vocab_link": "",
+        "name": "How to Learn Chinese (free e-book from LTL Mandarin School)",
+        "tags": []
+    },
+    {
+        "id": 58,
+        "link": "https://mandarinfriend.wordpress.com/",
+        "vocab_link": "",
+        "name": "Mandarin Friend \u4e2d\u6587\u670b\u53cb (explorations in Chinese grammar and vocabulary)",
+        "tags": []
+    },
+    {
+        "id": 59,
+        "link": "https://openaccess.leidenuniv.nl/bitstream/handle/1887/14919/Tang_Heuven_Lingua2009.pdf",
+        "vocab_link": "",
+        "name": "Mutual intelligibility of Chinese dialects experimentally tested (Tang & vad Heuven, 2009)",
+        "tags": []
+    },
+    {
+        "id": 60,
+        "link": "http://ninchanese.com",
+        "vocab_link": "",
+        "name": "Ninchanese | Efficient and enjoyable Chinese learning",
+        "tags": []
+    },
+    {
+        "id": 61,
+        "link": "http://www.purpleculture.net/chinese-pinyin-converter/",
+        "vocab_link": "",
+        "name": "Annotator with tone marks, colours, Pinyin and pronunciation (Purple Culture)",
+        "tags": []
+    },
+    {
+        "id": 62,
+        "link": "http://www.hackingchinese.com/the-tone-training-course-is-now-open/",
+        "vocab_link": "",
+        "name": "Tone training course (Hacking Chinese, WordSwing)",
+        "tags": []
+    },
+    {
+        "id": 63,
+        "link": "http://www.gwern.net/Spaced%20repetition?2",
+        "vocab_link": "",
+        "name": "Spaced repetition - Efficient memorization & what it's good for (Gwern.net)",
+        "tags": []
+    },
+    {
+        "id": 64,
+        "link": "https://play.google.com/store/apps/dev?id=4845954736942800726",
+        "vocab_link": "",
+        "name": "Hanping Chinese SoundBox (now rolled into Hanping Dictionary) (Android App on Google Play)",
+        "tags": []
+    },
+    {
+        "id": 65,
+        "link": "http://www.oplang.org/lesson/level1-english-chinese/?source=206",
+        "vocab_link": "",
+        "name": "The Open Languages Project (learning Chinese character-by-character)",
+        "tags": []
+    },
+    {
+        "id": 66,
+        "link": "http://www.duchinese.net/",
+        "vocab_link": "",
+        "name": "Du Chinese (mobile app for Chinese reading practice)",
+        "tags": []
+    },
+    {
+        "id": 67,
+        "link": "http://www.decipherchinese.com/",
+        "vocab_link": "",
+        "name": "Decipher Chinese (level-adjusted reading practice)",
+        "tags": []
+    },
+    {
+        "id": 68,
+        "link": "http://www.hwjyw.com/resource/resource-mail/index24.shtml",
+        "vocab_link": "",
+        "name": "\u534e\u8001\u5e08\u4fe1\u7bb1 (Chinese language Q&A from \u534e\u6587\u6559\u80b2\u7f51)",
+        "tags": []
+    },
+    {
+        "id": 69,
+        "link": "http://word-in-the-hand.com/chinese-phrasebook/",
+        "vocab_link": "",
+        "name": "Talking Chinese\u2013English\u2013Chinese Phrasebook app from Paiboon Publishing and Word in the Hand",
+        "tags": []
+    },
+    {
+        "id": 70,
+        "link": "https://play.google.com/store/apps/details?id=com.language.radio.stream",
+        "vocab_link": "",
+        "name": "Language Radio Free (Android app for listening practice)",
+        "tags": []
+    },
+    {
+        "id": 71,
+        "link": "http://qz.com/522079/the-long-incredibly-tortuous-and-fascinating-process-of-creating-a-chinese-font/",
+        "vocab_link": "",
+        "name": "Process of creating a Chinese font",
+        "tags": []
+    },
+    {
+        "id": 72,
+        "link": "http://www.hackingchinese.com/about/practical-guide-to-learning-mandarin/",
+        "vocab_link": "",
+        "name": "Hacking Chinese: A Practical Guide to Learning Mandarin (video/Audio/Text course)",
+        "tags": []
+    },
+    {
+        "id": 73,
+        "link": "http://word.hlc.edu.tw/download/manager.asp?dir=./%E5%9C%8B%E8%AA%9E%E4%B8%80%E5%AD%97%E5%A4%9A%E9%9F%B3%E5%AF%A9%E8%A8%82%E8%A1%A8",
+        "vocab_link": "",
+        "name": "\u570b\u8a9e\u4e00\u5b57\u591a\u97f3\u5be9\u8a02\u8868 (List of variant character pronunciations, Taiwan standard)",
+        "tags": []
+    },
+    {
+        "id": 74,
+        "link": "http://baike.baidu.com/view/248604.htm",
+        "vocab_link": "",
+        "name": "\u666e\u901a\u8bdd\u5f02\u8bfb\u8bcd\u5ba1\u97f3\u8868 (List of variant character pronunciations, mainland standard)",
+        "tags": []
+    },
+    {
+        "id": 75,
+        "link": "http://handedict.zydeo.net/",
+        "vocab_link": "",
+        "name": "HanDeDict - Chinesisch-deutsches W\u00f6rterbuch",
+        "tags": []
+    },
+    {
+        "id": 76,
+        "link": "http://foreigncy.us/language-sets/?lang=zh",
+        "vocab_link": "",
+        "name": "Foreigncy (Mandarin)",
+        "tags": []
+    },
+    {
+        "id": 77,
+        "link": "http://cantonese.org",
+        "vocab_link": "",
+        "name": "CC-Canto - Open-source online Cantonese-English dictionary (Pleco)",
+        "tags": []
+    },
+    {
+        "id": 78,
+        "link": "http://www.hackingchinese.com/is-it-necessary-to-learn-to-write-chinese-characters-by-hand/",
+        "vocab_link": "",
+        "name": "Is it necessary to learn to write Chinese characters by hand? (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 79,
+        "link": "http://www.livethelanguage.cn/",
+        "vocab_link": "",
+        "name": "Live the Language (Chinese Language School)",
+        "tags": []
+    },
+    {
+        "id": 80,
+        "link": "http://mandarinweekly.com/",
+        "vocab_link": "",
+        "name": "Mandarin Weekly (\u6bcf\u5468\u4e2d\u6587)",
+        "tags": []
+    },
+    {
+        "id": 81,
+        "link": "http://www.fluentinmandarin.com/content/those-chinese-characters-that-are-really-easy-to-get-mixed-up/",
+        "vocab_link": "",
+        "name": "Those Chinese characters that are really easy to get mixed up (Fluent in Mandarin)",
+        "tags": []
+    },
+    {
+        "id": 82,
+        "link": "https://docs.google.com/spreadsheets/d/17f0dQawb-s_Fd7DHgmVvJoEGDMH_yoSd8EYigrb0zmM",
+        "vocab_link": "",
+        "name": "PolyglotGamedev (Gaming vocabulary)",
+        "tags": []
+    },
+    {
+        "id": 83,
+        "link": "http://l2mastery.com/language-guides/master-mandarin/",
+        "vocab_link": "",
+        "name": "Master Mandarin: The Beginner's Step-by-Step Guide to Learning Chinese the Fun Way - Language Mastery",
+        "tags": []
+    },
+    {
+        "id": 84,
+        "link": "http://edu.ocac.gov.tw/interact/ebook/1000_w2/index.html",
+        "vocab_link": "",
+        "name": "Speak Mandarin in 1000 words",
+        "tags": []
+    },
+    {
+        "id": 85,
+        "link": "http://hiway-app.com/",
+        "vocab_link": "",
+        "name": "Hiway (English-Chinese Language Exchange Community)",
+        "tags": []
+    },
+    {
+        "id": 86,
+        "link": "http://www.freechinesefont.com/category/calligraphy/",
+        "vocab_link": "",
+        "name": "Chinese Calligraphy Fonts (Calligraphy Archives)",
+        "tags": []
+    },
+    {
+        "id": 87,
+        "link": "http://www.chinese-grammar.com/",
+        "vocab_link": "",
+        "name": "Learn Chinese Grammar Online",
+        "tags": []
+    },
+    {
+        "id": 88,
+        "link": "http://www.chinesepodcasts.com/",
+        "vocab_link": "",
+        "name": "Chinese Podcasts (collection of reviews and links)",
+        "tags": []
+    },
+    {
+        "id": 89,
+        "link": "https://play.google.com/store/apps/details?id=com.embermitre.hanping.app.popup",
+        "vocab_link": "",
+        "name": "Hanping Chinese Popup",
+        "tags": []
+    },
+    {
+        "id": 90,
+        "link": "http://www.hackingchinese.com/go/fluentu-hcr/",
+        "vocab_link": "",
+        "name": "Language learning through Video (FluentU)",
+        "tags": []
+    },
+    {
+        "id": 91,
+        "link": "https://www.youtube.com/watch?t=13&v=xJis9TSw1rE",
+        "vocab_link": "",
+        "name": "How to Memorize China's Major Dynasties by singing (Harvard University)",
+        "tags": []
+    },
+    {
+        "id": 92,
+        "link": "http://www.glossika.com/",
+        "vocab_link": "",
+        "name": "Glossika (mass sentences and spaced repetation audio lessons)",
+        "tags": []
+    },
+    {
+        "id": 93,
+        "link": "http://lingq.com/",
+        "vocab_link": "",
+        "name": "LingQ (Online-Learnign Platform)",
+        "tags": []
+    },
+    {
+        "id": 94,
+        "link": "http://www.hskhsk.com/graphs.html",
+        "vocab_link": "",
+        "name": "HSK Graphs (great infographics)",
+        "tags": []
+    },
+    {
+        "id": 95,
+        "link": "http://hskhsk.pythonanywhere.com/hanzi",
+        "vocab_link": "",
+        "name": "Analyse Your \u6c49\u5b57 \uff08Chinese Vocabulary and Text Analysis\uff09",
+        "tags": []
+    },
+    {
+        "id": 96,
+        "link": "http://shanka.hskhsk.com/beta1/",
+        "vocab_link": "",
+        "name": "Shanka \u95ea\u5361 Flashcards Web App (Handwriting Chinese - BETA)",
+        "tags": []
+    },
+    {
+        "id": 97,
+        "link": "https://www.coursera.org/learn/learn-chinese",
+        "vocab_link": "",
+        "name": "Chinese for Beginners (Coursera & Peking University)",
+        "tags": []
+    },
+    {
+        "id": 98,
+        "link": "http://www.chinese-forums.com/index.php?/topic/46777-easy-ways-to-have-chinese-conversations-in-china/",
+        "vocab_link": "",
+        "name": "Easy ways to have Chinese conversations in China (Chinese Forums)",
+        "tags": []
+    },
+    {
+        "id": 99,
+        "link": "http://challenges.hackingchinese.com",
+        "vocab_link": "",
+        "name": "Hacking Chinese Challenges (monthly language challenges)",
+        "tags": []
+    },
+    {
+        "id": 100,
+        "link": "https://en.wikipedia.org/wiki/Iteration_mark",
+        "vocab_link": "",
+        "name": "Iteration marks in Chinese (Wikipedia)",
+        "tags": []
+    },
+    {
+        "id": 101,
+        "link": "https://wordswing.com/cards/asking-directions-intro",
+        "vocab_link": "",
+        "name": "Practise asking directions and navigating through a city (WordSwing)",
+        "tags": []
+    },
+    {
+        "id": 102,
+        "link": "http://languagelog.ldc.upenn.edu/nll/?p=18877",
+        "vocab_link": "",
+        "name": "Names of the chemical elements in Chinese (Victor Mair, Language Log)",
+        "tags": []
+    },
+    {
+        "id": 103,
+        "link": "http://blogs.transparent.com/language-news/2015/04/29/how-to-find-more-time-learning-a-language-unlocking-your-true-potential/",
+        "vocab_link": "",
+        "name": "How to find more time learning a language",
+        "tags": []
+    },
+    {
+        "id": 104,
+        "link": "http://www.thechairmansbao.com/",
+        "vocab_link": "",
+        "name": "The Chairman's Bao (simplified news for language learners)",
+        "tags": []
+    },
+    {
+        "id": 105,
+        "link": "http://www.gospeaky.com",
+        "vocab_link": "",
+        "name": "Speaky (Language exchange community)",
+        "tags": []
+    },
+    {
+        "id": 106,
+        "link": "http://practicalmandarin.co.uk/",
+        "vocab_link": "",
+        "name": "Practical Mandarin (Chinese Lessons in London)",
+        "tags": []
+    },
+    {
+        "id": 107,
+        "link": "http://resources.allsetlearning.com/chinese/pronunciation/Main_Page",
+        "vocab_link": "",
+        "name": "Chinese Pronunciation Wiki (AllSet Learning)",
+        "tags": []
+    },
+    {
+        "id": 108,
+        "link": "http://www.outlier-linguistics.com/category/blog/",
+        "vocab_link": "",
+        "name": "Outlier Linguistic Solutions (blog about etymology and characters)",
+        "tags": []
+    },
+    {
+        "id": 109,
+        "link": "http://en.wikipedia.org/wiki/Second_round_of_simplified_Chinese_characters",
+        "vocab_link": "",
+        "name": "Second round of simplified Chinese characters (Wikipedia)",
+        "tags": []
+    },
+    {
+        "id": 110,
+        "link": "https://www.youtube.com/channel/UCKVoracQnI6616jZeNzweZQ",
+        "vocab_link": "",
+        "name": "Starcraft 2 Mandarin (all unit voices in Chinese, YouTube)",
+        "tags": []
+    },
+    {
+        "id": 111,
+        "link": "http://www.ziti88.com/",
+        "vocab_link": "",
+        "name": "\u8349\u4e66\u5b57\u4f53\u8f6c\u6362\u5668 (Cursive font converter)",
+        "tags": []
+    },
+    {
+        "id": 112,
+        "link": "http://www.takesport.idv.tw/bbs/discuss/join.asp?db=articles&ID=178&fid=1&sort=lastdate",
+        "vocab_link": "",
+        "name": "\u5065\u8eab\u5e38\u7528\u82f1\u8a9e\u55ae\u8a5e (Gym vocabulary in English and Chinese)",
+        "tags": []
+    },
+    {
+        "id": 113,
+        "link": "http://www.hackingchinese.com/the-new-paperless-revolution-in-chinese-reading/",
+        "vocab_link": "",
+        "name": "The new paperless revolution in Chinese reading",
+        "tags": []
+    },
+    {
+        "id": 114,
+        "link": "http://www.xinhuanet.com/english/bilingual/index.htm",
+        "vocab_link": "",
+        "name": "\u65b0\u534e\u7f51 \u2013 Xinhua Headlines Bilingual Zone",
+        "tags": []
+    },
+    {
+        "id": 115,
+        "link": "https://www.youtube.com/watch?v=8MCnjfws0XQ",
+        "vocab_link": "",
+        "name": "Chinese character stroke order rules (Understanding Chinese Characters on YouTube)",
+        "tags": []
+    },
+    {
+        "id": 116,
+        "link": "http://culturelab.cc/",
+        "vocab_link": "",
+        "name": "Culturelab (watch Chinese film, TV and music with subtitles and a pop-up dictionary)",
+        "tags": []
+    },
+    {
+        "id": 117,
+        "link": "http://www.gotcharacters.com/radical-view",
+        "vocab_link": "",
+        "name": "A Radical View (radicals neatly grouped by theme from gotCharacters)",
+        "tags": []
+    },
+    {
+        "id": 118,
+        "link": "http://lingua.mtsu.edu/chinese-computing/statistics/bigram/form.php",
+        "vocab_link": "",
+        "name": "Bigram frequencies and mutual information in Modern Chinese (Chinese Text Computing)",
+        "tags": []
+    },
+    {
+        "id": 119,
+        "link": "http://pinyinjoe.com/",
+        "vocab_link": "",
+        "name": "Pinyin Joe's Chinese Computing Help Desk (Windows, Ubuntu Linux, smartphones, macros and more)",
+        "tags": []
+    },
+    {
+        "id": 120,
+        "link": "http://www.voachinese.com/archive/bilingual-news/latest/1737/2404.html",
+        "vocab_link": "",
+        "name": "VoA bilingual news (\u82f1\u8bed\u6559\u5b66 \u53cc\u8bed\u65b0\u95fb)",
+        "tags": []
+    },
+    {
+        "id": 121,
+        "link": "http://www.purepen.com/",
+        "vocab_link": "",
+        "name": "\u7eaf\u6587\u5b66\u7f51\u7ad9 PurePen.com (online versions of \u7ea2\u697c\u68a6, \u4e09\u56fd\u6f14\u4e49, \u6c34\u6d52\u4f20, \u897f\u6e38\u8bb0 and \u91d1\u74f6\u6885)",
+        "tags": []
+    },
+    {
+        "id": 122,
+        "link": "http://www.ktdict.com/",
+        "vocab_link": "",
+        "name": "KTdict: iPhone and iPad dictionary for Chinese learners",
+        "tags": []
+    },
+    {
+        "id": 123,
+        "link": "http://www.chineseconverter.com/",
+        "vocab_link": "",
+        "name": "Chinese Converter (convert between Pinyin/Zhuyin, traditional/simplified, tone/number, text/image)",
+        "tags": []
+    },
+    {
+        "id": 124,
+        "link": "http://www.chinesewaytogo.org/teachers_corner/phonetic/broke/brokepho.php",
+        "vocab_link": "",
+        "name": "\u5e38\u7528100\u500b\u7834\u97f3\u5b57 (Quiz of 100 common polyphonic characters)",
+        "tags": []
+    },
+    {
+        "id": 125,
+        "link": "http://www.digmandarin.com/",
+        "vocab_link": "",
+        "name": "DigMandarin",
+        "tags": []
+    },
+    {
+        "id": 126,
+        "link": "http://www.chinese-skill.com/cs.html",
+        "vocab_link": "",
+        "name": "ChineseSkill (game-based, task-driven app)",
+        "tags": []
+    },
+    {
+        "id": 127,
+        "link": "http://www.tandemapp.me",
+        "vocab_link": "",
+        "name": "Tandem (language exchange app)",
+        "tags": []
+    },
+    {
+        "id": 128,
+        "link": "http://www.snowflakebooks.co.uk/",
+        "vocab_link": "",
+        "name": "Bilingual legends and folk tales (Snowflake Books Ltd)",
+        "tags": []
+    },
+    {
+        "id": 129,
+        "link": "https://www.youtube.com/user/baijiajiangtanTV",
+        "vocab_link": "",
+        "name": "\u767e\u5bb6\u8bb2\u575b\u5b98\u65b9\u9891\u9053 (YouTube video lectures with subtitles)",
+        "tags": []
+    },
+    {
+        "id": 130,
+        "link": "https://www.youtube.com/watch?v=xbK4KeD2ajI",
+        "vocab_link": "",
+        "name": "\u67f4\u9759\u96fe\u973e\u8c03\u67e5\uff1a\u7a79\u9876\u4e4b\u4e0b (Under the Dome, documentary)",
+        "tags": []
+    },
+    {
+        "id": 131,
+        "link": "http://www.chinese-forums.com/index.php?/topic/16784-the-grand-first-episode-project/",
+        "vocab_link": "",
+        "name": "The Grand First Episode Project (about Chinese TV on Chinese Forums)",
+        "tags": []
+    },
+    {
+        "id": 132,
+        "link": "http://zh.urbandictionary.com/",
+        "vocab_link": "",
+        "name": "Urban Dictionary Chinese",
+        "tags": []
+    },
+    {
+        "id": 133,
+        "link": "http://www.chinasmack.com/glossary",
+        "vocab_link": "",
+        "name": "chinaSMACK Glossary (Popular Chinese Internet Memes, Slang, Expressions, Acronyms)",
+        "tags": []
+    },
+    {
+        "id": 134,
+        "link": "http://www.newconceptmandarin.com",
+        "vocab_link": "",
+        "name": "New Concept Mandarin (Chinese Course Online)",
+        "tags": []
+    },
+    {
+        "id": 135,
+        "link": "https://medium.com/@idreyn/quantifying-simplified-chinese-9ec3980d7d35",
+        "vocab_link": "",
+        "name": "Quantifying Simplified Chinese",
+        "tags": []
+    },
+    {
+        "id": 136,
+        "link": "https://sites.psu.edu/symbolcodes/languages/asia/chinese/",
+        "vocab_link": "",
+        "name": "Chinese Computing Information (input methods, fonts, browsers, coding)",
+        "tags": []
+    },
+    {
+        "id": 137,
+        "link": "http://www.echineselearning.com/",
+        "vocab_link": "",
+        "name": "eChineseLearning",
+        "tags": []
+    },
+    {
+        "id": 138,
+        "link": "http://www.hackingchinese.com/learning-the-third-tone/",
+        "vocab_link": "",
+        "name": "Learning the third tone in Chinese (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 139,
+        "link": "http://www.hackingchinese.com/tones-are-more-important-than-you-think/",
+        "vocab_link": "",
+        "name": "Tones are more important than you think (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 140,
+        "link": "http://www.hackingchinese.com/a-guide-to-pinyin-traps-and-pitfalls/",
+        "vocab_link": "",
+        "name": "A guide to Pinyin traps and pitfalls (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 141,
+        "link": "http://lost-theory.org/chinese/phonetics/",
+        "vocab_link": "",
+        "name": "Mandarin Chinese Phonetics Table",
+        "tags": []
+    },
+    {
+        "id": 142,
+        "link": "https://www.youtube.com/watch?v=VwyQK62tO_U",
+        "vocab_link": "",
+        "name": "Mandarin Chinese Pinyin Pronunciation (Better Chinese)",
+        "tags": []
+    },
+    {
+        "id": 143,
+        "link": "http://mandarinhq.com/2015/02/real-spoken-chinese-plans-chinese-new-year/",
+        "vocab_link": "",
+        "name": "Real spoken Chinese: \"What are your plans for Chinese New Year?\"",
+        "tags": []
+    },
+    {
+        "id": 144,
+        "link": "http://www.dn.se",
+        "vocab_link": "",
+        "name": "eoeu",
+        "tags": []
+    },
+    {
+        "id": 145,
+        "link": "http://www.lizhi.fm/",
+        "vocab_link": "",
+        "name": "\u8354\u679dFM,\u4eba\u4eba\u90fd\u662f\u4e3b\u64ad_\u7f51\u7edc\u6536\u97f3\u673a|\u5e7f\u64ad\u7535\u53f0\u5728\u7ebf\u6536\u542c",
+        "tags": []
+    },
+    {
+        "id": 146,
+        "link": "http://www.hanbridgemandarin.com/",
+        "vocab_link": "",
+        "name": "Hanbridgemandarin.com (online and campus courses)",
+        "tags": []
+    },
+    {
+        "id": 147,
+        "link": "https://ankiweb.net/shared/info/9997725",
+        "vocab_link": "",
+        "name": "Anki deck: \u5c0f\u57ce\u4e4b\u6625 (Spring in a Small Town) - Full Chinese movie",
+        "tags": []
+    },
+    {
+        "id": 148,
+        "link": "http://carlgene.com/blog/2014/11/40-terms-commonly-used-in-chinese-academic-writing/",
+        "vocab_link": "",
+        "name": "40 Terms Commonly Used in Chinese Academic Writing (\u4e00\u6b65\u4e00\u4e2a\u811a\u5370)",
+        "tags": []
+    },
+    {
+        "id": 149,
+        "link": "http://chinesereadingpractice.com/",
+        "vocab_link": "",
+        "name": "Chinese Reading Practice | Simplified Chinese Reading Exercises & Materials Blog",
+        "tags": []
+    },
+    {
+        "id": 150,
+        "link": "http://www.nciku.com/books/peter_rabbit/",
+        "vocab_link": "",
+        "name": "The Tale of Peter Rabbit \u5154\u5b50\u5f7c\u5f97\u7684\u6545\u4e8b",
+        "tags": []
+    },
+    {
+        "id": 151,
+        "link": "http://online.thatsmags.com/post/explained-how-every-chinese-province-got-its-name",
+        "vocab_link": "",
+        "name": "How every Chinese province really got its name",
+        "tags": []
+    },
+    {
+        "id": 152,
+        "link": "http://jishi.cntv.cn/2012/12/10/VIDA1355146414011406.shtml",
+        "vocab_link": "",
+        "name": "\u300a\u51b0\u51bb\u661f\u7403\u300b Frozen Planet (\u7eaa\u5b9e\u53f0 \u592e\u89c6\u7f51)",
+        "tags": []
+    },
+    {
+        "id": 153,
+        "link": "http://open.spotify.com/album/26RqqLW2ztsGh1WZG1q5FN",
+        "vocab_link": "",
+        "name": "Learn in Your Car: Mandarin Chinese (Henry Raymond Jr. on Spotify)",
+        "tags": []
+    },
+    {
+        "id": 154,
+        "link": "http://www.amazon.com/gp/search/ref=as_li_qf_sp_sr_il_tl?ie=UTF8&camp=1789&creative=9325&index=aps&keywords=Stimulated%20Tests%20of%20the%20New%20Chinese%20Proficiency%20Test%20HSK&linkCode=as2&tag=hackichine07-20&linkId=PIAY4J2HJQGC7V5N",
+        "vocab_link": "",
+        "name": "Simulated Tests of the New Chinese Proficiency Test HSK",
+        "tags": []
+    },
+    {
+        "id": 155,
+        "link": "http://cctv.cntv.cn/lm/learningchinese/program/",
+        "vocab_link": "",
+        "name": "Growing up with Chinese (CNTV English)",
+        "tags": []
+    },
+    {
+        "id": 156,
+        "link": "http://www.bible.is/CH1CNV/Matt/1/N",
+        "vocab_link": "",
+        "name": "The Bible in Chinese (with audio)",
+        "tags": []
+    },
+    {
+        "id": 157,
+        "link": "http://www.singchinesesongs.com",
+        "vocab_link": "",
+        "name": "Sing Chinese Songs - Listen to Chinese music and learn Chinese with famous Chinese songs",
+        "tags": []
+    },
+    {
+        "id": 158,
+        "link": "http://mandarincompanion.com/",
+        "vocab_link": "",
+        "name": "Mandarin Companion (Chinese graded readers)",
+        "tags": []
+    },
+    {
+        "id": 159,
+        "link": "http://money.163.com/economist",
+        "vocab_link": "",
+        "name": "\u610f\u89c1\u4e2d\u56fd \u7ecf\u6d4e\u5b66\u5bb6\u8bbf\u8c08\u5f55 \u7f51\u6613\u8d22\u7ecf (Economics interviews and discussions with transcripts)",
+        "tags": []
+    },
+    {
+        "id": 160,
+        "link": "http://www.hackingchinese.com/preparing-for-rainy-days-and-dealing-with-slumps/",
+        "vocab_link": "",
+        "name": "Preparing for rainy days and dealing with slumps (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 161,
+        "link": "http://chinesepod.com/tools/glossary/entry/",
+        "vocab_link": "",
+        "name": "Chinese Glossary (sample sentences with audio from ChinesePod)",
+        "tags": []
+    },
+    {
+        "id": 162,
+        "link": "http://playinfluent.com/",
+        "vocab_link": "",
+        "name": "Influent",
+        "tags": []
+    },
+    {
+        "id": 163,
+        "link": "http://digchinese.com/measure-words",
+        "vocab_link": "",
+        "name": "Mandarin Chinese Count/Measure Words (digchinese.com)",
+        "tags": []
+    },
+    {
+        "id": 164,
+        "link": "http://www.hackingchinese.com/a-language-learners-guide-to-reading-comics-in-chinese/",
+        "vocab_link": "",
+        "name": "A language learner\u2019s guide to reading comics in Chinese (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 165,
+        "link": "http://www.hackingchinese.com/how-to-find-more-time-to-practise-listening/",
+        "vocab_link": "",
+        "name": "How to find more time to practise listening (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 166,
+        "link": "http://www.speakgoodchinese.org/",
+        "vocab_link": "",
+        "name": "Speak Good Chinese (Improve speaking by seeing your tones)",
+        "tags": []
+    },
+    {
+        "id": 167,
+        "link": "http://chinesehacks.com/",
+        "vocab_link": "",
+        "name": "Chinese Hacks (Tips, Tricks, Hacks, Software and Websites to make learning Chinese easier)",
+        "tags": []
+    },
+    {
+        "id": 168,
+        "link": "http://www.mandarinbanana.com",
+        "vocab_link": "",
+        "name": "MandarinBanana: Remembering Chinese Characters by Drawing Like a Four-Year-Old",
+        "tags": []
+    },
+    {
+        "id": 169,
+        "link": "http://www.tastymantou.com",
+        "vocab_link": "",
+        "name": "Tasty Mantou Chinese (Online dictionary)",
+        "tags": []
+    },
+    {
+        "id": 170,
+        "link": "http://www.hackingchinese.com/using-audacity-to-learn-chinese-speaking-and-listening/",
+        "vocab_link": "",
+        "name": "Using Audacity to learn Chinese (speaking and listening) (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 171,
+        "link": "http://www.cslpod.com/",
+        "vocab_link": "",
+        "name": "Learn Chinese with CSLPOD",
+        "tags": []
+    },
+    {
+        "id": 172,
+        "link": "http://talkify.net",
+        "vocab_link": "",
+        "name": "Talkify (online text-to-speech, including Mandarin)",
+        "tags": []
+    },
+    {
+        "id": 173,
+        "link": "http://www.hackingchinese.com/studying-chinese-when-your-grades-matter",
+        "vocab_link": "",
+        "name": "Studying Chinese when your grades matter (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 174,
+        "link": "http://pinyin.info/",
+        "vocab_link": "",
+        "name": "Pinyin.info",
+        "tags": []
+    },
+    {
+        "id": 175,
+        "link": "http://tatoeba.org/eng/home",
+        "vocab_link": "",
+        "name": "Tatoeba - Collecting example sentences",
+        "tags": []
+    },
+    {
+        "id": 176,
+        "link": "http://www.praat.org/",
+        "vocab_link": "",
+        "name": "Praat - Doing phonetics by computer",
+        "tags": []
+    },
+    {
+        "id": 177,
+        "link": "http://phtv.ifeng.com/program/kjbfz/",
+        "vocab_link": "",
+        "name": "\u5f00\u5377\u516b\u5206\u949f (8-minute introductions to books in Chinese)",
+        "tags": []
+    },
+    {
+        "id": 178,
+        "link": "http://www.hackingchinese.com/immersion-at-home-or-why-you-dont-have-to-go-abroad/",
+        "vocab_link": "",
+        "name": "Immersion at home or: Why you don\u2019t have to go abroad to learn Chinese (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 179,
+        "link": "http://www.hackingchinese.com/learning-the-right-chengyu-the-right-way/",
+        "vocab_link": "",
+        "name": "Learning the right chengyu the right way (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 180,
+        "link": "http://collections.uiowa.edu/chinese/topic_beginning.html",
+        "vocab_link": "",
+        "name": "\u4e2d\u6587\u9605\u8bfb\u5929\u5730 (University of Iowa)",
+        "tags": []
+    },
+    {
+        "id": 181,
+        "link": "http://commons.wikimedia.org/wiki/Commons:Stroke_Order_Project",
+        "vocab_link": "",
+        "name": "Stroke Order Project - Wikimedia Commons",
+        "tags": []
+    },
+    {
+        "id": 182,
+        "link": "http://www.haohaoreport.com",
+        "vocab_link": "",
+        "name": "Hao Hao Report - The best China news and blog posts as chosen by you",
+        "tags": []
+    },
+    {
+        "id": 183,
+        "link": "http://mandarinhq.com",
+        "vocab_link": "",
+        "name": "Mandarin HQ - Learn Basic Mandarin for Social, Travel and Work Situations",
+        "tags": []
+    },
+    {
+        "id": 184,
+        "link": "https://play.google.com/store/apps/details?id=com.embermitre.hanping.cantodict.app.pro",
+        "vocab_link": "",
+        "name": "Hanping Cantonese Dictionary",
+        "tags": []
+    },
+    {
+        "id": 185,
+        "link": "http://ctext.org/font-test-page",
+        "vocab_link": "",
+        "name": "Chinese font test page (Chinese Text Project)",
+        "tags": []
+    },
+    {
+        "id": 186,
+        "link": "http://www.fourtones.com/",
+        "vocab_link": "",
+        "name": "FourTones (Web music game for learning Chinese)",
+        "tags": []
+    },
+    {
+        "id": 187,
+        "link": "http://www.archchinese.com/how_to_write_chinese.html",
+        "vocab_link": "",
+        "name": "Character Stroke Order Worksheets (Arch Chinese)",
+        "tags": []
+    },
+    {
+        "id": 188,
+        "link": "http://www.yes-chinese.com/tzg/",
+        "vocab_link": "",
+        "name": "\u7530\u5b57\u683c\u6253\u5370 - \u4e2d\u6587\u5929\u4e0b (Generates stroke-order exercise sheets)",
+        "tags": []
+    },
+    {
+        "id": 189,
+        "link": "https://www.youtube.com/watch?v=s0h18Rdhb44#t=544",
+        "vocab_link": "",
+        "name": "Introduction to Chinese Characters (Video by ABCsof Chinese)",
+        "tags": []
+    },
+    {
+        "id": 190,
+        "link": "http://www.allsetlearning.com/products/allset-learning-pinyin/",
+        "vocab_link": "",
+        "name": "Pinyin charts with audio for iPad (Allset Learning)",
+        "tags": []
+    },
+    {
+        "id": 191,
+        "link": "http://en.wikipedia.org/wiki/Taiwanese_Mandarin",
+        "vocab_link": "",
+        "name": "Taiwanese Mandarin (Wikipedia)",
+        "tags": []
+    },
+    {
+        "id": 192,
+        "link": "http://mandarinspot.com/annotate",
+        "vocab_link": "",
+        "name": "Chinese Text Annotation (MandarinSpot)",
+        "tags": []
+    },
+    {
+        "id": 193,
+        "link": "http://www.hackingchinese.com/7-ways-of-learning-to-write-chinese-characters/",
+        "vocab_link": "",
+        "name": "7 ways of learning to write Chinese characters (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 194,
+        "link": "http://www.zein.se/patrick/chinen8p.html",
+        "vocab_link": "",
+        "name": "Mandarin Chinese Phonetics (Zein.se)",
+        "tags": []
+    },
+    {
+        "id": 195,
+        "link": "http://mandarinmadeez.com/",
+        "vocab_link": "",
+        "name": "MandarinMadeEZ | Mandarin Chinese Video Lessons With Fiona Tian",
+        "tags": []
+    },
+    {
+        "id": 196,
+        "link": "http://foreigncy.org/mandarin/",
+        "vocab_link": "",
+        "name": "Foreigncy (Reading and vocabulary practice for advanced learners)",
+        "tags": []
+    },
+    {
+        "id": 197,
+        "link": "http://www.hackingchinese.com/phonetic-components-part-2-hacking-chinese-characters/",
+        "vocab_link": "",
+        "name": "Phonetic components, part 2: Hacking Chinese characters",
+        "tags": []
+    },
+    {
+        "id": 198,
+        "link": "http://www.hackingchinese.com/phonetic-components-part-1-the-key-to-80-of-all-chinese-characters/",
+        "vocab_link": "",
+        "name": "Phonetic components, part 1: The key to 80% of all Chinese characters",
+        "tags": []
+    },
+    {
+        "id": 199,
+        "link": "http://carlgene.com/blog/2014/08/250-physical-verbs-in-english-and-chinese/",
+        "vocab_link": "",
+        "name": "250 Physical Verbs in English and Chinese (\u4e00\u6b65\u4e00\u4e2a\u811a\u5370)",
+        "tags": []
+    },
+    {
+        "id": 200,
+        "link": "http://singchinesesongs.com/",
+        "vocab_link": "",
+        "name": "Sing Chinese Songs - Listen to Chinese music and learn Chinese with famous Chinese songs",
+        "tags": []
+    },
+    {
+        "id": 201,
+        "link": "http://languagelog.ldc.upenn.edu/nll/?author=13",
+        "vocab_link": "",
+        "name": "Language Log \u00bb Victor Mair",
+        "tags": []
+    },
+    {
+        "id": 202,
+        "link": "http://diantai.ifeng.com/",
+        "vocab_link": "",
+        "name": "\u51e4\u51f0FM - \u4e2d\u56fd\u7b2c\u4e00\u97f3\u9891\u5e73\u53f0\uff01(app for streaming of programs, audio books etc.)",
+        "tags": []
+    },
+    {
+        "id": 203,
+        "link": "http://www.ting56.com/",
+        "vocab_link": "",
+        "name": "56\u542c\u4e66\u7f51 (online audiobook streaming)",
+        "tags": []
+    },
+    {
+        "id": 204,
+        "link": "http://www.fluentu.com/chinese/blog/2014/07/24/chinese-vocabulary-words-ghost-month/",
+        "vocab_link": "",
+        "name": "Top 10 Chinese Vocabulary Words for the Ghost Month",
+        "tags": []
+    },
+    {
+        "id": 205,
+        "link": "http://www.iciba.com/",
+        "vocab_link": "",
+        "name": "\u7231\u8bcd\u9738Iciba.com",
+        "tags": []
+    },
+    {
+        "id": 206,
+        "link": "http://www.melnyks.com/",
+        "vocab_link": "",
+        "name": "Melnyks (Podcast / Audio Course)",
+        "tags": []
+    },
+    {
+        "id": 207,
+        "link": "http://culturealley.com/mandarin",
+        "vocab_link": "",
+        "name": "Culture Alley Mandarin",
+        "tags": []
+    },
+    {
+        "id": 208,
+        "link": "https://gloss.dliflc.edu/",
+        "vocab_link": "",
+        "name": "Global Language Online Support System (with Chinese lessons)",
+        "tags": []
+    },
+    {
+        "id": 209,
+        "link": "http://www.language.berkeley.edu/fanjian/start.html",
+        "vocab_link": "",
+        "name": "Traditional-Simplified Character Tutor",
+        "tags": []
+    },
+    {
+        "id": 210,
+        "link": "http://www.sayjack.com/chinese/traditional-to-simplified-chinese-conversion-table/",
+        "vocab_link": "",
+        "name": "Traditional to Simplified Chinese Conversion Table",
+        "tags": []
+    },
+    {
+        "id": 211,
+        "link": "http://www.skritter.com/vocab/alltextbooks?siteref=HackingChinese",
+        "vocab_link": "",
+        "name": "Textbook Vocabulary Lists (Skritter)",
+        "tags": []
+    },
+    {
+        "id": 212,
+        "link": "http://wengu.tartarie.com/wg/wengu.php",
+        "vocab_link": "",
+        "name": "Wengu - Chinese Classics",
+        "tags": []
+    },
+    {
+        "id": 213,
+        "link": "http://goo.gl/oJ86pQ",
+        "vocab_link": "",
+        "name": "Nulinu.li",
+        "tags": []
+    },
+    {
+        "id": 214,
+        "link": "http://www.italki.com/",
+        "vocab_link": "",
+        "name": "italki: Learn a language online",
+        "tags": []
+    },
+    {
+        "id": 215,
+        "link": "http://mnemosyne-proj.org/",
+        "vocab_link": "",
+        "name": "Mnemosyne Project (flashcard spaced repetition software)",
+        "tags": []
+    },
+    {
+        "id": 216,
+        "link": "http://view.news.qq.com/index/zhuanti/zt_more.htm",
+        "vocab_link": "",
+        "name": "\u4eca\u65e5\u8bdd\u9898 / QQ's Today's Topic",
+        "tags": []
+    },
+    {
+        "id": 217,
+        "link": "http://forum.wordreference.com/forumdisplay.php?f=72",
+        "vocab_link": "",
+        "name": "\u4e2d\u6587+\u65b9\u8a00 (Chinese) - WordReference Forums",
+        "tags": []
+    },
+    {
+        "id": 218,
+        "link": "http://www.ctcfl.ox.ac.uk/Lang%20work/Grammar%20database/Grammar_database_content.htm",
+        "vocab_link": "",
+        "name": "Grammar Notes (University of Oxford)",
+        "tags": []
+    },
+    {
+        "id": 219,
+        "link": "http://www.zhtoolkit.com/apps/wordtest/",
+        "vocab_link": "",
+        "name": "Known Chinese Words / Characters Test",
+        "tags": []
+    },
+    {
+        "id": 220,
+        "link": "http://www.zhtoolkit.com/apps/chinese_word_extractor/",
+        "vocab_link": "",
+        "name": "Chinese Word Extractor",
+        "tags": []
+    },
+    {
+        "id": 221,
+        "link": "http://yuedu.fm/",
+        "vocab_link": "",
+        "name": "\u60a6\u8bfbFM - \u503e\u542c\u6587\u5b57\u7684\u58f0\u97f3 (recordings of selected articles)",
+        "tags": []
+    },
+    {
+        "id": 222,
+        "link": "http://www.peggyteacheschinese.com/",
+        "vocab_link": "",
+        "name": "Peggy Teaches Chinese (Videos, Lessons, Tutoring)",
+        "tags": []
+    },
+    {
+        "id": 223,
+        "link": "http://www.guokr.com/",
+        "vocab_link": "",
+        "name": "\u679c\u58f3\u7f51 \u79d1\u6280\u6709\u610f\u601d",
+        "tags": []
+    },
+    {
+        "id": 224,
+        "link": "http://goo.gl/VHQeqW",
+        "vocab_link": "",
+        "name": "Peking University CCL Online Corpus / \u8bed\u6599\u5e93\u68c0\u7d22\u7cfb\u7edf\uff08\u7f51\u7edc\u7248\uff09",
+        "tags": []
+    },
+    {
+        "id": 225,
+        "link": "http://lwtfi3m.co/lwt/",
+        "vocab_link": "",
+        "name": "Learning with Texts (online version)",
+        "tags": []
+    },
+    {
+        "id": 226,
+        "link": "http://chineseetymology.org/CharacterEtymology.aspx",
+        "vocab_link": "",
+        "name": "Chinese Etymology",
+        "tags": []
+    },
+    {
+        "id": 227,
+        "link": "https://hinative.com",
+        "vocab_link": "",
+        "name": "HiNative | A global platform for your questions",
+        "tags": []
+    },
+    {
+        "id": 228,
+        "link": "http://characterpop.com",
+        "vocab_link": "",
+        "name": "Character Pop",
+        "tags": []
+    },
+    {
+        "id": 229,
+        "link": "http://www.archchinese.com",
+        "vocab_link": "",
+        "name": "Arch Chinese - Learn to read and write Chinese characters",
+        "tags": []
+    },
+    {
+        "id": 230,
+        "link": "http://jandan.net/",
+        "vocab_link": "",
+        "name": "\u714e\u86cb\uff1a\u5730\u7403\u4e0a\u6ca1\u6709\u65b0\u9c9c\u4e8b",
+        "tags": []
+    },
+    {
+        "id": 231,
+        "link": "https://sinocism.com/",
+        "vocab_link": "",
+        "name": "The Sinocism China Newsletter",
+        "tags": []
+    },
+    {
+        "id": 232,
+        "link": "http://resources.hackingchinese.com",
+        "vocab_link": "",
+        "name": "Test",
+        "tags": []
+    },
+    {
+        "id": 233,
+        "link": "http://cctv.cntv.cn/lm/wenmingzhilv/index.shtml",
+        "vocab_link": "",
+        "name": "\u6587\u660e\u4e4b\u65c5 - Journey of a Civilization",
+        "tags": []
+    },
+    {
+        "id": 234,
+        "link": "https://chrome.google.com/webstore/detail/zhongwen-a-chinese-englis/kkmlkkjojmombglmlpbpapmhcaljjkde",
+        "vocab_link": "",
+        "name": "Zhongwen: A Chinese-English Popup Dictionary for Chrome",
+        "tags": []
+    },
+    {
+        "id": 235,
+        "link": "http://simplified-traditional.blogspot.tw/2011/02/new-tong-wen-tang.html",
+        "vocab_link": "",
+        "name": "New Tong Wen Tang \u65b0\u540c\u6587\u5802 (Character conversion of websites in most browsers)",
+        "tags": []
+    },
+    {
+        "id": 236,
+        "link": "http://www.hackingchinese.com/watch-the-world-cup-in-chinese/",
+        "vocab_link": "",
+        "name": "How and why to watch the world cup in Chinese (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 237,
+        "link": "http://www.fengyunzhibo.com/tv/jbty.htm",
+        "vocab_link": "",
+        "name": "\u98ce\u4e91\u76f4\u64ad,\u6700\u5feb\u6700\u6e05\u6670\u65e0\u63d2\u4ef6\u5f39\u5e55\u76f4\u64ad (Live Sports Broadcasts)",
+        "tags": []
+    },
+    {
+        "id": 238,
+        "link": "http://www.unlockyourbrain.com/",
+        "vocab_link": "",
+        "name": "Unlock Your Brain (app that quizzes you to unlock your phone, supports Chinese)",
+        "tags": []
+    },
+    {
+        "id": 239,
+        "link": "http://www.hackingchinese.com/how-to-learn-chinese-characters-as-a-beginner/",
+        "vocab_link": "",
+        "name": "How to learn Chinese characters as a beginner (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 240,
+        "link": "http://blog.skritter.com/2013/05/10-simple-phrases-for-improving-your.html",
+        "vocab_link": "",
+        "name": "10 Simple Phrases for Improving Your Conversational Skills (Skritter Blog)",
+        "tags": []
+    },
+    {
+        "id": 241,
+        "link": "http://workaudiobook.com/",
+        "vocab_link": "",
+        "name": "WorkAudioBook - Audio book player for language learners",
+        "tags": []
+    },
+    {
+        "id": 242,
+        "link": "http://www.hackingchinese.com/kickstart-your-character-learning-with-the-100-most-common-radicals/",
+        "vocab_link": "",
+        "name": "Kickstart your character learning with the 100 most common radicals (Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 243,
+        "link": "http://ankisrs.net/",
+        "vocab_link": "",
+        "name": "Anki - powerful, intelligent flashcards",
+        "tags": []
+    },
+    {
+        "id": 244,
+        "link": "https://chinese.yabla.com/chinese-pinyin-chart.php",
+        "vocab_link": "",
+        "name": "Mandarin Chinese Pinyin Chart with Audio (Yabla Chinese)",
+        "tags": []
+    },
+    {
+        "id": 245,
+        "link": "http://frill.miknight.com/",
+        "vocab_link": "",
+        "name": "Frill - The Chinese pop-up dictionary for Safari",
+        "tags": []
+    },
+    {
+        "id": 246,
+        "link": "https://twighk.github.io/tghz-word-tone-annotator/",
+        "vocab_link": "",
+        "name": "tghz-word-tone-annotator - Annotating Hanzi with tones and pinyin in Microsoft Word",
+        "tags": []
+    },
+    {
+        "id": 247,
+        "link": "http://chineselevel.com/",
+        "vocab_link": "",
+        "name": "ChineseLevel - Test your Chinese level, improve your reading, measure your progress",
+        "tags": []
+    },
+    {
+        "id": 248,
+        "link": "http://www.fastchinese.org/",
+        "vocab_link": "",
+        "name": "Chinese Tutor - Flashcards, Dictionary, Speaking Practice",
+        "tags": []
+    },
+    {
+        "id": 249,
+        "link": "http://horizontalhanzi.com/",
+        "vocab_link": "",
+        "name": "Horizontal Hanzi: Learn to differentiate similar Chinese characters",
+        "tags": []
+    },
+    {
+        "id": 250,
+        "link": "http://www.fluentu.com/chinese/blog/2014/06/01/chinese-proverbs/",
+        "vocab_link": "",
+        "name": "10 Inspiring Chinese Proverbs for Chinese Learners",
+        "tags": []
+    },
+    {
+        "id": 251,
+        "link": "http://www.cantonese.sheik.co.uk/dictionary/",
+        "vocab_link": "",
+        "name": "CantoDict - Online Cantonese Dictionary",
+        "tags": []
+    },
+    {
+        "id": 252,
+        "link": "https://play.google.com/store/apps/dev?id=4845954736942800726&utm_source=hackingchinese&utm_campaign=resources",
+        "vocab_link": "",
+        "name": "Hanping Chinese - Powerful Offline OCR & Dictionary apps for Android",
+        "tags": []
+    },
+    {
+        "id": 253,
+        "link": "http://www.ChineseLearnOnline.com",
+        "vocab_link": "",
+        "name": "Chinese Learn Online (CLO)",
+        "tags": []
+    },
+    {
+        "id": 254,
+        "link": "http://www-personal.umich.edu/~dporter/sampler/sampler.html",
+        "vocab_link": "",
+        "name": "Chinese Text Sampler: Readings in Chinese Literature, History, and Popular Culture",
+        "tags": []
+    },
+    {
+        "id": 255,
+        "link": "http://www.wenlin.com",
+        "vocab_link": "",
+        "name": "Wenlin Institute: Software for Learning Chinese",
+        "tags": []
+    },
+    {
+        "id": 256,
+        "link": "http://www.pinyinput.net",
+        "vocab_link": "",
+        "name": "Pinyinput (type Pinyin with tone marks)",
+        "tags": []
+    },
+    {
+        "id": 257,
+        "link": "http://www.hanzigrids.com",
+        "vocab_link": "",
+        "name": "Hanzi Grids | Create Grid Templates and Worksheets for Practising Chinese",
+        "tags": []
+    },
+    {
+        "id": 258,
+        "link": "https://itunes.apple.com/us/app/pleco-chinese-dictionary/id341922306?mt=8&uo=4&at=11l4Wi",
+        "vocab_link": "",
+        "name": "Pleco Chinese Dictionary for iOS",
+        "tags": []
+    },
+    {
+        "id": 259,
+        "link": "https://play.google.com/store/apps/details?id=com.pleco.chinesesystem",
+        "vocab_link": "",
+        "name": "Pleco Chinese Dictionary for Android (Google Play version)",
+        "tags": []
+    },
+    {
+        "id": 260,
+        "link": "http://carlgene.com/blog/2014/05/50-skills-and-abilities-in-chinese/",
+        "vocab_link": "",
+        "name": "50 Skills and Abilities in Chinese | \u4e00\u6b65\u4e00\u4e2a\u811a\u5370",
+        "tags": []
+    },
+    {
+        "id": 261,
+        "link": "https://play.google.com/store/apps/details?id=com.embermitre.hanping.app.reader.pro",
+        "vocab_link": "",
+        "name": "Hanping Chinese Camera - Android App on Google Play",
+        "tags": []
+    },
+    {
+        "id": 262,
+        "link": "https://play.google.com/store/apps/details?id=com.embermitre.hanping.app.pro",
+        "vocab_link": "",
+        "name": "Hanping Chinese Dictionary Pro - Android app on Google Play",
+        "tags": []
+    },
+    {
+        "id": 263,
+        "link": "https://play.google.com/store/apps/details?id=com.embermitre.hanping.app.lite",
+        "vocab_link": "",
+        "name": "Hanping Chinese Dictionary Lite - Android App on Google Play",
+        "tags": []
+    },
+    {
+        "id": 264,
+        "link": "http://techcrunch.cn/",
+        "vocab_link": "",
+        "name": "TechCrunch \u4e2d\u56fd",
+        "tags": []
+    },
+    {
+        "id": 265,
+        "link": "http://www.youtube.com/user/KhanAcademyMandarin/playlists",
+        "vocab_link": "",
+        "name": "Khan Academy Mandarin",
+        "tags": []
+    },
+    {
+        "id": 266,
+        "link": "https://www.youtube.com/watch?v=IpXAS7F57mM",
+        "vocab_link": "",
+        "name": "Movie: \u9633\u5149\u707f\u70c2\u7684\u65e5\u5b50\u300bIn the Heat of the Sun",
+        "tags": []
+    },
+    {
+        "id": 267,
+        "link": "http://m.youtube.com/watch?v=6ihA3QmhVnA",
+        "vocab_link": "",
+        "name": "Movie: Raise the Red Lantern \u5927\u7ea2\u706f\u7b3c\u9ad8\u9ad8\u6302",
+        "tags": []
+    },
+    {
+        "id": 268,
+        "link": "http://m.youtube.com/watch?v=2go7ogM9fGk",
+        "vocab_link": "",
+        "name": "To Live \u6d3b\u7740",
+        "tags": []
+    },
+    {
+        "id": 269,
+        "link": "http://lz.book.sohu.com/?cs=138",
+        "vocab_link": "",
+        "name": "A collection of novels and e-books (translated from English) in Chinese",
+        "tags": []
+    },
+    {
+        "id": 270,
+        "link": "http://www.voachinese.com/?refresh=1",
+        "vocab_link": "",
+        "name": "Voice of America Chinese News",
+        "tags": []
+    },
+    {
+        "id": 271,
+        "link": "http://carlgene.com/blog/2014/06/a-comprehensive-guide-to-euphemisms-in-chinese-and-english/",
+        "vocab_link": "",
+        "name": "A Comprehensive Guide to Euphemisms in Chinese and English (\u4e00\u6b65\u4e00\u4e2a\u811a\u5370)",
+        "tags": []
+    },
+    {
+        "id": 272,
+        "link": "http://www.linqapp.com",
+        "vocab_link": "",
+        "name": "Linqapp",
+        "tags": []
+    },
+    {
+        "id": 273,
+        "link": "https://www.youtube.com/watch?v=9CfHmPLhcdE",
+        "vocab_link": "",
+        "name": "20140607 \u7687\u724c\u5927\u653e\u9001  D-Day\uff1a\u6c34\u5e95\u7684\u6218\u573a \u8bfa\u66fc\u5e95\u767b\u964670\u5468\u5e74\u7279\u8f91 - YouTube",
+        "tags": []
+    },
+    {
+        "id": 274,
+        "link": "http://www.haodoo.net/",
+        "vocab_link": "",
+        "name": "\u597d\u8b80 (E-books in traditional Chinese)",
+        "tags": []
+    },
+    {
+        "id": 275,
+        "link": "http://chinadigitaltimes.net/space/Grass-Mud_Horse_Lexicon",
+        "vocab_link": "",
+        "name": "Grass-Mud Horse Lexicon (focusing on terms used online to avoid censorship)",
+        "tags": []
+    },
+    {
+        "id": 276,
+        "link": "http://www.hackingchinese.com/review-the-phonology-of-standard-chinese/",
+        "vocab_link": "",
+        "name": "The Phonology of Standard Chinese by Duanmu San (Review on Hacking Chinese)",
+        "tags": []
+    },
+    {
+        "id": 277,
+        "link": "https://www.youtube.com/channel/UCL6C66s10Xirrh1wX1ymtjA",
+        "vocab_link": "",
+        "name": "Learn a Chinese Phrase (Wayne State University on YouTube)",
+        "tags": []
+    },
+    {
+        "id": 278,
+        "link": "http://hellotalk.com/",
+        "vocab_link": "",
+        "name": "HelloTalk Language Exchange",
+        "tags": []
+    },
+    {
+        "id": 279,
+        "link": "http://www.learnnc.org/lp/editions/mandarin1/contents",
+        "vocab_link": "",
+        "name": "Mandarin Chinese I | \u4e2d\u6587\u8bfe\u7a0b1 (UNC free onilne textbook)",
+        "tags": []
+    },
+    {
+        "id": 280,
+        "link": "http://carlgene.com/blog/",
+        "vocab_link": "",
+        "name": "\u4e00\u6b65\u4e00\u4e2a\u811a\u5370 - My mission from advanced Chinese learner to professional interpreter",
+        "tags": []
+    },
+    {
+        "id": 281,
+        "link": "http://eastasiastudent.net/",
+        "vocab_link": "",
+        "name": "East Asia Student - A Blog About Random Stuff Related to East Asia",
+        "tags": []
+    },
+    {
+        "id": 282,
+        "link": "http://sarajaaksola.com/",
+        "vocab_link": "",
+        "name": "Living a Dream in China - Advice for life, love and language learning in China",
+        "tags": []
+    },
+    {
+        "id": 283,
+        "link": "http://www.sinosplice.com/learn-chinese/tone-pair-drills",
+        "vocab_link": "",
+        "name": "Mandarin Chinese Tone Pair Drills (Sinosplice)",
+        "tags": []
+    },
+    {
+        "id": 284,
+        "link": "http://www.bbc.co.uk/zhongwen/simp/",
+        "vocab_link": "",
+        "name": "\u65b0\u95fb\u4e3b\u9875 - BBC\u4e2d\u6587\u7f51 (BBC Chinese website)",
+        "tags": []
+    },
+    {
+        "id": 285,
+        "link": "http://www.kexuetuokouxiu.com/",
+        "vocab_link": "",
+        "name": "\u79d1\u5b66\u8131\u53e3\u79c0 | \u8282\u64cd\u6ee1\u5730\u804a\u79d1\u5b66 (Science Talk Show)",
+        "tags": []
+    },
+    {
+        "id": 286,
+        "link": "http://cn.nytimes.com/",
+        "vocab_link": "",
+        "name": "\u7ebd\u7ea6\u65f6\u62a5\u4e2d\u6587\u7f51 \u56fd\u9645\u7eb5\u89c8 (New York Times, Chinese)",
+        "tags": []
+    },
+    {
+        "id": 287,
+        "link": "http://www.hackingchinese.com/how-and-why-to-use-television-to-learn-chinese/",
+        "vocab_link": "",
+        "name": "How and why to use television to learn Chinese",
+        "tags": []
+    },
+    {
+        "id": 288,
+        "link": "http://chinese.engadget.com/",
+        "vocab_link": "",
+        "name": "Engadget (Chinese Edition)",
+        "tags": []
+    },
+    {
+        "id": 289,
+        "link": "http://www.fluentu.com/chinese/blog/2013/06/28/learn-chinese-movies/",
+        "vocab_link": "",
+        "name": "Learn Chinese Through Movies: The Quick Guide",
+        "tags": []
+    },
+    {
+        "id": 290,
+        "link": "http://www.hackingchinese.com/how-good-chinese-pronunciation/",
+        "vocab_link": "",
+        "name": "How to find out how good your Chinese pronunciation really is",
+        "tags": []
+    },
+    {
+        "id": 291,
+        "link": "http://www.hackingchinese.com/the-three-roads-to-mastering-chinese/",
+        "vocab_link": "",
+        "name": "The three roads to mastering Chinese",
+        "tags": []
+    },
+    {
+        "id": 292,
+        "link": "http://www.hackingchinese.com/how-to-approach-chinese-grammar/",
+        "vocab_link": "",
+        "name": "How to Approach Chinese Grammar",
+        "tags": []
+    },
+    {
+        "id": 293,
+        "link": "http://www.newconceptmandarin.com/resources/introduction_to_pinyin",
+        "vocab_link": "",
+        "name": "Mandarin Pronunciation Table (New Concept Mandarin)",
+        "tags": []
+    },
+    {
+        "id": 294,
+        "link": "http://www.hackingchinese.com/handwriting-chinese-characters-the-minimum-requirements/",
+        "vocab_link": "",
+        "name": "Handwriting Chinese characters: The minimum requirements",
+        "tags": []
+    },
+    {
+        "id": 295,
+        "link": "http://hkchinesemandarintutor.com/wp-content/Chart/index.html",
+        "vocab_link": "",
+        "name": "Mandarin Chinese Pinyin Chart with Audio",
+        "tags": []
+    },
+    {
+        "id": 296,
+        "link": "http://lingua.mtsu.edu/chinese-computing/",
+        "vocab_link": "",
+        "name": "Jun Da: Chinese text computing",
+        "tags": []
+    },
+    {
+        "id": 297,
+        "link": "http://www.hackingchinese.com/learn-to-read-chinese-with-ease/",
+        "vocab_link": "",
+        "name": "Learn to read Chinese\u2026 with ease?",
+        "tags": []
+    },
+    {
+        "id": 298,
+        "link": "http://www.hackingchinese.com/ways-improve-review-chinese-characters/",
+        "vocab_link": "",
+        "name": "Three ways to improve the way you review Chinese characters",
+        "tags": []
+    },
+    {
+        "id": 299,
+        "link": "http://www.hackingchinese.com/listening-cycle-improve-chinese-listening-ability/",
+        "vocab_link": "",
+        "name": "The Grand Listening Cycle: Improve your Chinese listening ability | Hacking Chinese",
+        "tags": []
+    },
+    {
+        "id": 300,
+        "link": "http://carlgene.com/blog/category/interpreting-resources/",
+        "vocab_link": "",
+        "name": "Archives for Interpreting Resources | \u4e00\u6b65\u4e00\u4e2a\u811a\u5370",
+        "tags": []
+    },
+    {
+        "id": 301,
+        "link": "http://www.chinesetextanalyser.com/",
+        "vocab_link": "",
+        "name": "Chinese Text Analyser (a tool for segmenting and analysing Chinese text)",
+        "tags": []
+    },
+    {
+        "id": 302,
+        "link": "http://hua.umf.maine.edu/Chinese/topics/topics.html",
+        "vocab_link": "",
+        "name": "Ting - Chinese English Study Center - Everyday Topics",
+        "tags": []
+    },
+    {
+        "id": 303,
+        "link": "http://www.iicm.org.tw/term/termb_I.htm",
+        "vocab_link": "",
+        "name": "\u96fb\u8166\u540d\u8a5e\u8b6f\u540d (English-Chinese computer terms)",
+        "tags": []
+    },
+    {
+        "id": 304,
+        "link": "http://languagelog.ldc.upenn.edu/nll/?p=11580",
+        "vocab_link": "",
+        "name": "The future of Chinese language learning is now (about handwriting and romanised text) (Language Log)",
+        "tags": []
+    },
+    {
+        "id": 305,
+        "link": "http://pinyinpractice.com/wangzhi/",
+        "vocab_link": "",
+        "name": "Pinyin Practice ~ Initials, finals and tones",
+        "tags": []
+    },
+    {
+        "id": 306,
+        "link": "http://www.hackingchinese.com/why-feedback-matters-how-to-get/",
+        "vocab_link": "",
+        "name": "Why good feedback matters and how to get it",
+        "tags": []
+    },
+    {
+        "id": 307,
+        "link": "http://www.sinosplice.com/life/archives/2014/04/04/a-realistic-look-at-the-challenges-of-reading-chinese",
+        "vocab_link": "",
+        "name": "A Realistic Look at the Challenges of Reading Chinese (Sinosplice)",
+        "tags": []
+    },
+    {
+        "id": 308,
+        "link": "http://popupchinese.com/",
+        "vocab_link": "",
+        "name": "Popup Chinese - Learn Chinese with 1300+ Chinese podcasts",
+        "tags": []
+    },
+    {
+        "id": 309,
+        "link": "http://chinesepod.com/",
+        "vocab_link": "",
+        "name": "ChinesePod - Learn Chinese Online & with Mobile Apps",
+        "tags": []
+    },
+    {
+        "id": 310,
+        "link": "https://chrome.google.com/webstore/detail/select-and-speak/gfjopfpjmkcfgjpogepmdjmcnihfpokn",
+        "vocab_link": "",
+        "name": "Select and Speak (Text-to-Speech Chrome Extension)",
+        "tags": []
+    },
+    {
+        "id": 311,
+        "link": "http://fsi-language-courses.org/Content.php?page=Chinese",
+        "vocab_link": "",
+        "name": "Chinese: A Modular Approach (FSI Language Courses)",
+        "tags": []
+    },
+    {
+        "id": 312,
+        "link": "http://en.wikipedia.org/wiki/Transcription_into_Chinese_characters",
+        "vocab_link": "",
+        "name": "Transcription into Chinese characters (Wikipedia)",
+        "tags": []
+    },
+    {
+        "id": 313,
+        "link": "http://easypronunciation.com/en/chinese-pinyin-phonetic-transcription-converter",
+        "vocab_link": "",
+        "name": "Chinese Pinyin Converter (Simplified, Tranditional, IPA, Pinyin)",
+        "tags": []
+    },
+    {
+        "id": 314,
+        "link": "https://www.youtube.com/watch?v=sbw7Z0ulDe8",
+        "vocab_link": "",
+        "name": "\u5c38\u5144 Zombie Brother \u7b2c1\u96c6 \u3010\u9a30\u8a0a\u6f2b\u756b\u4eba\u6c23\u699c\u7b2c\u4e00\uff01\u3011",
+        "tags": []
+    },
+    {
+        "id": 315,
+        "link": "https://itunes.apple.com/cn/podcast/xian-bai-er-dian-tai/id531733337?mt=2",
+        "vocab_link": "",
+        "name": "\u95f2\u767d\u513f\u7535\u53f0",
+        "tags": []
+    },
+    {
+        "id": 316,
+        "link": "http://chinesepod.com/tools/pronunciation",
+        "vocab_link": "",
+        "name": "Pinyin introduction and audio charts",
+        "tags": []
+    },
+    {
+        "id": 317,
+        "link": "http://chinesehacks.com/resources/chinese-version/",
+        "vocab_link": "",
+        "name": "Chinese Version \u2013 How to search for Chinese language stuff online",
+        "tags": []
+    },
+    {
+        "id": 318,
+        "link": "http://www.sinosplice.com/learn-chinese/pronunciation-of-mandarin-chinese",
+        "vocab_link": "",
+        "name": "John Pasden's complete tips on Chinese pronunciation (Sinosplice)",
+        "tags": []
+    },
+    {
+        "id": 319,
+        "link": "http://marcopoloproject.org",
+        "vocab_link": "",
+        "name": "Marco Polo Project - read and translate new writing from China",
+        "tags": []
+    },
+    {
+        "id": 320,
+        "link": "http://www.chineseboost.com/resources/subtitles",
+        "vocab_link": "",
+        "name": "Improve Your Chinese With: Subtitles",
+        "tags": []
+    },
+    {
+        "id": 321,
+        "link": "http://languagelog.ldc.upenn.edu/nll/?p=11109",
+        "vocab_link": "",
+        "name": "Chineasy?  Not (About what's wrong with Hsueh ShaoLan's Chineasy)",
+        "tags": []
+    },
+    {
+        "id": 322,
+        "link": "https://www.youtube.com/watch?v=u-Cl-gyfWTM",
+        "vocab_link": "",
+        "name": "Chinese is Easy!  Ep1 - Chinese Tones",
+        "tags": []
+    },
+    {
+        "id": 323,
+        "link": "http://dict.mini.moe.edu.tw/cgi-bin/gdic/gsweb.cgi?o=ddictionary",
+        "vocab_link": "",
+        "name": "\u570b\u8a9e\u5c0f\u5b57\u5178 (Taiwan Ministry of Education Elementary School Dictionary)",
+        "tags": []
+    },
+    {
+        "id": 324,
+        "link": "http://www.kwuntung.net/check/",
+        "vocab_link": "",
+        "name": "\u6771\u6771\u932f\u5225\u5b57\u8a5e\u5178\uff1a\u7db2\u4e0a\u4e2d\u6587\u932f\u5225\u5b57\u5b57\u5178 (Chinese Spell-checker)",
+        "tags": []
+    },
+    {
+        "id": 325,
+        "link": "http://blog.nciku.com/blog/en/?page_id=362",
+        "vocab_link": "",
+        "name": "Radical list with colloquial names",
+        "tags": []
+    },
+    {
+        "id": 326,
+        "link": "http://www.hackingchinese.com/sensible-chinese-character-learning-revisited/",
+        "vocab_link": "",
+        "name": "Sensible Chinese character learning revisited",
+        "tags": []
+    },
+    {
+        "id": 327,
+        "link": "http://wenku.baidu.com/view/fa48201efc4ffe473368ab20.html",
+        "vocab_link": "",
+        "name": "\u7b2c\u4e8c\u6b21\u6c49\u5b57\u7b80\u5316\u65b9\u6848(\u8349\u6848)\u7ea2_\u767e\u5ea6\u6587\u5e93",
+        "tags": []
+    },
+    {
+        "id": 328,
+        "link": "http://en.wikipedia.org/wiki/Ambiguities_in_Chinese_character_simplification",
+        "vocab_link": "",
+        "name": "Ambiguities in Chinese character simplification",
+        "tags": []
+    },
+    {
+        "id": 329,
+        "link": "http://bbs.hupu.com/all-gambia",
+        "vocab_link": "",
+        "name": "\u7518\u6bd4\u4e9a\u5927\u9646 - \u864e\u6251\u7bee\u7403\u8bba\u575b",
+        "tags": []
+    },
+    {
+        "id": 330,
+        "link": "http://v.ifeng.com/news/opinion/2014003/0193a49e-5f6e-4e2a-8bf9-ea91f74a6924.shtml",
+        "vocab_link": "",
+        "name": "2014-03-13\u9535\u9535\u4e09\u4eba\u884c \u7aa6\u6587\u6d9b\uff1a\u5185\u5730\u533b\u60a3\u7f3a\u4e4f\u6c9f\u901a\u6ecb\u751f\u4fe1\u4efb\u5371\u673a",
+        "tags": []
+    },
+    {
+        "id": 331,
+        "link": "http://eastasiastudent.net/china/mandarin/shijian-dou-qu-na-le",
+        "vocab_link": "",
+        "name": "\u300a\u65f6\u95f4\u90fd\u53bb\u54ea\u513f\u4e86\u300b lyrics translation: Where Has the Time Gone? \u82f1\u6587\u7ffb\u8bd1",
+        "tags": []
+    },
+    {
+        "id": 332,
+        "link": "http://chinahopelive.net/2014/03/13/preparing-for-the-resurrection-festival-aka-easter-in-chinese",
+        "vocab_link": "",
+        "name": "Preparing for Resurrection Festival (aka Easter) in Chinese",
+        "tags": []
+    },
+    {
+        "id": 333,
+        "link": "http://chinahopelive.net/2014/02/26/viral-one-minute-chinese-sex-ed-video-english-translation",
+        "vocab_link": "",
+        "name": "Viral one-minute Chinese sex ed video with English translation",
+        "tags": []
+    },
+    {
+        "id": 334,
+        "link": "http://www.pps.tv/",
+        "vocab_link": "",
+        "name": "PPS TV Player",
+        "tags": []
+    },
+    {
+        "id": 335,
+        "link": "http://resources.allsetlearning.com/chinese/grammar/Main_Page",
+        "vocab_link": "",
+        "name": "Chinese Grammar Wiki",
+        "tags": []
+    },
+    {
+        "id": 336,
+        "link": "http://www.justlearnchinese.com/mini-novels/",
+        "vocab_link": "",
+        "name": "Chinese online short story collection (Just Learn Chinese!)",
+        "tags": []
+    },
+    {
+        "id": 337,
+        "link": "http://mandarinsegments.blogspot.tw/2014/02/i-really-regret-not-studying-chinese.html",
+        "vocab_link": "",
+        "name": "I really regret not studying Chinese sooner! (Mandarin Segments)",
+        "tags": []
+    },
+    {
+        "id": 338,
+        "link": "http://www.laits.utexas.edu/orkelm/chinese/index.html",
+        "vocab_link": "",
+        "name": "Cultural Interviews with Chinese-Speaking Professionals",
+        "tags": []
+    },
+    {
+        "id": 339,
+        "link": "http://www.memrise.com/",
+        "vocab_link": "",
+        "name": "Learning, powered by imagination - Memrise",
+        "tags": []
+    },
+    {
+        "id": 340,
+        "link": "http://www.perapera.org/",
+        "vocab_link": "",
+        "name": "Perapera Language Tools (Popup browser dictionary)",
+        "tags": []
+    },
+    {
+        "id": 341,
+        "link": "http://www.theworldofchinese.com/2014/01/on-the-character-%E9%9D%A9/",
+        "vocab_link": "",
+        "name": "On the Character \u9769 (The World of Chinese)",
+        "tags": []
+    },
+    {
+        "id": 342,
+        "link": "http://www.theworldofchinese.com/2013/12/on-the-character-2/",
+        "vocab_link": "",
+        "name": "On the character \u6027 \uff08The World of Chinese)",
+        "tags": []
+    },
+    {
+        "id": 343,
+        "link": "http://www.theworldofchinese.com/2014/02/fake-it-until-you-make-it/",
+        "vocab_link": "",
+        "name": "Fake it Until You Make It (The World of Chinese)",
+        "tags": []
+    },
+    {
+        "id": 344,
+        "link": "http://pinyin.info/news/2012/pinyin-sort-order/",
+        "vocab_link": "",
+        "name": "Pinyin sort order (Pinyin News)",
+        "tags": []
+    },
+    {
+        "id": 345,
+        "link": "http://phonemica.net/",
+        "vocab_link": "",
+        "name": "\u4e61\u97f3\u82d1 Phonemica, a panorama of Chinese dialects, painted by speakers through their stories",
+        "tags": []
+    },
+    {
+        "id": 346,
+        "link": "http://v.ifeng.com/news/world/2014003/01a79d33-0a12-4415-8282-76be8ac95cac.shtml",
+        "vocab_link": "",
+        "name": "2014-03-11 \u9535\u9535\u4e09\u4eba\u884c \u6881\u6587\u9053\uff1a\u9a6c\u822a\u98de\u673a\u65e0\u7aef\u5931\u8054 \u8ba9\u4eba\u5fc3\u60ac",
+        "tags": []
+    },
+    {
+        "id": 347,
+        "link": "http://www.chinese-tools.com/chinese/chengyu",
+        "vocab_link": "",
+        "name": "Chengyu stories, chinese idioms - Chinese-Tools.com",
+        "tags": []
+    },
+    {
+        "id": 348,
+        "link": "http://www.hackingchinese.com/asking-the-experts-how-to-learn-chinese-grammar/",
+        "vocab_link": "",
+        "name": "Asking the experts: How to learn Chinese grammar",
+        "tags": []
+    },
+    {
+        "id": 349,
+        "link": "http://countryoftheblind.blogspot.de/2012/01/mnemonics-for-pronouncing-chinese.html",
+        "vocab_link": "",
+        "name": "Mnemonics for Pronouncing Chinese Characters",
+        "tags": []
+    },
+    {
+        "id": 350,
+        "link": "http://sinoglot.com/blog/2013/05/earthly-branches/",
+        "vocab_link": "",
+        "name": "Earthly Branches (Sinoglot)",
+        "tags": []
+    },
+    {
+        "id": 351,
+        "link": "http://sinoglot.com/blog/2013/05/heavenly-stems/",
+        "vocab_link": "",
+        "name": "Heavenly Stems (Sinoglot)",
+        "tags": []
+    },
+    {
+        "id": 352,
+        "link": "http://sinoglot.com/blog/2013/06/chinas-tower-of-babel-and-the-language-dialect-question-again/?owa_medium=feed&owa_sid=",
+        "vocab_link": "",
+        "name": "\u201cChina\u2019s tower of babel\u201d and the language/dialect question. Again. (Sinoglot)",
+        "tags": []
+    },
+    {
+        "id": 353,
+        "link": "http://dheera.net/proto/fastchinese/",
+        "vocab_link": "",
+        "name": "Fast Chinese (Reading Tool)",
+        "tags": []
+    },
+    {
+        "id": 354,
+        "link": "http://www.douban.com/",
+        "vocab_link": "",
+        "name": "Douban - \u8c46\u74e3",
+        "tags": []
+    },
+    {
+        "id": 355,
+        "link": "http://www.fluentu.com/chinese/blog/2014/01/18/chinese-podcasts/",
+        "vocab_link": "",
+        "name": "6 Awesome Chinese Podcasts You've Never Heard Of (FluentU)",
+        "tags": []
+    },
+    {
+        "id": 356,
+        "link": "http://www.fluentu.com/chinese/blog/2014/02/26/mandarin-chinese-grammar-patterns-structures/",
+        "vocab_link": "",
+        "name": "13 Chinese Grammar Patterns & Structures We Love to Hate (FluentU)",
+        "tags": []
+    },
+    {
+        "id": 357,
+        "link": "http://www.sinosplice.com/life/archives/2014/02/07/the-year-of-the-horse-chengyu",
+        "vocab_link": "",
+        "name": "The Year of the Horse Chengyu (Sinosplice)",
+        "tags": []
+    },
+    {
+        "id": 358,
+        "link": "http://laowaichinese.net/the-5th-skill-handwriting.htm",
+        "vocab_link": "",
+        "name": "The 5th Skill: Handwriting (Laowai Chinese \u8001\u5916\u4e2d\u6587)",
+        "tags": []
+    },
+    {
+        "id": 359,
+        "link": "http://www.chinasmack.com/?p=56394",
+        "vocab_link": "",
+        "name": "15 Chinese Artifacts That Will Change How You Look at China (chinaSMACK)",
+        "tags": []
+    },
+    {
+        "id": 360,
+        "link": "http://www.yellowbridge.com/chinese/chinese-dictionary.php",
+        "vocab_link": "",
+        "name": "Chinese Dictionary - YellowBridge",
+        "tags": []
+    },
+    {
+        "id": 361,
+        "link": "http://laowaichinese.net/tone-colors-and-what-pleco-did-with-them.htm",
+        "vocab_link": "",
+        "name": "Tone Colors and What Pleco Did with Them (Laowai Chinese \u8001\u5916\u4e2d\u6587)",
+        "tags": []
+    },
+    {
+        "id": 362,
+        "link": "http://laowaichinese.net/",
+        "vocab_link": "",
+        "name": "Laowai Chinese \u8001\u5916\u4e2d\u6587",
+        "tags": []
+    },
+    {
+        "id": 363,
+        "link": "http://chinese-characters.org/",
+        "vocab_link": "",
+        "name": "Chinese-Characters.org",
+        "tags": []
+    },
+    {
+        "id": 364,
+        "link": "http://www.netvibes.com/learnchinese#Blogs",
+        "vocab_link": "",
+        "name": "\"Learn Chinese\" Resource Bank (by LaowaiChinese.net)",
+        "tags": []
+    },
+    {
+        "id": 365,
+        "link": "http://www.chinesetest.cn/gonewcontent.do?id=6428777#",
+        "vocab_link": "",
+        "name": "\u65b0\u95fb\u516c\u544a - \u6c49\u8bed\u8003\u8bd5\u670d\u52a1\u7f51 (HSK & YCT test resources)",
+        "tags": []
+    },
+    {
+        "id": 366,
+        "link": "http://www.nciku.com/",
+        "vocab_link": "",
+        "name": "nciku - Online English Chinese Dictionary, Learn Chinese Mandarin Online",
+        "tags": []
+    },
+    {
+        "id": 367,
+        "link": "http://www.chinese-forums.com",
+        "vocab_link": "",
+        "name": "Chinese-forums.com",
+        "tags": []
+    },
+    {
+        "id": 368,
+        "link": "http://www.jukuu.com/",
+        "vocab_link": "",
+        "name": "\u53e5\u9177 - \u4f8b\u53e5\u641c\u7d22 \u514d\u8d39\u5728\u7ebf\u7ffb\u8bd1",
+        "tags": []
+    },
+    {
+        "id": 369,
+        "link": "http://www.theworldofchinese.com/",
+        "vocab_link": "",
+        "name": "The World of Chinese | Culture, Language, Travel, Food, Living in China, and more",
+        "tags": []
+    },
+    {
+        "id": 370,
+        "link": "http://talkbank.org/pinyin/Basics.php",
+        "vocab_link": "",
+        "name": "Pinyin Basics",
+        "tags": []
+    },
+    {
+        "id": 371,
+        "link": "http://www.hackingchinese.com/flashcard-overflow-about-card-models-and-review-directions/",
+        "vocab_link": "",
+        "name": "Flashcard overflow: About card models and review directions",
+        "tags": []
+    },
+    {
+        "id": 372,
+        "link": "http://www.zein.se/patrick/3000char.html",
+        "vocab_link": "",
+        "name": "The 3000 most common Chinese characters",
+        "tags": []
+    },
+    {
+        "id": 373,
+        "link": "http://www.hackingchinese.com/go/skritter-r/",
+        "vocab_link": "",
+        "name": "Skritter (app to help you learn to write Chinese characters)",
+        "tags": []
+    },
+    {
+        "id": 374,
+        "link": "http://www.pleco.com/",
+        "vocab_link": "",
+        "name": "Pleco Software - Learn Chinese with dictionaries for iPhone, iPad and Android",
+        "tags": []
+    },
+    {
+        "id": 375,
+        "link": "http://www.reddit.com/r/ChineseLanguage/",
+        "vocab_link": "",
+        "name": "Chinese Language (Reddit)",
+        "tags": []
+    },
+    {
+        "id": 376,
+        "link": "http://en.wikipedia.org/wiki/Chinese_numerals",
+        "vocab_link": "",
+        "name": "Chinese numerals (Wikipedia)",
+        "tags": []
+    },
+    {
+        "id": 377,
+        "link": "http://en.wikipedia.org/wiki/Mandarin_phonology",
+        "vocab_link": "",
+        "name": "Standard Chinese phonology (Wikipedia)",
+        "tags": []
+    },
+    {
+        "id": 378,
+        "link": "https://www.youtube.com/watch?v=Ivke9uWwNfs",
+        "vocab_link": "",
+        "name": "A Cat That Barks (About looking Chinese without knowing the language)",
+        "tags": []
+    },
+    {
+        "id": 379,
+        "link": "http://www.fluentu.com/chinese/blog/2013/12/15/chinese-listening-practice/",
+        "vocab_link": "",
+        "name": "Chinese Listening Practice: Why and How to Get Started",
+        "tags": []
+    },
+    {
+        "id": 380,
+        "link": "http://www.sinosplice.com/learn-chinese",
+        "vocab_link": "",
+        "name": "Learn Chinese (Sinosplice)",
+        "tags": []
+    },
+    {
+        "id": 381,
+        "link": "http://chinese.stackexchange.com/",
+        "vocab_link": "",
+        "name": "Chinese Language Stack Exchange",
+        "tags": []
+    },
+    {
+        "id": 382,
+        "link": "http://www.chinese-tools.com/tools/calligraphy.html",
+        "vocab_link": "",
+        "name": "Chinese Calligraphy Editor (Chinese-Tools.com)",
+        "tags": []
+    },
+    {
+        "id": 383,
+        "link": "http://www.chinese-tools.com/tools/seal.html",
+        "vocab_link": "",
+        "name": "Chinese Seal Generator (Chinese-Tools.com)",
+        "tags": []
+    },
+    {
+        "id": 384,
+        "link": "http://www.lexilogos.com/keyboard/pinyin_conversion.htm",
+        "vocab_link": "",
+        "name": "Pinyin Conversion: Number <> Tone Mark (Lexilogos)",
+        "tags": []
+    },
+    {
+        "id": 385,
+        "link": "http://www.fluentu.com/chinese/blog/2014/01/04/how-to-learn-chinese-faster/",
+        "vocab_link": "",
+        "name": "How to Learn Chinese Faster: Capacity Management",
+        "tags": []
+    },
+    {
+        "id": 386,
+        "link": "http://www.youtube.com/watch?v=_0Qxmj3ngjQ",
+        "vocab_link": "",
+        "name": "\u52a8\u753b\uff1a\u8521\u5fd7\u5fe0\u7cfb\u5217\u4e4b \u767d\u86c7\u50b3 (Legend of the White Snake)",
+        "tags": []
+    },
+    {
+        "id": 387,
+        "link": "http://corpus.leeds.ac.uk/query-zh.html",
+        "vocab_link": "",
+        "name": "A collection of Chinese corpora and frequency lists",
+        "tags": []
+    },
+    {
+        "id": 388,
+        "link": "http://www.fluentu.com/chinese/blog/2014/02/09/easy-way-learn-chinese-comprehensible-input/",
+        "vocab_link": "",
+        "name": "An Easier Way to Learn Chinese: Comprehensible Input",
+        "tags": []
+    },
+    {
+        "id": 389,
+        "link": "http://www.youtube.com/watch?v=FLFvVMjwwkQ#t=198",
+        "vocab_link": "",
+        "name": "\u5f26\u5b50 - \u9006\u98a8\u7684\u8594\u8587",
+        "tags": []
+    },
+    {
+        "id": 390,
+        "link": "http://www.youtube.com/watch?v=foPrDeXJQIc",
+        "vocab_link": "",
+        "name": "\u738b\u83f2 - \u518d\u898b\u87a2\u706b\u87f2",
+        "tags": []
+    },
+    {
+        "id": 391,
+        "link": "https://www.moedict.tw/",
+        "vocab_link": "",
+        "name": "\u6559\u80b2\u90e8\u570b\u8a9e\u3001\u81fa\u8a9e\u3001\u5ba2\u8a9e\u8fad\u5178\u6c11\u9593\u7248 (Taiwan Ministry of Education Online Dictionary)",
+        "tags": []
+    },
+    {
+        "id": 392,
+        "link": "http://dict.baidu.com/",
+        "vocab_link": "",
+        "name": "\u767e\u5ea6\u8bcd\u5178 \uff08Baidu Dictionary)",
+        "tags": []
+    },
+    {
+        "id": 393,
+        "link": "http://www.archchinese.com/chinese_english_dictionary.html",
+        "vocab_link": "",
+        "name": "Arch Chinese - Learn Chinese with innovative Chinese writing worksheets and powerful online Chinese English dictionary",
+        "tags": []
+    },
+    {
+        "id": 394,
+        "link": "http://www.zhongwen.com/",
+        "vocab_link": "",
+        "name": "Zhongwen.com - Chinese characters and culture",
+        "tags": []
+    },
+    {
+        "id": 395,
+        "link": "http://www.mdbg.net/chindict/chindict.php",
+        "vocab_link": "",
+        "name": "MDBG English to Chinese dictionary",
+        "tags": []
+    },
+    {
+        "id": 396,
+        "link": "http://practice-chinese.com/post/3657298450/the-conjunction-in-mandarin-chinese",
+        "vocab_link": "",
+        "name": "Common Chinese conjuctions (\u4e2d\u6587\u5e38\u7528\u8fde\u8bcd\u603b\u7ed3/\u4e2d\u6587\u5e38\u7528\u9023\u8a5e\u7e3d\u7d50)",
+        "tags": []
+    },
+    {
+        "id": 397,
+        "link": "http://carlgene.com/blog/2013/11/how-to-describe-medical-symptoms-in-chinese/",
+        "vocab_link": "",
+        "name": "How to Describe Medical Symptoms in Chinese (\u4e00\u6b65\u4e00\u4e2a\u811a\u5370)",
+        "tags": []
+    },
+    {
+        "id": 398,
+        "link": "http://www.fluentu.com/chinese/blog/2013/01/21/business-chinese-vocabulary-list-foreign-companies-in-chinese/",
+        "vocab_link": "",
+        "name": "Business Chinese Vocabulary List: Foreign Companies in Chinese",
+        "tags": []
+    },
+    {
+        "id": 399,
+        "link": "http://chinesenotes.com/grammar.php",
+        "vocab_link": "",
+        "name": "Chinese Notes \u2014 Grammar (\u4e2d\u6587\u7b14\u8bb0 - \u8bed\u6cd5)",
+        "tags": []
+    },
+    {
+        "id": 400,
+        "link": "https://lareviewofbooks.org/review/familiarizing-humanizing-exotic-language-jason-d-patent-perry-links-anatomy-chinese",
+        "vocab_link": "",
+        "name": "Jason D. Patent on \"An Anatomy of Chinese: Rhythm, Metaphor, Politics\" by Perry Link",
+        "tags": []
+    },
+    {
+        "id": 401,
+        "link": "http://popupchinese.com/lessons/sinica/",
+        "vocab_link": "",
+        "name": "Popup Chinese Sinica Podcast",
+        "tags": []
+    },
+    {
+        "id": 402,
+        "link": "http://resources.allsetlearning.com/chinese/grammar/",
+        "vocab_link": "",
+        "name": "Chinese Grammar Wiki",
+        "tags": []
+    },
+    {
+        "id": 403,
+        "link": "http://www.youdao.com/",
+        "vocab_link": "",
+        "name": "\u6709\u9053 (Youdao.com)",
+        "tags": []
+    },
+    {
+        "id": 404,
+        "link": "http://www.chinesebreeze.net/",
+        "vocab_link": "",
+        "name": "Chinese Breeze: Graded Chinese Readers",
+        "tags": []
+    },
+    {
+        "id": 405,
+        "link": "http://www.sinosplice.com/life/archives/2010/05/18/language-power-struggles",
+        "vocab_link": "",
+        "name": "Language Power Struggles",
+        "tags": []
+    },
+    {
+        "id": 406,
+        "link": "http://www.sinosplice.com/life/archives/2008/12/10/toward-better-tones-in-natural-speech",
+        "vocab_link": "",
+        "name": "Toward Better Tones in Natural Speech",
+        "tags": []
+    },
+    {
+        "id": 407,
+        "link": "http://www.hackingchinese.com/learning-how-to-fish-or-why-knowing-how-to-learn-chinese-is-essential/",
+        "vocab_link": "",
+        "name": "Learning how to fish: Or, why it\u2019s essential to know how to learn",
+        "tags": []
+    },
+    {
+        "id": 408,
+        "link": "http://www.sbs.com.au/chinese/program/mandarin-radio",
+        "vocab_link": "",
+        "name": "SBS Chinese - Mandarin Radio (\u666e\u901a\u8bdd\u5e7f\u64ad)",
+        "tags": []
+    },
+    {
+        "id": 409,
+        "link": "http://www.youtube.com/watch?v=w2B13IVTAw0&feature=youtu.be",
+        "vocab_link": "",
+        "name": "\u3010\u570b\u7acb\u6e05\u83ef\u5927\u5b78\u2027\u79d1\u5e7b\u6982\u8ad62010\u3011\u7b2c1\u8b1b  \u8ab2\u7a0b\u4ecb\u7d39\u8207\u4e0a\u8ab2\u65b9\u5f0f\u8aaa\u660e",
+        "tags": []
+    },
+    {
+        "id": 410,
+        "link": "http://www.economist.com/node/15108690",
+        "vocab_link": "",
+        "name": "Being foreign: The others (The Economist)",
+        "tags": []
+    },
+    {
+        "id": 411,
+        "link": "http://www.epochtimes.com/b5/ccstories.htm",
+        "vocab_link": "",
+        "name": "Epoch Times Culture Web (\u5927\u7d00\u5143\u6587\u5316\u7db2)",
+        "tags": []
+    },
+    {
+        "id": 412,
+        "link": "http://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dwebmge",
+        "vocab_link": "",
+        "name": "National Digital Library of Theses and Dissertations in Taiwan",
+        "tags": []
+    },
+    {
+        "id": 413,
+        "link": "http://www.forumosa.com/taiwan/",
+        "vocab_link": "",
+        "name": "Forumosa | Taiwan's Global Online Community",
+        "tags": []
+    },
+    {
+        "id": 414,
+        "link": "http://www.pinyinput.com/",
+        "vocab_link": "",
+        "name": "Online Pinyin Input Method (\u7db2\u4e0a\u62fc\u97f3\u8f38\u5165\u6cd5)",
+        "tags": []
+    },
+    {
+        "id": 415,
+        "link": "http://ctext.org/",
+        "vocab_link": "",
+        "name": "Chinese Text Project",
+        "tags": []
+    },
+    {
+        "id": 416,
+        "link": "http://www.youtube.com/watch?v=KtQW-H1gLWo",
+        "vocab_link": "",
+        "name": "Matzka - \u60c5\u4eba\u7684\u773c\u6dda\uff08\u5b8c\u6574\u7248\uff09",
+        "tags": []
+    },
+    {
+        "id": 417,
+        "link": "http://clavisinica.com/SS/intro.html",
+        "vocab_link": "",
+        "name": "Clavis Sinica Stepping Stones E-textbook",
+        "tags": []
+    },
+    {
+        "id": 418,
+        "link": "http://www.youtube.com/watch?v=Wb_rOtTIiTc",
+        "vocab_link": "",
+        "name": "TeSL\u661f\u6d772\u51a0\u8ecd\u8cfd | Sen Vs San",
+        "tags": []
+    },
+    {
+        "id": 419,
+        "link": "http://www.ted.com/talks/shaolan_learn_to_read_chinese_with_ease.html",
+        "vocab_link": "",
+        "name": "ShaoLan: Learn to read Chinese ... with ease!",
+        "tags": []
+    },
+    {
+        "id": 420,
+        "link": "http://lang-8.com/",
+        "vocab_link": "",
+        "name": "Lang-8: Multi-lingual language learning and language exchange",
+        "tags": []
+    },
+    {
+        "id": 421,
+        "link": "http://phtv.ifeng.com/program/qqsrx/",
+        "vocab_link": "",
+        "name": "\u9535\u9535\u4e09\u4eba\u884c",
+        "tags": []
+    },
+    {
+        "id": 422,
+        "link": "http://hanzicraft.com/",
+        "vocab_link": "",
+        "name": "HanziCraft - The Ultimate Chinese Character Dictionary",
+        "tags": []
+    },
+    {
+        "id": 423,
+        "link": "http://www.hackingchinese.com/easing-yourself-into-reading-novels-in-chinese/",
+        "vocab_link": "",
+        "name": "Easing yourself into reading novels in Chinese",
+        "tags": []
+    },
+    {
+        "id": 424,
+        "link": "http://www.hackingchinese.com/focusing-on-tone-pairs-to-improve-your-mandarin-pronunciation/",
+        "vocab_link": "",
+        "name": "Focusing on tone pairs to improve your Mandarin pronunciation",
+        "tags": []
+    },
+    {
+        "id": 425,
+        "link": "http://www.hackingchinese.com/habit-hacking-for-language-learners/",
+        "vocab_link": "",
+        "name": "Habit hacking for language learners",
+        "tags": []
+    },
+    {
+        "id": 426,
+        "link": "http://www.hackingchinese.com/two-reasons-why-pronunciation-matters-more-than-you-think/",
+        "vocab_link": "",
+        "name": "Two reasons why pronunciation matters more than you think",
+        "tags": []
+    },
+    {
+        "id": 427,
+        "link": "http://www.hackingchinese.com/a-language-learners-guide-to-wuxia-novels/",
+        "vocab_link": "",
+        "name": "A language learner\u2019s guide to wuxia  novels",
+        "tags": []
+    },
+    {
+        "id": 428,
+        "link": "http://media.ccc.de/browse/congress/2013/30C3_-_5543_-_en_-_saal_2_-_201312291245_-_id_cards_in_china_your_worst_nightmare_-_kate_krauss.html",
+        "vocab_link": "",
+        "name": "ID Cards in China: Your Worst Nightmare",
+        "tags": []
+    },
+    {
+        "id": 429,
+        "link": "http://www.hackingchinese.com/25-books-i-read-in-chinese-last-year/",
+        "vocab_link": "",
+        "name": "25 books I read in Chinese last year",
+        "tags": []
+    },
+    {
+        "id": 430,
+        "link": "http://www.hackingchinese.com/chinese-reading-challenge-read-more-or-die/",
+        "vocab_link": "",
+        "name": "Chinese reading challenge:  Read more or die",
+        "tags": []
+    }
+]
