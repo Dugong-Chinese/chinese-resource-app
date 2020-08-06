@@ -1,6 +1,4 @@
-"""api.models
-Database models for the RESTful API.
-"""
+"""Database models for the RESTful API."""
 
 from flask_sqlalchemy import SQLAlchemy
 

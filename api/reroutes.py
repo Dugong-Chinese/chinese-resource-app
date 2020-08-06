@@ -1,6 +1,7 @@
 from flask import Blueprint
 from flask_restful import Resource
 
+
 reroutes = Blueprint(
     "reroutes",
     __name__,

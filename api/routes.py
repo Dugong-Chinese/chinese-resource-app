@@ -1,7 +1,7 @@
 """Define the main routes of the app."""
 
 from flask import Blueprint
-from flask_restful import Resource, Api, abort
+from flask_restful import Resource, abort
 from functools import wraps
 from flask_jwt import jwt_required, current_identity
 
@@ -11,6 +11,7 @@ routes = Blueprint(
     __name__,
     static_folder="../build",
     static_url_path="/",
+    url_prefix="api/",  # This applies to all resources in this blueprint.
 )
 
 
@@ -62,15 +63,3 @@ class ParamExample(Resource):
         add2 = args["add2"]
 
         return {"result": int(add1) + int(add2)}
-
-
-api = Api()
-api.add_resource(Index, "/")
-# link resources to their respective URLs
-api.add_resource(SimpleExample, "/api/test")
-# whatever you call the parameter will be the way that it needs to be invoked,
-# for example here it would be e.g. ...?num=5
-api.add_resource(
-    ComplexExample, "/api/multiply/<int:num>"
-)  # specify variable type (or typecast)
-api.add_resource(ParamExample, "/api/add")
