@@ -48,7 +48,10 @@ for i in range(len(true_links)):
                     "link": str(list(true_links[i].children)[0]["href"]),
                     "vocab_link": "",  # must be done manually
                     "name": str(list(true_links[i].children)[0].text),
-                    "tags": [] # must be done manually
+                    "tags": [], # must be done manually
+                    "upvotes": 0,
+                    "rating": -1, # represents no rating present
+                    "images": [] # images used for cover, card preview, etc.
                 }
             )
 
