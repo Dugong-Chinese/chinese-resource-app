@@ -2024,21 +2024,11 @@
         "images": []
     },
     {
-        "id": 400,
-        "link": "https://lareviewofbooks.org/review/familiarizing-humanizing-exotic-language-jason-d-patent-perry-links-anatomy-chinese",
-        "vocab_link": "",
-        "name": "Jason D. Patent on \"An Anatomy of Chinese: Rhythm, Metaphor, Politics\" by Perry Link",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
         "id": 401,
         "link": "http://popupchinese.com/lessons/sinica/",
         "vocab_link": "",
         "name": "Popup Chinese Sinica Podcast",
-        "tags": [],
+        "tags": ["podcast", "native adult", "HSK-6", "free", "website", "slice-of-life", "talkshow"],
         "upvotes": 0,
         "rating": -1,
         "images": []
@@ -2048,17 +2038,7 @@
         "link": "http://resources.allsetlearning.com/chinese/grammar/",
         "vocab_link": "",
         "name": "Chinese Grammar Wiki",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 403,
-        "link": "http://www.youdao.com/",
-        "vocab_link": "",
-        "name": "\u6709\u9053 (Youdao.com)",
-        "tags": [],
+        "tags": ["grammar", "HSK-1", "HSK-2", "HSK-3", "starter", "listening", "everyday chinese", "dictionary", "HSK-4", "free"],
         "upvotes": 0,
         "rating": -1,
         "images": []
@@ -2068,97 +2048,17 @@
         "link": "http://www.chinesebreeze.net/",
         "vocab_link": "",
         "name": "Chinese Breeze: Graded Chinese Readers",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 405,
-        "link": "http://www.sinosplice.com/life/archives/2010/05/18/language-power-struggles",
-        "vocab_link": "",
-        "name": "Language Power Struggles",
-        "tags": [],
+        "tags": ["starter", "reading", "graded readers", "HSK-1", "HSK-2", "HSK-3", "book", "purchase", "pinyin annotated"],
         "upvotes": 0,
         "rating": -1,
         "images": []
     },
     {
         "id": 406,
-        "link": "http://www.sinosplice.com/life/archives/2008/12/10/toward-better-tones-in-natural-speech",
+        "link": "http://www.sinosplice.com",
         "vocab_link": "",
-        "name": "Toward Better Tones in Natural Speech",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 407,
-        "link": "http://www.hackingchinese.com/learning-how-to-fish-or-why-knowing-how-to-learn-chinese-is-essential/",
-        "vocab_link": "",
-        "name": "Learning how to fish: Or, why it\u2019s essential to know how to learn",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 408,
-        "link": "http://www.sbs.com.au/chinese/program/mandarin-radio",
-        "vocab_link": "",
-        "name": "SBS Chinese - Mandarin Radio (\u666e\u901a\u8bdd\u5e7f\u64ad)",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 409,
-        "link": "http://www.youtube.com/watch?v=w2B13IVTAw0&feature=youtu.be",
-        "vocab_link": "",
-        "name": "\u3010\u570b\u7acb\u6e05\u83ef\u5927\u5b78\u2027\u79d1\u5e7b\u6982\u8ad62010\u3011\u7b2c1\u8b1b  \u8ab2\u7a0b\u4ecb\u7d39\u8207\u4e0a\u8ab2\u65b9\u5f0f\u8aaa\u660e",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 410,
-        "link": "http://www.economist.com/node/15108690",
-        "vocab_link": "",
-        "name": "Being foreign: The others (The Economist)",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 411,
-        "link": "http://www.epochtimes.com/b5/ccstories.htm",
-        "vocab_link": "",
-        "name": "Epoch Times Culture Web (\u5927\u7d00\u5143\u6587\u5316\u7db2)",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 412,
-        "link": "http://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dwebmge",
-        "vocab_link": "",
-        "name": "National Digital Library of Theses and Dissertations in Taiwan",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 413,
-        "link": "http://www.forumosa.com/taiwan/",
-        "vocab_link": "",
-        "name": "Forumosa | Taiwan's Global Online Community",
-        "tags": [],
+        "name": "SinoSplice",
+        "tags": ["blog", "pronuncation", "speaking", "website", "free", "slice-of-life", "everyday chinese", "miscellaneous", "free", "english", "foreign language students"],
         "upvotes": 0,
         "rating": -1,
         "images": []
@@ -2168,7 +2068,7 @@
         "link": "http://www.pinyinput.com/",
         "vocab_link": "",
         "name": "Online Pinyin Input Method (\u7db2\u4e0a\u62fc\u97f3\u8f38\u5165\u6cd5)",
-        "tags": [],
+        "tags": ["miscellaneous", "HSK-all", "pinyin annotated", "translation", "simplified chinese", "free", "website"],
         "upvotes": 0,
         "rating": -1,
         "images": []
@@ -2178,17 +2078,7 @@
         "link": "http://ctext.org/",
         "vocab_link": "",
         "name": "Chinese Text Project",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 416,
-        "link": "http://www.youtube.com/watch?v=KtQW-H1gLWo",
-        "vocab_link": "",
-        "name": "Matzka - \u60c5\u4eba\u7684\u773c\u6dda\uff08\u5b8c\u6574\u7248\uff09",
-        "tags": [],
+        "tags": ["free", "website", "reading", "ancient chinese", "classical chinese", "corpus", "traditional chinese", "researchers"],
         "upvotes": 0,
         "rating": -1,
         "images": []
@@ -2198,27 +2088,7 @@
         "link": "http://clavisinica.com/SS/intro.html",
         "vocab_link": "",
         "name": "Clavis Sinica Stepping Stones E-textbook",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 418,
-        "link": "http://www.youtube.com/watch?v=Wb_rOtTIiTc",
-        "vocab_link": "",
-        "name": "TeSL\u661f\u6d772\u51a0\u8ecd\u8cfd | Sen Vs San",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 419,
-        "link": "http://www.ted.com/talks/shaolan_learn_to_read_chinese_with_ease.html",
-        "vocab_link": "",
-        "name": "ShaoLan: Learn to read Chinese ... with ease!",
-        "tags": [],
+        "tags": ["starter", "free", "website", "audiobook", "reading", "listening", "simplified chinese", "HSK-1", "HSK-2", "short story"],
         "upvotes": 0,
         "rating": -1,
         "images": []
@@ -2228,17 +2098,7 @@
         "link": "http://lang-8.com/",
         "vocab_link": "",
         "name": "Lang-8: Multi-lingual language learning and language exchange",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 421,
-        "link": "http://phtv.ifeng.com/program/qqsrx/",
-        "vocab_link": "",
-        "name": "\u9535\u9535\u4e09\u4eba\u884c",
-        "tags": [],
+        "tags": ["free", "website", "iOS", "language exchange", "foreign language students", "simplified chinese", "traditional chinese", "conversation", "mandarin", "cantonese", "writing"],
         "upvotes": 0,
         "rating": -1,
         "images": []
@@ -2248,87 +2108,7 @@
         "link": "http://hanzicraft.com/",
         "vocab_link": "",
         "name": "HanziCraft - The Ultimate Chinese Character Dictionary",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 423,
-        "link": "http://www.hackingchinese.com/easing-yourself-into-reading-novels-in-chinese/",
-        "vocab_link": "",
-        "name": "Easing yourself into reading novels in Chinese",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 424,
-        "link": "http://www.hackingchinese.com/focusing-on-tone-pairs-to-improve-your-mandarin-pronunciation/",
-        "vocab_link": "",
-        "name": "Focusing on tone pairs to improve your Mandarin pronunciation",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 425,
-        "link": "http://www.hackingchinese.com/habit-hacking-for-language-learners/",
-        "vocab_link": "",
-        "name": "Habit hacking for language learners",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 426,
-        "link": "http://www.hackingchinese.com/two-reasons-why-pronunciation-matters-more-than-you-think/",
-        "vocab_link": "",
-        "name": "Two reasons why pronunciation matters more than you think",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 427,
-        "link": "http://www.hackingchinese.com/a-language-learners-guide-to-wuxia-novels/",
-        "vocab_link": "",
-        "name": "A language learner\u2019s guide to wuxia  novels",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 428,
-        "link": "http://media.ccc.de/browse/congress/2013/30C3_-_5543_-_en_-_saal_2_-_201312291245_-_id_cards_in_china_your_worst_nightmare_-_kate_krauss.html",
-        "vocab_link": "",
-        "name": "ID Cards in China: Your Worst Nightmare",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 429,
-        "link": "http://www.hackingchinese.com/25-books-i-read-in-chinese-last-year/",
-        "vocab_link": "",
-        "name": "25 books I read in Chinese last year",
-        "tags": [],
-        "upvotes": 0,
-        "rating": -1,
-        "images": []
-    },
-    {
-        "id": 430,
-        "link": "http://www.hackingchinese.com/chinese-reading-challenge-read-more-or-die/",
-        "vocab_link": "",
-        "name": "Chinese reading challenge:  Read more or die",
-        "tags": [],
+        "tags": ["free", "website", "dictionary", "etymology", "reference"],
         "upvotes": 0,
         "rating": -1,
         "images": []
