@@ -3,10 +3,7 @@ from flask_restful import Resource
 
 
 reroutes = Blueprint(
-    "reroutes",
-    __name__,
-    static_folder="../build",
-    static_url_path="/",
+    "reroutes", __name__, static_folder="../build", static_url_path="/",
 )
 
 
