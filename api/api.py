@@ -70,6 +70,32 @@ class SimpleExample(Resource):
         some_json = request.get_json()  # whatever was posted
         return {"you sent": some_json}
 
+class NewUser(Resource):
+    """
+    Registers a new user, and adds them to the SQL database.
+    """
+    # require authentication to prevent s pamming
+    decorators = [checkuser, jwt_required()]
+
+    def post(self):
+        """
+        Sample Usage:
+        fetch('/api/register', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json','Authorization':'jwt secret_key'},
+            body: JSON.stringify({"email": "joe@schmoe.com", "password": 1234})
+        }).then(res => res.json()).then(data => console.log(data))
+        """
+        args = request.json
+        if args['email'] and args['password']:
+            # perform some PostgreSQL magic...
+            postgresql_status = 200
+
+            return {"status": postgresql_status}
+        else:
+            return {"status": 400}
+
+
 
 class ComplexExample(Resource):
     """
@@ -105,6 +131,7 @@ api.add_resource(
     ComplexExample, "/api/multiply/<int:num>"
 )  # specify variable type (or typecast)
 api.add_resource(ParamExample, "/api/add")
+api.add_resource(NewUser, "/api/register")
 
 # if __name__ == "__main__":
 #     app.run()
