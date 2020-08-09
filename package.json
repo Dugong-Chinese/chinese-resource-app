@@ -40,7 +40,7 @@
     "postinstall": "npm run build",
     "start": "npm-run-all --parallel scriptstart api",
     "scriptstart": "react-scripts start",
-    "api": "cd api && flask run --no-debugger",
+    "api": "cd api && flask run",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

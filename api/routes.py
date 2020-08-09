@@ -1,7 +1,7 @@
 """Define the main routes of the app."""
 
 from flask import Blueprint
-from flask_restful import Resource, abort
+from flask_restful import Resource, abort, Api
 from functools import wraps
 from flask_jwt import jwt_required, current_identity
 
@@ -14,6 +14,7 @@ routes = Blueprint(
     url_prefix="/api/",  # This applies to all resources in this blueprint.
 )
 
+api = Api(routes)
 
 def checkuser(func):
     @wraps(func)
@@ -59,3 +60,8 @@ class ParamExample(Resource):
         add2 = args["add2"]
 
         return {"result": int(add1) + int(add2)}
+
+# add resources within Blueprint
+api.add_resource(ComplexExample, "multiply/<int:num>")
+api.add_resource(SimpleExample, "test")
+api.add_resource(ParamExample, "add")
