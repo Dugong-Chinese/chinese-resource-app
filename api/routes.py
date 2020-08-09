@@ -11,7 +11,7 @@ routes = Blueprint(
     __name__,
     static_folder="../build",
     static_url_path="/",
-    url_prefix="api/",  # This applies to all resources in this blueprint.
+    url_prefix="/api/",  # This applies to all resources in this blueprint.
 )
 
 
@@ -49,14 +49,10 @@ class ComplexExample(Resource):
 
 
 class ParamExample(Resource):
-    """
-    Demonstrates a GET request with parameters.
-    """
+    """Demonstrates a GET request with parameters."""
 
     def get(self, request):
-        """
-        Usage: /api/add?add1=5&add2=7 will return 12
-        """
+        """Usage: /api/add?add1=5&add2=7 will return 12"""
         # NOTE: come out as strings
         args = request.args
         add1 = args["add1"]
