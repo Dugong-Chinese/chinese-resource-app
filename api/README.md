@@ -1,24 +1,58 @@
 # chinese-resource-app
+
+## Database
+**Important:** read this section when pulling in order to have a functional database for use with the API.
+
+### When pulling
+First time pulling:
+- Take a look at `local_settings_example.py` and fill in the database information; follow the instructions in the
+ docstring of the module. You may need to create a database at this point, and point the configuration to it.
+
+On any pull, including the first one:
+1. Make sure you installed the requirements from `requirements.txt`, as these contain the necessary drivers and may
+ contain important updates.
+1. Run `flask db upgrade` to apply migrations to your local database.
+
+### When developing
+1. After modifying the database models, run `flask db migrate`. Add the `-m "Commit message"` option as you would for a
+ Git commit, modifying the commit message as appropriate. Treat these as commits for the database.
+1. Run `flask db upgrade` to apply the migration to your own local database.
+    - If you add a new not-nullable column on an existing module, it's possible you'll have to input a default for
+     existing data (even if there is no actual record in the table on your local database). In this case, always prefer
+     adding a default to the model itself, unless the value cannot be assumed. In the latter case, consider if it makes
+     sense to allow the column to be nullable. Both this and the previous approach have potentially long-lived
+     consequences.
+1. Make sure to push any changes that will automatically have occurred in the `migrations` directory: all contributors
+ need to have up-to-date database schemata.
+
+
 ## REST api
 
 ### Intro
-We will be using `Flask` and `flaskRESTful` for the backend. This makes it very easy to setup a backend that can accept HTTP requests.
+We will be using `Flask` and `flaskRESTful` for the backend. This makes it very easy to setup a backend that can accept
+ HTTP requests.
 
-The `api.py` is where the app will be run and json will be read/sent, but we can use other files and just import them in the main `api.py` file.
+The `api.py` is where the app will be run and json will be read/sent, but we can use other files and just import them in
+ the main `api.py` file.
 
 `Flask` runs on http://localhost:5000. We can use this to test the various HTTP requests with `curl`.
 
 ### `curl` details
-`curl` is a great package used for "transferring data with URLs". You most likely have it installed, but in case you don't you can easily go their website and install it with instructions and a download wizard [here](https://curl.haxx.se/dlwiz/?type=bin).
+`curl` is a great package used for "transferring data with URLs". You most likely have it installed, but in case you
+ don't you can easily go their website and install it with instructions and a download wizard
+ [here](https://curl.haxx.se/dlwiz/?type=bin).
 
 ### No Authorization
 Below are a few examples of how the Flask app would work without authorization for the API.
 
 #### GET request
-By running the following command from the terminal, you can perform a simple GET request from the website of your choice (we'll be using http://localhost:5000):
+By running the following command from the terminal, you can perform a simple GET request from the website of your choice
+ (we'll be using http://localhost:5000):
+
 `curl http://localhost:5000/test`
 
-In the `api.py` file we already have an example URL set up, which will return "Hello World!". You can see that if we run the above command then we get the expected output:
+In the `api.py` file we already have an example URL set up, which will return "Hello World!". You can see that if we run
+ the above command then we get the expected output:
 ```
 {
     "response": "Hello World!"
@@ -34,11 +68,14 @@ Which, likewise, returns what we'd expect it to:
     "result": 200
 }
 ```
+
 #### POST requests
 POST requests are a bit trickier, but they're still manageable. Here's an example:
 `curl -X POST -H 'Content-Type: application/json' http://127.0.0.1:5000/test -d '{"name": "Alice"}'`
 
-Everything up to the URL is mandatory in order to have the data be sent and parsed correctly. Afterwards, we include the URL to wherever it is that we want to POST the data, and then add the data with the `-d` flag and the data that we want to send. In this case, the Flask route will just echo whatever is being sent to it, returning:
+Everything up to the URL is mandatory in order to have the data be sent and parsed correctly. Afterwards, we include the
+ URL to wherever it is that we want to POST the data, and then add the data with the `-d` flag and the data that we want
+  to send. In this case, the Flask route will just echo whatever is being sent to it, returning:
 ```
 {
     "you sent": {
@@ -84,7 +121,7 @@ For each URL and all the HTTP requests below it, we can choose whether it is pub
 #### Step 4 - Getting Authentication
 You need to have a token in order to access the admin pages, but it'd be tricky for users to remember the entirety of the token. So, what happens is that they first send their username and password to `/auth`, which will give them the token unique to their user id.
 
-Example: 
+Example:
 ```
 curl -H "Content-Type: application/json" -X POST \
 '{"username":"user1","password":"abcxyz"}' http://localhost:5000/auth
@@ -141,7 +178,7 @@ fetch('/api/test', {
     headers: {
         'Authorization': 'jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1OTY0NDk2MTgsImlhdCI6MTU5NjQ0OTMxOCwibmJmIjoxNTk2NDQ5MzE4LCJpZGVudGl0eSI6MX0.UI374UJLdBwd8csAW9AJTClv92G1R6b9Lr67TPFgazk'
     }
-    
+
 }).then(res => res.json()).then(data => {
       console.log(data)})
 

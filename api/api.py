@@ -1,138 +1,19 @@
-from flask import Flask, request
-from flask_restful import Resource, Api, abort
-from functools import wraps
-from flask_cors import CORS
+"""Entry point for the API."""
 
-# store reroutes in separate file
-from reroutes import reroutes, Index 
-
-app = Flask(__name__, static_folder="../build", static_url_path="/")
-api = Api(app)
-cors = CORS(app, resources={r"/api/*": {"origins": ["https://mandarin-web-app.herokuapp.com"]}})
-
-app.register_blueprint(reroutes)
-
-from flask_jwt import JWT, jwt_required, current_identity
-from werkzeug.security import safe_str_cmp
-
-class User(object):
-    def __init__(self, id, username, password):
-        self.id = id
-        self.username = username
-        self.password = password
-
-    def __str__(self):
-        return "User(id='%s')" % self.id
-
-users = [
-    User(1, 'user1', 'abcxyz'),
-    User(2, 'user2', 'abcdwxyz'),
-]
-
-username_table = {u.username: u for u in users}
-userid_table = {u.id: u for u in users}
-
-def authenticate(username, password):
-    user = username_table.get(username, None)
-    if user and safe_str_cmp(user.password.encode('utf-8'), password.encode('utf-8')):
-        return user
-
-def identity(payload):
-    user_id = payload['identity']
-    return userid_table.get(user_id, None)
+from init import create_app
 
 
-app.config['SECRET_KEY'] = 'super-secret' # TODO: move to environment variable
+if __name__ == "__main__":
+    # Locally, copy `local_settings_example.py`, remove `_example`, and set
+    #  debug mode to True.
+    # In production, ensure debug mode is disabled.
+    try:
+        import local_settings
 
-jwt = JWT(app, authenticate, identity)
+        debug = local_settings.DEBUG
+    except (ImportError, AttributeError):
+        debug = False
+    debug = bool(debug)
 
-def checkuser(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        if current_identity.username == 'user1':
-            return func(*args, **kwargs)
-        return abort(401)
-    return wrapper
-
-# GET request, no parameters
-class SimpleExample(Resource):
-    """
-    Demonstrates simple GET + POST requests.
-    """
-    decorators = [checkuser, jwt_required()]
-
-    def get(self):
-        # simply have the function name be 'get' and return a dict with the name ("response") and the text that you will send
-        return {"response": f"Hello {current_identity.username}!"}
-
-    def post(self):
-        # get POST data with request.get_json()
-        some_json = request.get_json()  # whatever was posted
-        return {"you sent": some_json}
-
-class NewUser(Resource):
-    """
-    Registers a new user, and adds them to the SQL database.
-    """
-    # require authentication to prevent s pamming
-    decorators = [checkuser, jwt_required()]
-
-    def post(self):
-        """
-        Sample Usage:
-        fetch('/api/register', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json','Authorization':'jwt secret_key'},
-            body: JSON.stringify({"email": "joe@schmoe.com", "password": 1234})
-        }).then(res => res.json()).then(data => console.log(data))
-        """
-        args = request.json
-        if args['email'] and args['password']:
-            # perform some PostgreSQL magic...
-            postgresql_status = 200
-
-            return {"status": postgresql_status}
-        else:
-            return {"status": 400}
-
-
-
-class ComplexExample(Resource):
-    """
-    Demonstrates a GET request with a custom route.
-    """
-
-    def get(self, num):  # unlimited number of arguments
-        return {"result": num * 10}
-
-class ParamExample(Resource):
-    """
-    Demonstrates a GET request with parameters.
-    """
-
-    def get(self):
-        """
-        Usage: /api/add?add1=5&add2=7 will return 12
-        """
-        # NOTE: come out as strings
-        args = request.args
-        add1 = args['add1']
-        add2 = args['add2']
-
-        return {"result": int(add1) + int(add2)}
-
-# reroute files below
-api.add_resource(Index, "/")
-
-# link resources to their respective URLs
-api.add_resource(SimpleExample, "/api/test")
-# whatever you call the parameter will be the way that it needs to be invoked, for example here it would be e.g. ...?num=5
-api.add_resource(
-    ComplexExample, "/api/multiply/<int:num>"
-)  # specify variable type (or typecast)
-api.add_resource(ParamExample, "/api/add")
-api.add_resource(NewUser, "/api/register")
-
-# if __name__ == "__main__":
-#     app.run()
-# you can start the server by cding to the directory and running python3 api.py; it will start on localhost:5000 (if not in use)
+    app = create_app()
+    app.run(debug=debug)
