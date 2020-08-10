@@ -1,4 +1,31 @@
 # chinese-resource-app
+
+## Database
+**Important:** read this section when pulling in order to have a functional database for use with the API.
+
+### When pulling
+First time pulling:
+- Take a look at `local_settings_example.py` and fill in the database information; follow the instructions in the
+ docstring of the module. You may need to create a database at this point, and point the configuration to it.
+
+On any pull, including the first one:
+1. Make sure you installed the requirements from `requirements.txt`, as these contain the necessary drivers and may
+ contain important updates.
+1. Run `flask db upgrade` to apply migrations to your local database.
+
+### When developing
+1. After modifying the database models, run `flask db migrate`. Add the `-m "Commit message"` option as you would for a
+ Git commit, modifying the commit message as appropriate. Treat these as commits for the database.
+1. Run `flask db upgrade` to apply the migration to your own local database.
+    - If you add a new not-nullable column on an existing module, it's possible you'll have to input a default for
+     existing data (even if there is no actual record in the table on your local database). In this case, always prefer
+     adding a default to the model itself, unless the value cannot be assumed. In the latter case, consider if it makes
+     sense to allow the column to be nullable. Both this and the previous approach have potentially long-lived
+     consequences.
+1. Make sure to push any changes that will automatically have occurred in the `migrations` directory: all contributors
+ need to have up-to-date database schemata.
+
+
 ## REST api
 
 ### Intro

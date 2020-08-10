@@ -16,6 +16,7 @@ routes = Blueprint(
 
 api = Api(routes)
 
+
 def checkuser(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -60,6 +61,7 @@ class ParamExample(Resource):
         add2 = args["add2"]
 
         return {"result": int(add1) + int(add2)}
+
 
 # add resources within Blueprint
 api.add_resource(ComplexExample, "multiply/<int:num>")

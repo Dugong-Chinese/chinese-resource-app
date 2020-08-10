@@ -51,7 +51,13 @@ const useStyles = theme => ({
   },
 
   dualImgContainer: {
-    flexDirection: 'row', display: 'flex',
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      flexDirection: 'row'
+    },
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    },
     flexGrow: 0.3,
     flexShrink: 1,
     flexBasis: '0%',
@@ -59,6 +65,10 @@ const useStyles = theme => ({
     [theme.breakpoints.up('sm')]: {
       paddingRight: theme.spacing(1.5),
     }
+  },
+
+  previewImg: {
+    flex: 1, minWidth: 0, objectFit: 'cover', maxWidth: '100%', maxHeight: '100%', borderRadius: '5px'
   },
 
   catAffixContainer: {
@@ -70,22 +80,25 @@ const useStyles = theme => ({
   blogTagContainer: {
     paddingLeft: theme.spacing(0.5),
     paddingRight: theme.spacing(0.5),
+    margin: theme.spacing(0.5),
     backgroundColor: grey[900],
     boxShadow: "6px 11px 20px -11px rgba(0,0,0,0.82)"
   },
 
   separator: {
     width: theme.spacing(0.5),
+    height: theme.spacing(0.5),
   },
 
   resourceSummaryContainer: {
     display: 'flex',
     flexDirection: 'column',
-    flex: 0.6,
+    flex: 0.7,
   },
 
   cefrContainer: {
-    flex: 0.1,
+    // backgroundColor: 'black',
+    // flex: 0.1,
     paddingRight: theme.spacing(1),
     marginBottom: theme.spacing(1),
     marginTop: theme.spacing(1),
@@ -126,7 +139,7 @@ class ResourceListingRow extends Component {
 
         ctx.restore();
         // var fontSize = (height / 114).toFixed(2);
-        ctx.font = /*fontSize + */"bold 1rem helvetica";
+        ctx.font = /*fontSize + */"bold 0.75rem helvetica";
         ctx.fillStyle = "white";
         ctx.textBaseline = "middle";
 
@@ -144,11 +157,11 @@ class ResourceListingRow extends Component {
     const { classes } = this.props;
     return <div className={classes.listingRowContainer}>
       <div className={classes.dualImgContainer}>
-        <img src="https://picsum.photos/130" style={{ flex: 1, minWidth: 0, objectFit: 'cover', maxWidth: '100%', maxHeight: '100%' }} />
+        <img src="https://picsum.photos/130" className={classes.previewImg} />
 
         <div className={classes.separator} />
 
-        <img src="https://picsum.photos/131" style={{ flex: 1, minWidth: 0, objectFit: 'cover', maxWidth: '100%', maxHeight: '100%' }} />
+        <img src="https://picsum.photos/131" className={classes.previewImg} />
 
       </div>
 
@@ -167,15 +180,33 @@ class ResourceListingRow extends Component {
           {"This is a very long resource listing name that spans many lines".toUpperCase()}
         </Typography>
 
-        <div style={{ flexDirection: 'row', display: 'flex' }}>
-          <BlockTag text={'tag'} />
-          <div className={classes.separator} />
-          <BlockTag text={'tag'} />
-          <div className={classes.separator} />
-          <BlockTag text={'tag'} />
-          <div className={classes.separator} />
-          <BlockTag text={'tag'} />
+        <div style={{ flexDirection: 'row', display: 'flex' }} >
+          {/* tag container */}
+          <div style={{ minWidth: 0, flexDirection: 'row', display: 'flex', flexWrap: 'wrap', alignSelf: 'flex-start' }}>
+            <BlockTag text={'tag'} />
+            <BlockTag text={'tag'} />
+            <BlockTag text={'tag'} />
+            <BlockTag text={'tag'} />
+            <BlockTag text={'tag'} />
+            <BlockTag text={'tag'} />
+            <BlockTag text={'tag'} />
+            <BlockTag text={'tag'} />
+            <BlockTag text={'tag'} />
+            <BlockTag text={'tag'} />
+            <BlockTag text={'tag'} />
+          </div>
+
+
+          <div className={classes.cefrContainer}>
+            <Doughnut legend={{ display: false }}
+              layout={{ padding: -50 }}
+              options={{ cutoutPercentage: 60 }}
+              height={100} width={100} data={data} />
+          </div>
+
         </div>
+
+
 
         <div style={{ flexDirection: 'row', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', marginTop: 'auto' }}>
 
@@ -191,11 +222,6 @@ class ResourceListingRow extends Component {
             {"Publisher/Group Name".toUpperCase()}
           </Typography>
         </div>
-      </div>
-
-
-      <div className={classes.cefrContainer}>
-        <Doughnut legend={{ display: false }} layout={{ padding: -50 }} width={120} data={data} />
       </div>
 
     </div>

@@ -1,0 +1,676 @@
+[
+    {
+        "id": 1,
+        "link": "http://www.hsklevel.com",
+        "vocab_link": "",
+        "name": "HSK level",
+        "tags": ["website", "free", "starter", "HSK-all", "reading", "tool", "exam preparation", "#test", "foreign language students", "simplified chinese", "traditional chinese"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 2,
+        "link": "https://studycli.org/",
+        "vocab_link": "",
+        "name": "The Chinese Language Institute (CLI)",
+        "tags": ["IRL", "simplified chinese", "starter", "HSK-all", "foreign language students", "region locked", "speaking", "listening", "purchase", "mandarin"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 3,
+        "link": "https://www.optilingo.com/",
+        "vocab_link": "",
+        "name": "OptiLingo Language Learning",
+        "tags": ["app", "Android", "iOS", "subscription", "starter", "HSK-1", "HSK-2", "HSK-3", "listening", "speaking", "reading", "conversation", "everyday chinese", "mandarin", "foreign language students","simplified chinese"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 4,
+        "link": "https://www.maayot.com/",
+        "vocab_link": "",
+        "name": "Maayot",
+        "tags": ["reading", "listening", "starter", "HSK-all","freemium", "subscription", "short story", "adventure", "foreign language students", "simplified chinese", "flashcards"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 6,
+        "link": "https://videos.learnchinese.club/",
+        "vocab_link": "",
+        "name": "Learn Chinese Club",
+        "tags": ["video", "free", "reading", "speaking", "listening", "calligraphy", "writing", "conversation", "character writing", "grammar", "audiobook", "foreign language students", "simplified chinese", "traditional chinese", "pinyin annotated", "mandarin", "cantonese"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 7,
+        "link": "https://www.zhihudigest.com/",
+        "vocab_link": "",
+        "name": "Zhihu Digest - The Top Questions from Zhihu in English",
+        "tags": ["daily news", "website", "blog", "politics", "foreign language students", "native adult",
+        "native 12-15Y",
+        "native 15-18Y", "simplified chinese", "HSK-4", "HSK-5", "HSK-6"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 8,
+        "link": "https://xkcd.in/",
+        "vocab_link": "",
+        "name": "XKCD",
+        "tags": ["reading", "native adult",
+            "native 9-12Y",
+            "native 12-15Y", "HSK-6", "translation", "simplified chinese", "comic"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 9,
+        "link": "https://ankiweb.net/shared/info/782551504",
+        "vocab_link": "",
+        "name": "Chinese Grammar Wiki Study Deck (Anki)",
+        "tags": ["flashcards", "starter", "HSK-1", "HSK-2", "HSK-3", "HSK-4", "HSK-5", "#test"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 10,
+        "link": "http://edsko.net/2019/06/08/hsk-handwriting/?fbclid=IwAR1oBElBPM7pDSqSyqtCgDfj1hkh0d8fZwwewYPratIOzp59zT7rxk0ftlA",
+        "vocab_link": "",
+        "name": "HSK Handwriting Samples",
+        "tags": ["ebook", "calligraphy", "writing"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 11,
+        "link": "http://corpus.zhonghuayuwen.org/CnCindex.aspx",
+        "vocab_link": "",
+        "name": "现代汉语语料库检索",
+        "tags": ["website", "free", "nil-to-native", "reading", "reference", "corpus", "foreign language students", "simplified chinese"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 12,
+        "link": "https://thetype.com/2017/08/11606/",
+        "vocab_link": "",
+        "name": "The Type",
+        "tags": ["podcast", "website", "free", "simplified chinese", "voluntary donation", "simplified chinese", "niche" ],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 13,
+        "link": "https://www.alllanguageresources.com/category/simsums-chinese/",
+        "vocab_link": "",
+        "name": "All Language Resources",
+        "tags": ["free", "talkshow", "website", "abridged", "daily news", "biography", "listening", "podcast", "audiobook", "reading", "HSK-5", "HSK-6"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 14,
+        "link": "http://technology.chtsai.org/syllable/",
+        "vocab_link": "",
+        "name": "Mandarin Syllable Frequency Counts for Chinese Characters",
+        "tags": ["reading", "listening", "HSK-3", "HSK-4", "simplified chinese", "educational", "website", "economics", "foreign language teachers"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 24,
+        "link": "http://www.learningchinesethroughstories.com/",
+        "vocab_link": "",
+        "name": "Learning Chinese Through Stories",
+        "tags": ["website", "free", "short story", "listening", "reading", "foreign language students","simplified chinese", "pinyin annotated", "HSK-3", "HSK-4", "HSK-5", "HSK-6", "nil-to-native"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 27,
+        "link": "https://resources.allsetlearning.com/chinese/pronunciation/Pinyin_chart",
+        "vocab_link": "",
+        "name": "Pinyin chart - Chinese Pronunciation Wiki",
+        "tags": ["pronuncation", "speaking", "pinyin annotated", "website", "free", "mandarin", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 29,
+        "link": "https://www.clozemaster.com/",
+        "vocab_link": "",
+        "name": "Clozemaster",
+        "tags": ["video game", "app", "website", "iOS", "Android", "HSK-4", "HSK-5", "HSK-6", "freemium", "open-source", "listening", "reading", "foreign language students", "simplified chinese", "traditional chinese"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 30,
+        "link": "https://www.tofulearn.com/chinese",
+        "vocab_link": "",
+        "name": "TOFU Learn",
+        "tags": ["app", "iOS", "Android", "freemium", "HSK-all", "speaking", "pronuncation","dictionary", "writing", "flashcards", "character writing", "pinyin annotated", "simplified chinese", "traditional chinese", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 31,
+        "link": "https://l-lingo.com/",
+        "vocab_link": "",
+        "name": "L-Lingo",
+        "tags": ["website", "comprehensive","foreign language students", "subscription", "simplified chinese", "app", "iOS", "Android"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 32,
+        "link": "https://en.duolingo.com/course/zh-CN/en/Learn-Chinese-Online",
+        "vocab_link": "",
+        "name": "Duolingo: Learn Spanish, French and other languages for free",
+        "tags": ["HSK-1", "foreign language students","website", "free", "app", "iOS", "Android", "simplified chinese", "writing", "speaking", "listening", "reading", "AI-driven", "pinyin annotated"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 34,
+        "link": "https://www.skishore.me/inkstone/",
+        "vocab_link": "",
+        "name": "Inkstone",
+        "tags": ["purchase", "Android", "app", "foreign language students","open-source", "character writing", "writing", "simplified chinese", "reference", "exam preparation", "HSK-all", "nil-to-native"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 35,
+        "link": "https://tutormandarin.net",
+        "vocab_link": "",
+        "name": "TutorMandarin: Online Mandarin Tutor",
+        "tags": ["tutor", "simplified chinese", "mandarin", "speaking", "IRL", "app", "iOS", "Android", "comprehensive", "HSK-all", "nil-to-native", "demo/trial available", "subscription", "conversation", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 36,
+        "link": "https://www.mondlylanguages.com/",
+        "vocab_link": "",
+        "name": "Mondly Languages",
+        "tags": ["freemium", "website", "comprehensive", "HSK-1", "starter", "HSK-2", "subscription", "simplified chinese", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 37,
+        "link": "https://wordswing.com/cards/text-game/city/intro",
+        "vocab_link": "",
+        "name": "Into the Haze - Text Adventure",
+        "tags": ["HSK-4", "HSK-5", "HSK-6", "website", "video game", "adventure", "simplified chinese", "pinyin annotated", "reading", "listening", "entertainment", "mystery", "short story", "free", "native 12-15Y", "native 9-12Y", "native 15-18Y", "native adult", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 38,
+        "link": "https://visualchinesesearch.com",
+        "vocab_link": "",
+        "name": "Visual Chinese Search",
+        "tags": ["free", "website", "miscellaneous", "simplified chinese", "reading", "dictionary", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 40,
+        "link": "https://nativemonks.com/mandarin-classes",
+        "vocab_link": "",
+        "name": "Online Mandarin Chinese lessons",
+        "tags": ["mandarin", "speaking", "conversation", "tutor", "subscription", "IRL", "listening", "HSK-all", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 41,
+        "link": "http://www.grimmstories.com/zh/grimm_tonghua/index",
+        "vocab_link": "",
+        "name": "Grimms' Fairy Tales in Chinese with English (and other) translations",
+        "tags": ["website", "free", "voluntary donation", "short story", "reading", "native 12-15Y", "native 9-12Y", "native 15-18Y", "native adult", "HSK-4", "HSK-5", "HSK-6", "translation", "adventure", "fairy tale", "abridged", "simplified chinese", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 42,
+        "link": "http://www.sbs.com.au/yourlanguage/social-tags/happy-weekend-0",
+        "vocab_link": "",
+        "name": "SBS Happy Weekend ",
+        "tags": ["podcast", "talkshow", "website", "free", "daily news", "native adult", "HSK-5", "HSK-6", "mandarin", "listening"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 43,
+        "link": "https://www.youtube.com/channel/UCipQJmg3yqouy6MRtPv_0Bg/videos",
+        "vocab_link": "",
+        "name": "Little Fox Chinese ",
+        "tags": ["native 2-6Y", "video", "free","foreign language students","listening", "reading", "short story", "animated", "arts-and-music", "mandarin", "pinyin annotated", "HSK-3", "HSK-4", "HSK-5", "HSK-6", "native 6-9Y", "entertainment"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 44,
+        "link": "http://www.listeningpractice.org/session.php",
+        "vocab_link": "",
+        "name": "Listening Practice",
+        "tags": ["mandarin","foreign language students", "listening", "website", "free", "exam preparation", "shanghainese", "HSK-2", "HSK-3", "HSK-4", "HSK-5", "HSK-6", "writing", "translation"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 45,
+        "link": "http://hanyu123.weebly.com/",
+        "vocab_link": "",
+        "name": "Mandarin Chinese Listening Training (\u6f22\u8a9e\u807d\u529b\u901a)",
+        "tags": ["listening", "reading", "cantonese", "mandarin", "shanghainese", "simplified chinese", "website", "free", "open-source", "slice-of-life", "HSK-3", "HSK-4", "HSK-5", "HSK-6", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 46,
+        "link": "http://www.zizzle.io/",
+        "vocab_link": "",
+        "name": "Zizzle (app for learning Chinese characters)",
+        "tags": ["website", "demo/trial available", "writing", "character writing", "app", "iOS", "Android", "subscription", "purchase", "exam preparation", "tool", "HSK-1", "HSK-2", "HSK-3", "foreign language students", "foreign language teachers"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 49,
+        "link": "https://wordswing.com/cards/text-game/escape/intro",
+        "vocab_link": "",
+        "name": "Escape \u9003\u51fa\u53bb (text adventure game for Chinese learners)",
+        "tags": ["HSK-3", "HSK-4", "HSK-5", "HSK-6", "website", "video game", "adventure", "simplified chinese", "pinyin annotated", "reading", "listening", "entertainment", "mystery", "short story", "free", "native 12-15Y", "native 9-12Y", "native 15-18Y", "native adult", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 50,
+        "link": "https://themandarincornerblog.com/",
+        "vocab_link": "",
+        "name": "The Mandarin Corner",
+        "tags": ["culture", "english", "blog", "mandarin", "free", "website"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 52,
+        "link": "http://www.17k.com/ ",
+        "vocab_link": "",
+        "name": "17K 小说网 (Agglomeration website for Chinese webnovels)",
+        "tags": ["website", "app", "free", "CopyNormalized", "reading", "modern literature", "novel", "short story", "omnibus", "native 12-15Y", "native 15-18Y", "native adult", "simplified chinese"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 60,
+        "link": "http://ninchanese.com",
+        "vocab_link": "",
+        "name": "Ninchanese | Efficient and enjoyable Chinese learning",
+        "tags": ["app", "subscription", "demo/trial available", "starter", "HSK-1", "HSK-2", "HSK-3", "HSK-4", "HSK-5", "comprehensive", "everyday chinese", "flashcards","HSK", "foreign language students", "english"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 61,
+        "link": "http://www.purpleculture.net/chinese-pinyin-converter/",
+        "vocab_link": "",
+        "name": "Annotator with tone marks, colours, Pinyin and pronunciation (Purple Culture)",
+        "tags": ["freemium", "website", "tool", "foreign language students", "nil-to-native"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+  },
+    {
+        "id": 66,
+        "link": "http://www.duchinese.net/",
+        "vocab_link": "",
+        "name": "Du Chinese (mobile app for Chinese reading practice)",
+        "tags": ["app", "freemium", "foreign language students", "graded readers", "culture", "omnibus", "daily news", "subscription", "audiobook", "reading", "listening", "dictionary", "pinyin annotated", "simplified chinese", "mandarin"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 75,
+        "link": "http://handedict.zydeo.net/",
+        "vocab_link": "",
+        "name": "HanDeDict - Chinesisch-deutsches W\u00f6rterbuch",
+        "tags": ["website", "dictionary", "free", "other", "foreign language students", "nil-to-native", "reference", "PC"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 91,
+        "link": "https://www.youtube.com/watch?t=13&v=xJis9TSw1rE",
+        "vocab_link": "",
+        "name": "How to Memorize China's Major Dynasties by singing (Harvard University)",
+        "tags": ["video", "free", "starter", "history", "music"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 94,
+        "link": "http://www.hskhsk.com/graphs.html",
+        "vocab_link": "",
+        "name": "HSK Graphs (great infographics)",
+        "tags": ["website", "free", "illustrated", "tool", "open-source", "foreign language students", "HSK"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 97,
+        "link": "https://www.coursera.org/learn/learn-chinese",
+        "vocab_link": "",
+        "name": "Chinese for Beginners (Coursera & Peking University)",
+        "tags": ["free", "course", "starter", "OCW"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 104,
+        "link": "http://www.thechairmansbao.com/",
+        "vocab_link": "",
+        "name": "The Chairman's Bao (simplified news for language learners)",
+        "tags": ["app", "website", "reading", "HSK", "subscription", "demo/trial available", "HSK-all", "reading", "omnibus", "daily news", "culture", "graded readers","simplified chinese","traditional chinese","pinyin annotated", "zhuyin annotated"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 126,
+        "link": "http://www.chinese-skill.com/cs.html",
+        "vocab_link": "",
+        "name": "ChineseSkill (game-based, task-driven app)",
+        "tags": ["app","HSK-1","HSK-2","HSK-3","free", "starter", "foreign language students", "english", "comprehensive"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 127,
+        "link": "http://www.tandemapp.me",
+        "vocab_link": "",
+        "name": "Tandem (language exchange app)",
+        "tags": ["app", "language exchange", "freemium", "tutor"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 131,
+        "link": "http://www.chinese-forums.com/index.php?/topic/16784-the-grand-first-episode-project/",
+        "vocab_link": "",
+        "name": "The Grand First Episode Project (about Chinese TV on Chinese Forums)",
+        "tags": [],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 133,
+        "link": "http://www.chinasmack.com/glossary",
+        "vocab_link": "",
+        "name": "chinaSMACK Glossary (Popular Chinese Internet Memes, Slang, Expressions, Acronyms)",
+        "tags": ["website", "blog", "free", "slang"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 149,
+        "link": "http://chinesereadingpractice.com/",
+        "vocab_link": "",
+        "name": "Chinese Reading Practice | Simplified Chinese Reading Exercises & Materials Blog",
+        "tags": ["website", "free", "short story", "idioms", "short story", "nil-to-native", "foreign language students", "daily news", "poetry", "mythology", "simplified chinese"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 162,
+        "link": "http://playinfluent.com/",
+        "vocab_link": "",
+        "name": "Influent",
+        "tags": ["video game"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 226,
+        "link": "http://chineseetymology.org/CharacterEtymology.aspx",
+        "vocab_link": "",
+        "name": "Chinese Etymology",
+        "tags": ["website", "free", "etymology", "reference"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 227,
+        "link": "https://hinative.com",
+        "vocab_link": "l",
+        "name": "HiNative | A global platform for your questions",
+        "tags": ["language exchange", "app", "subscription", "demo/trial available"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 256,
+        "link": "http://www.pinyinput.net",
+        "vocab_link": "",
+        "name": "Pinyinput (type Pinyin with tone marks)",
+        "tags": ["PC", "tool"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 257,
+        "link": "http://www.hanzigrids.com",
+        "vocab_link": "",
+        "name": "Hanzi Grids | Create Grid Templates and Worksheets for Practising Chinese",
+        "tags": ["website", "stroke order", "tool"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 265,
+        "link": "http://www.youtube.com/user/KhanAcademyMandarin/playlists",
+        "vocab_link": "",
+        "name": "Khan Academy Mandarin",
+        "tags": ["video", "free", "native 6-9Y", "native 9-12Y", "native 12-15Y"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 267,
+        "link": "http://m.youtube.com/watch?v=6ihA3QmhVnA",
+        "vocab_link": "",
+        "name": "Movie: Raise the Red Lantern \u5927\u7ea2\u706f\u7b3c\u9ad8\u9ad8\u6302",
+        "tags": [],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 278,
+        "link": "http://hellotalk.com/",
+        "vocab_link": "",
+        "name": "HelloTalk Language Exchange",
+        "tags": ["app", "freemium", "language exchange", "tutor", "everyday chinese"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 282,
+        "link": "http://sarajaaksola.com/",
+        "vocab_link": "",
+        "name": "Living a Dream in China - Advice for life, love and language learning in China",
+        "tags": ["blog", "culture", "tutor"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 284,
+        "link": "http://www.bbc.co.uk/zhongwen/simp/",
+        "vocab_link": "",
+        "name": "\u65b0\u95fb\u4e3b\u9875 - BBC\u4e2d\u6587\u7f51 (BBC Chinese website)",
+        "tags": ["website", "daily news", "traditional chinese", "business", "simplified chinese", "native adult"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 286,
+        "link": "http://cn.nytimes.com/",
+        "vocab_link": "",
+        "name": "\u7ebd\u7ea6\u65f6\u62a5\u4e2d\u6587\u7f51 \u56fd\u9645\u7eb5\u89c8 (New York Times, Chinese)",
+        "tags": ["website", "daily news", "simplified chinese", "b"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 309,
+        "link": "http://chinesepod.com/",
+        "vocab_link": "",
+        "name": "ChinesePod - Learn Chinese Online & with Mobile Apps",
+        "tags": ["website", "listening", "HSK", "grammar", "short story", "audiobook", "course"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 315,
+        "link": "https://itunes.apple.com/cn/podcast/xian-bai-er-dian-tai/id531733337?mt=2",
+        "vocab_link": "",
+        "name": "\u95f2\u767d\u513f\u7535\u53f0",
+        "tags": ["podcast"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 373,
+        "link": "https://skritter.com/",
+        "vocab_link": "",
+        "name": "Skritter (app to help you learn to write Chinese characters)",
+        "tags": ["app", "character writing", "foreign language students", "english", "HSK-all", "starter", "subscription"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 374,
+        "link": "http://www.pleco.com/",
+        "vocab_link": "",
+        "name": "Pleco Software - Learn Chinese with dictionaries for iPhone, iPad and Android",
+        "tags": ["freemium", "app", "nil-to-native", "dictionary", "etymology", "flashcards", "graded readers", "grammar", "OCR", "reference", "stroke order", "TTS", "foreign language students"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 392,
+        "link": "http://dict.baidu.com/",
+        "vocab_link": "",
+        "name": "\u767e\u5ea6\u8bcd\u5178 \uff08Baidu Dictionary)",
+        "tags": ["website", "native adult", "free", "dictionary"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 402,
+        "link": "http://resources.allsetlearning.com/chinese/grammar/",
+        "vocab_link": "",
+        "name": "Chinese Grammar Wiki",
+        "tags": ["grammar", "HSK-1", "HSK-2", "HSK-3", "starter", "listening", "everyday chinese", "dictionary", "HSK-4", "free"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 404,
+        "link": "http://www.chinesebreeze.net/",
+        "vocab_link": "",
+        "name": "Chinese Breeze: Graded Chinese Readers",
+        "tags": ["starter", "reading", "graded readers", "HSK-1", "HSK-2", "HSK-3", "book", "purchase", "pinyin annotated"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 415,
+        "link": "http://ctext.org/",
+        "vocab_link": "",
+        "name": "Chinese Text Project",
+        "tags": ["free", "website", "reading", "ancient chinese", "classical chinese", "corpus", "traditional chinese", "researchers"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    },
+    {
+        "id": 420,
+        "link": "http://lang-8.com/",
+        "vocab_link": "",
+        "name": "Lang-8: Multi-lingual language learning and language exchange",
+        "tags": ["free", "website", "iOS", "language exchange", "foreign language students", "simplified chinese", "traditional chinese", "conversation", "mandarin", "cantonese", "writing"],
+        "upvotes": 0,
+        "rating": -1,
+        "images": []
+    }
+]

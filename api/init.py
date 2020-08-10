@@ -7,9 +7,7 @@ from models import db
 from cors import cors
 from reroutes import reroutes
 from routes import routes
-
-
-from flask_jwt import JWT, jwt_required, current_identity
+from flask_jwt import JWT
 from werkzeug.security import safe_str_cmp
 
 
@@ -42,12 +40,10 @@ def identity(payload):
     user_id = payload["identity"]
     return userid_table.get(user_id, None)
 
+
 def create_app() -> Flask:
     """Instantiate the app."""
     app = Flask(__name__, static_folder="../build", static_url_path="/")
-
-    # required for flask_jwt
-    app.config['SECRET_KEY'] = 'super-secret' # TODO: move to environment variable
 
     # Settings are loaded before and after extensions just in case some extensions
     #  need Flask settings to be already in place at init time.
@@ -81,8 +77,7 @@ def register_extensions(app: Flask):
     Migrate(app, db)
     cors.init_app(app)
 
-    admin = JWT(app, authentication_handler=authenticate, identity_handler=identity)
-
+    JWT(app, authentication_handler=authenticate, identity_handler=identity)
 
     # Blueprints
     app.register_blueprint(reroutes)

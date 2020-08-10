@@ -7,6 +7,7 @@ from sqlalchemy.sql import text
 db = SQLAlchemy()
 
 
+# Models and tables for users and authentication in general
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_joined = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
@@ -17,6 +18,18 @@ class User(db.Model):
 
     def __repr__(self):
         return f"<Users {self.email}>"
+
+
+class APIKey(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date_emitted = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
+    key = db.Column(db.String, unique=True, nullable=False)
+    is_revoked = db.Column(db.Boolean, nullable=False, default=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    
+    def __repr__(self):
+        return f"<API key for user" \
+               f" {self.user_id} ({'invalid' if self.is_revoked else 'valid'})>"
 
 
 # Models and tables for resources.

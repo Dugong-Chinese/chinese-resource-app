@@ -17,7 +17,7 @@ from flask import Flask
 DEBUG = False
 
 settings = {
-    # Flask
+    # For Flask-JWT
     "SECRET_KEY": "",
     # Flask-SQLAlchemy
     # Format: protocol+backend://user:password@host:port/database, many parts optional
