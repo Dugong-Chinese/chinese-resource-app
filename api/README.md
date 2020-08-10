@@ -87,7 +87,7 @@ You need to have a token in order to access the admin pages, but it'd be tricky 
 Example: 
 ```
 curl -H "Content-Type: application/json" -X POST \
-{"username":"user1","password":"abcxyz"}' http://localhost:5000/auth
+'{"username":"user1","password":"abcxyz"}' http://localhost:5000/auth
 ```
 If their username and password is correct, they will get back something that looks like this (but larger of course):
 ```
