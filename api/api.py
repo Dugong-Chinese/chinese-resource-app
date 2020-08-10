@@ -2,6 +2,7 @@
 
 from init import create_app
 
+app = create_app()
 
 if __name__ == "__main__":
     # Locally, copy `local_settings_example.py`, remove `_example`, and set
@@ -15,5 +16,4 @@ if __name__ == "__main__":
         debug = False
     debug = bool(debug)
 
-    app = create_app()
     app.run(debug=debug)
