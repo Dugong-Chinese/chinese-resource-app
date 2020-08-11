@@ -15,4 +15,5 @@ class Index(Resource):
     def get(self):
         return reroutes.send_static_file("index.html")
 
+
 api.add_resource(Index, "/")

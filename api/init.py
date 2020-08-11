@@ -62,7 +62,7 @@ def load_settings(app: Flask):
     Settings reference for Flask:
     https://flask.palletsprojects.com/en/1.1.x/config/#builtin-configuration-values
     """
-    app.config['SECRET_KEY'] = "super-secret"
+    app.config["SECRET_KEY"] = "super-secret"
 
     try:
         from local_settings import settings

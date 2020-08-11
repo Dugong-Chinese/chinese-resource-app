@@ -8,13 +8,30 @@ db = SQLAlchemy()
 
 
 # Models and tables for users and authentication in general
+lemmas_helper = db.Table(
+    "lemmas_to_users_mtm",
+    db.Column("lemma_id", db.Integer, db.ForeignKey("lemma.id"), primary_key=True),
+    db.Column("user_id", db.Integer, db.ForeignKey("user.id"), primary_key=True),
+)
+
+
+class Lemma(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    # content is not set as unique because there might be lemmas of different kinds
+    #  that look exactly the same.
+    content = db.Column(db.String, nullable=False)
+    # TODO difficulty index, depending on how we decide to implement that
+
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date_joined = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
     email = db.Column(db.String, unique=True, nullable=False)
     password = db.Column(db.String, nullable=False)
     salt = db.Column(db.String, nullable=False)
-    # TODO known vocabulary
+    lemmas = db.relationship(
+        "Lemma", secondary=lemmas_helper, lazy="subquery", backref="users"
+    )
 
     def __repr__(self):
         return f"<Users {self.email}>"
@@ -26,10 +43,12 @@ class APIKey(db.Model):
     key = db.Column(db.String, unique=True, nullable=False)
     is_revoked = db.Column(db.Boolean, nullable=False, default=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
-    
+
     def __repr__(self):
-        return f"<API key for user" \
-               f" {self.user_id} ({'invalid' if self.is_revoked else 'valid'})>"
+        return (
+            f"<API key for user"
+            f" {self.user_id} ({'invalid' if self.is_revoked else 'valid'})>"
+        )
 
 
 # Models and tables for resources.
