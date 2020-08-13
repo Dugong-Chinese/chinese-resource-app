@@ -1,6 +1,6 @@
 """Define the main routes of the app."""
 
-from flask import Blueprint
+from flask import Blueprint, request
 from flask_restful import Resource, abort, Api
 from functools import wraps
 from flask_jwt import jwt_required, current_identity
@@ -44,7 +44,7 @@ class SimpleExample(Resource):
 
 
 class ComplexExample(Resource):
-    """Demonstrates a GET request with parameters."""
+    """Demonstrates a GET request with a dynamic route."""
 
     def get(self, num):  # unlimited number of arguments
         return {"result": num * 10}
@@ -53,7 +53,7 @@ class ComplexExample(Resource):
 class ParamExample(Resource):
     """Demonstrates a GET request with parameters."""
 
-    def get(self, request):
+    def get(self):
         """Usage: /api/add?add1=5&add2=7 will return 12"""
         # NOTE: come out as strings
         args = request.args

@@ -1,4 +1,5 @@
 aniso8601==8.0.0
+beautifulsoup4==4.9.1
 click==7.1.2
 Flask==1.1.2
 Flask-RESTful==0.3.8
@@ -14,6 +15,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 six==1.15.0
+requests==2.24.0
 Werkzeug==1.0.1
 alembic==1.4.2
 psycopg2==2.8.5

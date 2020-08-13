@@ -7,6 +7,7 @@ from models import db
 from cors import cors
 from reroutes import reroutes
 from routes import routes
+from exercises.blank_fill import blank_exercises
 from flask_jwt import JWT
 from werkzeug.security import safe_str_cmp
 
@@ -83,5 +84,6 @@ def register_extensions(app: Flask):
     # Blueprints
     app.register_blueprint(reroutes)
     app.register_blueprint(routes)
+    app.register_blueprint(blank_exercises)
 
     Api(app)
