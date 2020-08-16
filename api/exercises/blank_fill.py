@@ -173,7 +173,11 @@ def generate_exercises(hanzi_phrase: str, amount=5, difficulty_limit=0.7):
 
     for i in range(len(output)):
         words_known[i] = [
-            len(set(known_vocab) & set([ele for ele in jieba.cut(output[i][1], cut_all=False)])) / len([ele for ele in jieba.cut(output[i][1], cut_all=False)]),
+            len(
+                set(known_vocab)
+                & set([ele for ele in jieba.cut(output[i][1], cut_all=False)])
+            )
+            / len([ele for ele in jieba.cut(output[i][1], cut_all=False)]),
             output[i][1],
         ]
 

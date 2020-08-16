@@ -38,20 +38,20 @@ class LemmaType(enum.IntEnum):
 
 class Lemma(BaseModel, db.Model):
     """A single lemma: a word, idiom, expression or grammatical construction."""
-    
+
     # `content` is not set as unique because there might be lemmas of different kinds
     #  that look exactly the same.
     content = db.Column(db.String, nullable=False)
-    
+
     # Type is encoded as integer and not array because of implementation and performance
     #  issues due to SQLAlchemy and PostgreSQL.
-    type_ = db.Column(ARRAY(db.SmallInteger), default=[])
+    type_ = db.Column(ARRAY(db.SmallInteger), name="type", default=[])
     # TODO difficulty index, depending on how we decide to implement that
 
 
 class User(BaseModel, db.Model):
     """A user on the platform."""
-    
+
     date_joined = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
     email = db.Column(db.String, unique=True, nullable=False)
     password = db.Column(db.String, nullable=False)
@@ -69,7 +69,7 @@ class PermLevel(enum.IntEnum):
     
     Remember to use PermLevel.SOMEVALUE.value; see documentation on LemmaType enum.
     """
-    
+
     REVOKED = enum.auto()
     READ = enum.auto()
     EDIT = enum.auto()
@@ -79,7 +79,7 @@ class PermLevel(enum.IntEnum):
 
 class APIKey(BaseModel, db.Model):
     """An API-key associated to a user and needed to access the API."""
-    
+
     date_emitted = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
     key = db.Column(db.String, unique=True, nullable=False)
     level = db.Column(db.SmallInteger, nullable=False, default=PermLevel.READ.value)
@@ -112,7 +112,7 @@ tags_helper = db.Table(
 
 class Resource(BaseModel, db.Model):
     """A learning resource on the platform."""
-    
+
     date_added = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
     upvotes = db.Column(db.Integer, nullable=False, default=0)
     downvotes = db.Column(db.Integer, nullable=False, default=0)
@@ -130,7 +130,7 @@ class Resource(BaseModel, db.Model):
 
 class ResourceName(BaseModel, db.Model):
     """One name for a resource on the platform."""
-    
+
     value = db.Column(db.String, unique=True, nullable=False)
     resource_id = db.Column(
         db.Integer,
@@ -158,7 +158,7 @@ class ResourceUrl(BaseModel, db.Model):
 
 class Tag(BaseModel, db.Model):
     """A tag to classify learning resources."""
-    
+
     value = db.Column(db.String, unique=True, nullable=False)
 
     def __repr__(self):
