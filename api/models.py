@@ -166,6 +166,8 @@ class Tag(BaseModel, db.Model):
 
 
 class Review(BaseModel, db.Model):
+    """A user review on a learning resource."""
+
     content = db.Column(db.String, nullable=False)
     resource_id = db.Column(
         db.Integer,

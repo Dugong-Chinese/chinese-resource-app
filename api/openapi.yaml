@@ -1,0 +1,458 @@
+openapi: 3.0.3
+servers:
+# Added by API Auto Mocking Plugin
+  # - description: Dugong Chinese Public API
+  #   url: https://TBD/api/{version}
+  #   variables:
+  #     version:
+  #       # To add a version, add it to the enum and set the latest as default.
+  #       # Also remember to change #/info/version below.
+  #       default: v1
+  #       enum:
+  #       - v1
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/berzi/dugong-chinese/1.0.0
+info:
+  description: API for access to authentication and resource information on Dugong Chinese.
+  version: "1.0.0"
+  title: Dugong Chinese API
+  contact:
+    email: api@dugongchinese.com
+  license:
+    name: MIT License
+    url: 'https://spdx.org/licenses/MIT.html'
+tags:
+  - name: open
+    description: "Routes available to everyone (limits may apply for unauthenticated callers)"
+  - name: users
+    description: "Routes available only to authenticated callers"
+  - name: staff
+    description: "Routes only available to staff"
+paths:
+  /resources:
+    get:
+      operationId: get_resources
+      tags:
+        - open
+      description: "Query available resources."
+      summary: "Retrieve resources"
+      parameters:
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/resourceId"
+        - $ref: "#/components/parameters/resourceName"
+        - $ref: "#/components/parameters/resourceIncludesTags"
+        - $ref: "#/components/parameters/resourceExcludesTags"
+        - $ref: "#/components/parameters/resourceHasParent"
+        - $ref: "#/components/parameters/resourceParentIs"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          description: "Found resources matching the query."
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Resource"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+        "402":
+          description: "Premium content. Include API-Key of upgraded account in order to access."
+          content:
+            "application/json":
+              schema:
+                type: string
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+    post:
+      operationId: post_resource
+      tags:
+        - users
+      description: "Add a new resource to the platform."
+      summary: "Post resources"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/Resource"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "201":
+          $ref: "#/components/responses/Created"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "409":
+          description: "Resource already exists. Use PUT or PATCH to edit existing."
+          content:
+            "application/json":
+              schema:
+                type: string
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+    put:
+      operationId: put_resource
+      tags:
+        - users
+      description: "Add or replace a resource on the platform."
+      summary: "Add or replace resources"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/Resource"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "201":
+          $ref: "#/components/responses/Created"
+        "204":
+          description: "Successfully modified resource."
+          content:
+            "application/json": {}
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+    patch:
+      operationId: patch_resource
+      tags:
+        - users
+      description: "Modify fields on queried resources."
+      summary: "Edit resource fields"
+      parameters:
+        - $ref: "#/components/parameters/resourceId"
+        - $ref: "#/components/parameters/resourceName"
+        - $ref: "#/components/parameters/resourceIncludesTags"
+        - $ref: "#/components/parameters/resourceExcludesTags"
+        - $ref: "#/components/parameters/resourceHasParent"
+        - $ref: "#/components/parameters/resourceParentIs"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: array
+              items:
+                anyOf:
+                  - $ref: "#/components/schemas/Resource/properties"
+                not:
+                  $ref: "#/components/schemas/Resource/properties/id"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          description: "Some resources successfully patched."
+          content:
+            "application/json":
+              schema:
+                type: integer
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+    delete:
+      operationId: delete_resource
+      tags:
+        - staff
+      description: "Delete a resource on the platform."
+      summary: "Delete resources."
+      parameters:
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/resourceId"
+        - $ref: "#/components/parameters/resourceName"
+        - $ref: "#/components/parameters/resourceIncludesTags"
+        - $ref: "#/components/parameters/resourceExcludesTags"
+        - $ref: "#/components/parameters/resourceHasParent"
+        - $ref: "#/components/parameters/resourceParentIs"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          description: "Some resources successfully deleted."
+          content:
+            "application/json":
+              schema:
+                type: integer
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+components:
+  schemas:
+    Lemma:
+      type: object
+      description: "A single lemma: a word, idiom, expression or grammatical construction."
+      properties:
+        id:
+          type: integer
+          format: int64
+        content:
+          type: string
+          nullable: false
+        lemma_type:
+          type: array
+          items:
+            type: string
+            enum:
+              - noun
+              - adjective
+              - verb
+              - particle
+              - idiom
+    User:
+      type: object
+      description: "A user on the platform."
+      properties:
+        id:
+          type: integer
+          format: int64
+        date_joined:
+          type: string
+          format: date-time
+        email:
+          type: string
+          nullable: false
+        lemmas:
+          type: array
+          items:
+            $ref: "#/components/schemas/Lemma"
+    APIKey:
+      type: object
+      description: "An API-key associated to a user and needed to access some parts the API or lift some limitations."
+      properties:
+        id:
+          type: integer
+          format: int64
+        date_emitted:
+          type: string
+          format: date-time
+        key:
+          type: string
+          nullable: false
+        user_id:
+          $ref: "#/components/schemas/User/properties/id"
+        level:
+          type: string
+          description: "Permission level of the key regarding resources."
+          enum:
+            - revoked
+            - read
+            - edit
+            - create
+            - admin
+    Resource:
+      type: object
+      description: "A learning resource on the platform."
+      properties:
+        id:
+          type: integer
+          format: int64
+        date_emitted:
+          type: string
+          format: date-time
+        upvotes:
+          type: integer
+        downvotes:
+          type: integer
+        names:
+          type: array
+          items:
+            $ref: "#/components/schemas/ResourceName"
+        urls:
+          type: array
+          items:
+            $ref: "#/components/schemas/ResourceURL"
+        tags:
+          type: array
+          items:
+            $ref: "#/components/schemas/Tag"
+        parent_id:
+          $ref: "#/components/schemas/Resource/properties/id"
+    ResourceName:
+      type: object
+      description: "Name for a resource on the platform."
+      properties:
+        id:
+          type: integer
+          format: int64
+        value:
+          type: string
+          nullable: false
+        resource_id:
+          $ref: "#/components/schemas/Resource/properties/id"
+    ResourceURL:
+      type: object
+      description: "URL for a resource on the platform."
+      properties:
+        id:
+          type: integer
+          format: int64
+        value:
+          type: string
+          nullable: false
+        resource_id:
+          $ref: "#/components/schemas/Resource/properties/id"
+    Tag:
+      type: object
+      description: "Tag to classify learning resources."
+      properties:
+        id:
+          type: integer
+          format: int64
+        value:
+          type: string
+          nullable: false
+    Review:
+      type: object
+      description: "User review on a learning resource."
+      properties:
+        id:
+          type: integer
+          format: int64
+        content:
+          type: string
+          nullable: false
+        resource_id:
+          $ref: "#/components/schemas/Resource/properties/id"
+        user_id:
+          $ref: "#/components/schemas/User/properties/id"
+  responses:
+    ErrorMessage:
+      description: "Error code with a description of the error."
+      content:
+        "application/json":
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+    PermanentlyRemoved:
+      description: "The resource(s) queried has(/have) been permanently removed from the platform. Re-addition is not allowed."
+      content:
+        "application/json": {}
+    RateLimited:
+      description: "Rate limited. Authenticate or wait to lift the limit."
+      content:
+        "application/json":
+          schema:
+            type: string
+    Created:
+      description: "Successfully added the resource."
+      content:
+        "application/json": {}
+    LoginRequired:
+      description: "Login required. Include API-Key of enabled account in order to access."
+      content:
+        "application/json":
+          schema:
+            type: string
+    InsufficientAuthorisation:
+      description: "An elevated API-Key is required for this operation."
+      content:
+        "application/json":
+          schema:
+            type: string
+    NoMatch:
+      description: "No match for the current query."
+      content:
+        "application/json": {}
+  parameters:
+    page:
+      in: query
+      name: page
+      description: "Page in the pagination of API results. Each page contains up to 100 results."
+      required: false
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+    resourceId:
+      in: query
+      name: resource_id
+      description: "The ID of a specific resource."
+      required: false
+      schema:
+        $ref: "#/components/schemas/Resource/properties/id"
+    resourceName:
+      in: query
+      name: name
+      description: "A string to search for among resource names."
+      required: false
+      schema:
+        type: string
+    resourceIncludesTags:
+      in: query
+      name: includes_tags
+      description: "List of tags (by name) resulting resources must contain."
+      required: false
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/Tag/properties/value"
+    resourceExcludesTags:
+      in: query
+      name: excludes_tags
+      description: "List of tags (by name) resulting resources must not contain."
+      required: false
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/Tag/properties/value"
+    resourceHasParent:
+      in: query
+      name: has_parent
+      description: "Whether resulting resources must or must not have a parent resource."
+      required: false
+      schema:
+        type: boolean
+    resourceParentIs:
+      in: query
+      name: parent_id
+      description: "ID of the parent to which the resulting resources must belong."
+      required: false
+      schema:
+        $ref: "#/components/schemas/Resource/properties/id"
+    reviewId:
+      in: query
+      name: review_id
+      description: "ID of the specific review to retrieve."
+      required: false
+      schema:
+        $ref: "#/components/schemas/Review/properties/id"
+    reviewAuthor:
+      in: query
+      name: author_id
+      description: "ID of the user who authored the review."
+      required: false
+      schema:
+        $ref: "#/components/schemas/User/properties/id"
+    reviewContent:
+      in: query
+      name: review_content
+      description: "A string to search for inside the review's contents."
+      required: false
+      schema:
+        type: string
