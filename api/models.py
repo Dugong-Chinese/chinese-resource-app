@@ -10,7 +10,15 @@ db = SQLAlchemy()
 
 
 class BaseModel:
+    """Mixin for models containing basic information."""
+
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+
+
+class DatedModel:
+    """Mixin for models with creation date."""
+
+    creation_date = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
 
 
 # Models and tables for users and authentication in general
@@ -49,10 +57,9 @@ class Lemma(BaseModel, db.Model):
     # TODO difficulty index, depending on how we decide to implement that
 
 
-class User(BaseModel, db.Model):
+class User(BaseModel, DatedModel, db.Model):
     """A user on the platform."""
 
-    date_joined = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
     email = db.Column(db.String, unique=True, nullable=False)
     password = db.Column(db.String, nullable=False)
     salt = db.Column(db.String, nullable=False)
@@ -77,10 +84,9 @@ class PermLevel(enum.IntEnum):
     ADMIN = enum.auto()
 
 
-class APIKey(BaseModel, db.Model):
+class APIKey(BaseModel, DatedModel, db.Model):
     """An API-key associated to a user and needed to access the API."""
 
-    date_emitted = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
     key = db.Column(db.String, unique=True, nullable=False)
     level = db.Column(db.SmallInteger, nullable=False, default=PermLevel.READ.value)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
@@ -110,10 +116,9 @@ tags_helper = db.Table(
 )
 
 
-class Resource(BaseModel, db.Model):
+class Resource(BaseModel, DatedModel, db.Model):
     """A learning resource on the platform."""
 
-    date_added = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
     upvotes = db.Column(db.Integer, nullable=False, default=0)
     downvotes = db.Column(db.Integer, nullable=False, default=0)
     names = db.relationship("ResourceName", backref="resource", lazy=True)
@@ -165,7 +170,7 @@ class Tag(BaseModel, db.Model):
         return f"<Tag {self.value}>"
 
 
-class Review(BaseModel, db.Model):
+class Review(BaseModel, DatedModel, db.Model):
     """A user review on a learning resource."""
 
     content = db.Column(db.String, nullable=False)
