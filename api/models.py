@@ -21,6 +21,14 @@ class DatedModel:
     creation_date = db.Column(db.DateTime(timezone=True), server_default=text("NOW()"))
 
 
+class ModifiableModel:
+    """Mixin for models with modified date."""
+
+    modified_date = db.Column(
+        db.DateTime(timezone=True), onupdate=text("NOW()"), nullable=True,
+    )
+
+
 # Models and tables for users and authentication in general
 lemmas_helper = db.Table(
     "lemmas_to_users_mtm",
@@ -29,19 +37,21 @@ lemmas_helper = db.Table(
 )
 
 
-class LemmaType(enum.IntEnum):
+class LemmaType(enum.Enum):
     """Type of lemma, meant to be used in arrays as lemmas can have multiple types.
     An unknown type is represented by an empty array.
     
     Remember to use LemmaType.SOMETYPE.value when inserting or comparing database data,
     as the column itself technically accepts integers.
+    Do NOT modify existing values in this enum or consistency with values in the
+    database will be lost.
     """
 
-    NOUN = enum.auto()
-    ADJECTIVE = enum.auto()
-    VERB = enum.auto()
-    PARTICLE = enum.auto()
-    IDIOM = enum.auto()
+    NOUN = 1
+    ADJECTIVE = 2
+    VERB = 3
+    PARTICLE = 4
+    IDIOM = 5
 
 
 class Lemma(BaseModel, db.Model):
@@ -51,7 +61,7 @@ class Lemma(BaseModel, db.Model):
     #  that look exactly the same.
     content = db.Column(db.String, nullable=False)
 
-    # Type is encoded as integer and not array because of implementation and performance
+    # Type is encoded as integer and not enum because of implementation and performance
     #  issues due to SQLAlchemy and PostgreSQL.
     type_ = db.Column(ARRAY(db.SmallInteger), name="type", default=[])
     # TODO difficulty index, depending on how we decide to implement that
@@ -75,13 +85,16 @@ class PermLevel(enum.IntEnum):
     """Actions permitted by a certain key.
     
     Remember to use PermLevel.SOMEVALUE.value; see documentation on LemmaType enum.
+    Do NOT modify existing values in this enum or consistency with values in the
+    database will be lost.
     """
 
-    REVOKED = enum.auto()
-    READ = enum.auto()
-    EDIT = enum.auto()
-    CREATE = enum.auto()
-    ADMIN = enum.auto()
+    REVOKED = 0
+    READ = 1
+    REVIEW = 2
+    EDIT = 3
+    CREATE = 4
+    ADMIN = 5
 
 
 class APIKey(BaseModel, DatedModel, db.Model):
@@ -170,7 +183,7 @@ class Tag(BaseModel, db.Model):
         return f"<Tag {self.value}>"
 
 
-class Review(BaseModel, DatedModel, db.Model):
+class Review(BaseModel, DatedModel, ModifiableModel, db.Model):
     """A user review on a learning resource."""
 
     content = db.Column(db.String, nullable=False)
