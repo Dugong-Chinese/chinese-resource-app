@@ -6,6 +6,7 @@ from functools import wraps
 from flask_jwt import jwt_required, current_identity
 
 
+# TODO consider when implementing auth routes: https://tools.ietf.org/html/rfc6750
 routes = Blueprint(
     "routes",
     __name__,

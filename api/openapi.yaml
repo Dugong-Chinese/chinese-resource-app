@@ -34,6 +34,9 @@ paths:
       operationId: get_resources
       tags:
         - open
+      security:
+        - {}
+        - APIKey: []
       description: "Query available resources."
       summary: "Retrieve resources"
       parameters:
@@ -58,21 +61,19 @@ paths:
         "404":
           $ref: "#/components/responses/NoMatch"
         "402":
-          description: "Premium content. Include API-Key of upgraded account in order to access."
-          content:
-            "application/json":
-              schema:
-                type: string
+          $ref: "#/components/responses/PremiumContent"
         "410":
-          $ref: "#/components/responses/PermanentlyRemoved"
-        "451":
           $ref: "#/components/responses/PermanentlyRemoved"
         "429":
           $ref: "#/components/responses/RateLimited"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
     post:
       operationId: post_resource
       tags:
         - users
+      security:
+        - APIKey: []
       description: "Add a new resource to the platform."
       summary: "Post resources"
       requestBody:
@@ -103,6 +104,8 @@ paths:
       operationId: put_resource
       tags:
         - users
+      security:
+        - APIKey: []
       description: "Add or replace a resource on the platform."
       summary: "Add or replace resources"
       requestBody:
@@ -116,9 +119,7 @@ paths:
         "201":
           $ref: "#/components/responses/Created"
         "204":
-          description: "Successfully modified resource."
-          content:
-            "application/json": {}
+          $ref: "#/components/responses/ModifiedOne"
         "401":
           $ref: "#/components/responses/LoginRequired"
         "403":
@@ -131,7 +132,9 @@ paths:
       operationId: patch_resource
       tags:
         - users
-      description: "Modify fields on queried resources."
+      security:
+        - APIKey: []
+      description: "Modify specific fields on queried resources."
       summary: "Edit resource fields"
       parameters:
         - $ref: "#/components/parameters/resourceId"
@@ -154,11 +157,7 @@ paths:
         default:
           $ref: "#/components/responses/ErrorMessage"
         "200":
-          description: "Some resources successfully patched."
-          content:
-            "application/json":
-              schema:
-                type: integer
+          $ref: "#/components/responses/ModifiedMultiple"
         "401":
           $ref: "#/components/responses/LoginRequired"
         "403":
@@ -173,6 +172,8 @@ paths:
       operationId: delete_resource
       tags:
         - staff
+      security:
+        - APIKey: []
       description: "Delete a resource on the platform."
       summary: "Delete resources."
       parameters:
@@ -187,11 +188,580 @@ paths:
         default:
           $ref: "#/components/responses/ErrorMessage"
         "200":
-          description: "Some resources successfully deleted."
+          $ref: "#/components/responses/DeletedMultiple"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+  /lemmas:
+    get:
+      operationId: get_lemmas
+      tags:
+        - open
+      security:
+        - {}
+      description: "Query recorded vocabulary."
+      summary: "Retrieve lemmas"
+      parameters:
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/lemmaId"
+        - $ref: "#/components/parameters/lemmaType"
+        - $ref: "#/components/parameters/lemmaContentIs"
+        - $ref: "#/components/parameters/lemmaContentLike"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          description: "Found lemmas matching the query."
           content:
             "application/json":
               schema:
-                type: integer
+                type: array
+                items:
+                  $ref: "#/components/schemas/Lemma"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+    post:
+      operationId: post_lemmas
+      tags:
+        - staff
+      security:
+        - APIKey: []
+      description: "Add new lemmas to recorded vocabulary."
+      summary: "Post new vocabulary"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/Lemma"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "201":
+          $ref: "#/components/responses/Created"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "409":
+          description: "Lemmas already exist. Use PUT or PATCH to edit existing."
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Lemma"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+    put:
+      operationId: put_lemma
+      tags:
+        - staff
+      security:
+        - APIKey: []
+      description: "Add or replace lemmas."
+      summary: "Add or replace lemmas"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/Lemma/properties"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "201":
+          $ref: "#/components/responses/Created"
+        "204":
+          $ref: "#/components/responses/ModifiedMultiple"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+    patch:
+      operationId: patch_lemmas
+      tags:
+        - staff
+      security:
+        - APIKey: []
+      description: "Modify data on a lemma."
+      summary: "Edit lemma data"
+      parameters:
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/lemmaId"
+        - $ref: "#/components/parameters/lemmaType"
+        - $ref: "#/components/parameters/lemmaContentIs"
+        - $ref: "#/components/parameters/lemmaContentLike"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: array
+              items:
+                anyOf:
+                  - $ref: "#/components/schemas/Lemma/properties"
+                not:
+                  $ref: "#/components/schemas/Lemma/properties/id"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          $ref: "#/components/responses/ModifiedMultiple"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+    delete:
+      operationId: delete_lemmas
+      tags:
+        - staff
+      security:
+        - APIKey: []
+      description: "Delete one or more lemmas."
+      summary: "Delete lemmas"
+      parameters:
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/lemmaId"
+        - $ref: "#/components/parameters/lemmaType"
+        - $ref: "#/components/parameters/lemmaContentIs"
+        - $ref: "#/components/parameters/lemmaContentLike"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          $ref: "#/components/responses/DeletedMultiple"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+  /users:
+    get:
+      operationId: get_users
+      tags:
+        - open
+      security:
+        - {}
+        - APIKey: []
+      description: "Query existing users."
+      summary: "Retrieve users"
+      parameters:
+        - $ref: "#/components/parameters/userId"
+        - $ref: "#/components/parameters/userEmail"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          description: "Found users matching the query."
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+    post:
+      operationId: post_user
+      tags:
+        - open
+      security:
+        - {}
+        - APIKey: []
+      description: "Register a new user."
+      summary: "Register users"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          $ref: "#/components/responses/SuccessfulLogin"
+        "409":
+          description: "User already exists."
+          content:
+            "application/json": {}
+    put:
+      operationId: put_user
+      tags:
+        - staff
+      security:
+        - APIKey: []
+      description: "Add or replace a user."
+      summary: "Add or replace users"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "201":
+          $ref: "#/components/responses/Created"
+        "204":
+          $ref: "#/components/responses/ModifiedOne"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+    patch:
+      operationId: patch_user
+      tags:
+        - staff
+        - users
+      security:
+        - APIKey: []
+      description: "Modify data on a user. Users can only modify some data of their own account."
+      summary: "Edit user data"
+      parameters:
+        - $ref: "#/components/parameters/userId"
+        - $ref: "#/components/parameters/userEmail"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: array
+              items:
+                anyOf:
+                  - $ref: "#/components/schemas/User/properties"
+                not:
+                  $ref: "#/components/schemas/User/properties/id"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          $ref: "#/components/responses/ModifiedOne"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+    delete:
+      operationId: delete_user
+      tags:
+        - staff
+        - users
+      security:
+        - APIKey: []
+      description: "Delete a user. Users can only delete their own account."
+      summary: "Delete users"
+      parameters:
+        - $ref: "#/components/parameters/userId"
+        - $ref: "#/components/parameters/userEmail"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          $ref: "#/components/responses/DeletedOne"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+  /login:
+    post:
+      operationId: login
+      tags:
+        - open
+      security:
+        - {}
+      description: "Log in as a user, obtaining a corresponding API-Key. If the current key has been revoked, a new key with basic permissions is generated."
+      summary: "Authenticate"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          $ref: "#/components/responses/SuccessfulLogin"
+        "401":
+          description: "Login data didn't match any user and password combination."
+          content:
+            "application/json":
+              schema:
+                type: string
+                example: "Password is incorrect or the username entered is not registered."
+    delete:
+      operationId: delete_key
+      tags:
+        - users
+      security:
+        - APIKey: []
+      description: "Invalidate the current API-Key. Logging in with the same user will generate a new one."
+      summary: "Invalidate API-Keys"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          description: "API-Key successfully revoked."
+          content:
+            "application/json":
+              schema:
+                type: string
+                example: "API-Key revoked successfully. A new login will generate a new key with basic permissions."
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+  /tags:
+    get:
+      operationId: get_tags
+      tags:
+        - open
+      security:
+        - {}
+        - APIKey: []
+      description: "Query existing resource tags."
+      summary: "Retrieve tags"
+      parameters:
+        - $ref: "#/components/parameters/tagId"
+        - $ref: "#/components/parameters/tagContentIs"
+        - $ref: "#/components/parameters/tagContentLike"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          description: "Found tags matching the query."
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Tag"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+    post:
+      operationId: post_tag
+      tags:
+        - staff
+      security:
+        - APIKey: []
+      description: "Register a new resource tag."
+      summary: "Register tags"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/Tag"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "201":
+          $ref: "#/components/responses/Created"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "409":
+          description: "Tags already exist. Use PUT or PATCH to edit existing."
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Tag"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+    put:
+      operationId: put_tags
+      tags:
+        - staff
+      security:
+        - APIKey: []
+      description: "Add or replace a tag."
+      summary: "Add or replace tags"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/Tag/properties"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "201":
+          $ref: "#/components/responses/Created"
+        "204":
+          $ref: "#/components/responses/ModifiedMultiple"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+    delete:
+      operationId: delete_tag
+      tags:
+        - staff
+      security:
+        - APIKey: []
+      description: "Delete a tag."
+      summary: "Delete tags"
+      parameters:
+        - $ref: "#/components/parameters/tagId"
+        - $ref: "#/components/parameters/tagContentIs"
+        - $ref: "#/components/parameters/tagContentLike"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "200":
+          $ref: "#/components/responses/DeletedMultiple"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+  /reviews:
+    get:
+      operationId: get_reviews
+      tags:
+        - open
+      security:
+        - {}
+        - APIKey: []
+      description: "Query published reviews."
+      summary: "Retrieve reviews"
+      parameters:
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/reviewId"
+        - $ref: "#/components/parameters/resourceId"
+        - $ref: "#/components/parameters/userId"
+        - $ref: "#/components/parameters/reviewContent"
+      responses:
+        default:
+            $ref: "#/components/responses/ErrorMessage"
+        "200":
+          description: "Found reviews matching the query."
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Review"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+        "402":
+          $ref: "#/components/responses/PremiumContent"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+    post:
+      operationId: post_review
+      tags:
+        - users
+      security:
+        - APIKey: []
+      description: "Add a review on a resource."
+      summary: "Post new reviews"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/Review"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "201":
+          $ref: "#/components/responses/Created"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+        "409":
+          description: "A review on this resource by this user already exists. Use PATCH to edit existing."
+          content:
+            "application/json":
+              schema:
+                type: string
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+    patch:
+      operationId: patch_review
+      tags:
+        - users
+      security:
+        - APIKey: []
+      description: "Modify the contents of a review."
+      summary: "Edit review contents"
+      parameters:
+        - $ref: "#/components/parameters/resourceId"
+        - $ref: "#/components/parameters/reviewId"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: string
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "204":
+          $ref: "#/components/responses/ModifiedOne"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoMatch"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+    delete:
+      operationId: delete_reviews
+      tags:
+        - users
+        - staff
+      security:
+        - APIKey: []
+      description: "Delete a review. Users can only delete owned reviews."
+      summary: "Delete reviews"
+      parameters:
+        - $ref: "#/components/parameters/resourceId"
+        - $ref: "#/components/parameters/reviewId"
+      responses:
+        default:
+            $ref: "#/components/responses/ErrorMessage"
+        "204":
+          description: "Review successfully deleted."
+          content:
+            "application/json": {}
         "401":
           $ref: "#/components/responses/LoginRequired"
         "403":
@@ -199,6 +769,11 @@ paths:
         "404":
           $ref: "#/components/responses/NoMatch"
 components:
+  securitySchemes:
+    APIKey:
+      type: "http"
+      scheme: "bearer"
+      bearerFormat: "Bearer APIKEY"
   schemas:
     Lemma:
       type: object
@@ -207,6 +782,7 @@ components:
         id:
           type: integer
           format: int64
+          readOnly: true
         content:
           type: string
           nullable: false
@@ -227,9 +803,11 @@ components:
         id:
           type: integer
           format: int64
-        date_joined:
+          readOnly: true
+        creation_date:
           type: string
           format: date-time
+          readOnly: true
         email:
           type: string
           nullable: false
@@ -244,12 +822,15 @@ components:
         id:
           type: integer
           format: int64
-        date_emitted:
+          readOnly: true
+        creation_date:
           type: string
           format: date-time
+          readOnly: true
         key:
           type: string
           nullable: false
+          readOnly: true
         user_id:
           $ref: "#/components/schemas/User/properties/id"
         level:
@@ -268,9 +849,11 @@ components:
         id:
           type: integer
           format: int64
-        date_emitted:
+          readOnly: true
+        creation_date:
           type: string
           format: date-time
+          readOnly: true
         upvotes:
           type: integer
         downvotes:
@@ -296,6 +879,7 @@ components:
         id:
           type: integer
           format: int64
+          readOnly: true
         value:
           type: string
           nullable: false
@@ -308,6 +892,7 @@ components:
         id:
           type: integer
           format: int64
+          readOnly: true
         value:
           type: string
           nullable: false
@@ -320,6 +905,7 @@ components:
         id:
           type: integer
           format: int64
+          readOnly: true
         value:
           type: string
           nullable: false
@@ -330,6 +916,16 @@ components:
         id:
           type: integer
           format: int64
+          readOnly: true
+        creation_date:
+          type: string
+          format: date-time
+          readOnly: true
+        modified_date:
+          type: string
+          format: date-time
+          nullable: true
+          readOnly: true
         content:
           type: string
           nullable: false
@@ -347,10 +943,19 @@ components:
             properties:
               code:
                 type: integer
+                example: 400
               message:
                 type: string
+                example: "Unknown field: name"
+    PremiumContent:
+      description: "Premium content. Include API-Key of upgraded account in order to access."
+      content:
+        "application/json":
+          schema:
+            type: string
+            example: "This content is reserved for premium users."
     PermanentlyRemoved:
-      description: "The resource(s) queried has(/have) been permanently removed from the platform. Re-addition is not allowed."
+      description: "The item(s) queried has(/have) been permanently removed from the platform. Re-addition is not allowed."
       content:
         "application/json": {}
     RateLimited:
@@ -359,8 +964,33 @@ components:
         "application/json":
           schema:
             type: string
+            example: "You have reached the limit for number of requests today. Wait 24 hours or become a premium user to lift the limit."
     Created:
-      description: "Successfully added the resource."
+      description: "Successfully added items."
+      content:
+        "application/json":
+          schema:
+            type: integer
+            example: 3
+    ModifiedMultiple:
+      description: "Successfully modified items."
+      content:
+        "application/json":
+          schema:
+            type: integer
+            example: 3
+    ModifiedOne:
+      description: "Successfully modified item."
+      content:
+        "application/json": {}
+    DeletedMultiple:
+      description: "Some items successfully deleted."
+      content:
+        "application/json":
+          schema:
+            type: integer
+    DeletedOne:
+      description: "Item successfully deleted."
       content:
         "application/json": {}
     LoginRequired:
@@ -369,12 +999,20 @@ components:
         "application/json":
           schema:
             type: string
+            example: "This content requires an authenticated user and may require specific authorisation."
+    SuccessfulLogin:
+      description: "User login successful. The response contains the API-Key."
+      content:
+        "application/json":
+          schema:
+            $ref: "#/components/schemas/APIKey"
     InsufficientAuthorisation:
       description: "An elevated API-Key is required for this operation."
       content:
         "application/json":
           schema:
             type: string
+            example: "Insufficient authorisation for this account."
     NoMatch:
       description: "No match for the current query."
       content:
@@ -389,6 +1027,73 @@ components:
         type: integer
         default: 1
         minimum: 1
+    tagId:
+      in: query
+      name: tag_id
+      description: "The ID of a specific tag."
+      required: false
+      schema:
+        $ref: "#/components/schemas/Tag/properties/id"
+    tagContentIs:
+      in: query
+      name: content_is
+      required: false
+      description: "String to match with the tag's content."
+      schema:
+        type: string
+        example: "podcast"
+    tagContentLike:
+      in: query
+      name: content_like
+      required: false
+      description: "String to search for in the tag's content."
+      schema:
+        type: string
+        example: "book"
+    lemmaId:
+      in: query
+      name: lemma_id
+      description: "The ID of a specific lemma."
+      required: false
+      schema:
+        $ref: "#/components/schemas/Lemma/properties/id"
+    lemmaType:
+      in: query
+      name: type
+      description: "The type of lemma."
+      required: false
+      schema:
+        $ref: "#/components/schemas/Lemma/properties/lemma_type"
+    lemmaContentIs:
+      in: query
+      name: content_is
+      required: false
+      description: "String to match with the lemma's content."
+      schema:
+        type: string
+        example: "加油"
+    lemmaContentLike:
+      in: query
+      name: content_like
+      required: false
+      description: "String to search for in the lemma's content."
+      schema:
+        type: string
+        example: "加"
+    userId:
+      in: query
+      name: user_id
+      description: "The ID of a specific user."
+      required: false
+      schema:
+        $ref: "#/components/schemas/User/properties/id"
+    userEmail:
+      in: query
+      name: email
+      description: "The email of a specific user."
+      required: false
+      schema:
+        $ref: "#/components/schemas/User/properties/id"
     resourceId:
       in: query
       name: resource_id
@@ -442,13 +1147,6 @@ components:
       required: false
       schema:
         $ref: "#/components/schemas/Review/properties/id"
-    reviewAuthor:
-      in: query
-      name: author_id
-      description: "ID of the user who authored the review."
-      required: false
-      schema:
-        $ref: "#/components/schemas/User/properties/id"
     reviewContent:
       in: query
       name: review_content
