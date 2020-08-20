@@ -20,7 +20,9 @@ info:
     email: api@dugongchinese.com
   license:
     name: MIT License
-    url: 'https://spdx.org/licenses/MIT.html'
+    url: "https://spdx.org/licenses/MIT.html"
+security:
+  - APIKey: []
 tags:
   - name: open
     description: "Routes available to everyone (limits may apply for unauthenticated callers)"
@@ -72,8 +74,6 @@ paths:
       operationId: post_resource
       tags:
         - users
-      security:
-        - APIKey: []
       description: "Add a new resource to the platform."
       summary: "Post resources"
       requestBody:
@@ -96,6 +96,7 @@ paths:
             "application/json":
               schema:
                 type: string
+                example: "Conflict. Use PUT or PATCH to edit existing resource."
         "410":
           $ref: "#/components/responses/PermanentlyRemoved"
         "451":
@@ -104,8 +105,6 @@ paths:
       operationId: put_resource
       tags:
         - users
-      security:
-        - APIKey: []
       description: "Add or replace a resource on the platform."
       summary: "Add or replace resources"
       requestBody:
@@ -132,8 +131,6 @@ paths:
       operationId: patch_resource
       tags:
         - users
-      security:
-        - APIKey: []
       description: "Modify specific fields on queried resources."
       summary: "Edit resource fields"
       parameters:
@@ -147,12 +144,20 @@ paths:
         content:
           "application/json":
             schema:
-              type: array
+              type: object
               items:
                 anyOf:
-                  - $ref: "#/components/schemas/Resource/properties"
-                not:
-                  $ref: "#/components/schemas/Resource/properties/id"
+                  - $ref: "#/components/schemas/Resource/properties/names"
+                  - $ref: "#/components/schemas/Resource/properties/urls"
+                  - $ref: "#/components/schemas/Resource/properties/tags"
+                  - $ref: "#/components/schemas/Resource/properties/upvotes"
+                  - $ref: "#/components/schemas/Resource/properties/downvotes"
+              example:
+                tags:
+                  - "website"
+                  - "free"
+                  - "HSK4"
+                upvotes: 420
       responses:
         default:
           $ref: "#/components/responses/ErrorMessage"
@@ -172,8 +177,6 @@ paths:
       operationId: delete_resource
       tags:
         - staff
-      security:
-        - APIKey: []
       description: "Delete a resource on the platform."
       summary: "Delete resources."
       parameters:
@@ -195,6 +198,100 @@ paths:
           $ref: "#/components/responses/InsufficientAuthorisation"
         "404":
           $ref: "#/components/responses/NoMatch"
+  /{resourceId}/upvote:
+    post:
+      operationId: upvote_resource
+      tags:
+        - users
+      description: "Upvote a resource on the platform."
+      summary: "Upvote resources"
+      parameters:
+        - $ref: "#/components/parameters/resourceIdPath"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "204":
+          $ref: "#/components/responses/VotePosted"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "409":
+          $ref: "#/components/responses/VotedAlready"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+    delete:
+      operationId: cancel_upvote
+      tags:
+        - users
+      description: "Remove your upvote from a resource on the platform."
+      summary: "Cancel upvotes"
+      parameters:
+        - $ref: "#/components/parameters/resourceIdPath"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "204":
+          $ref: "#/components/responses/VoteRemoved"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoVotePresent"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+  /{resourceId}/downvote:
+    post:
+      operationId: downvote_resource
+      tags:
+        - users
+      description: "Downvote a resource on the platform."
+      summary: "Downvote resources"
+      parameters:
+        - $ref: "#/components/parameters/resourceIdPath"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "204":
+          $ref: "#/components/responses/VotePosted"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "409":
+          $ref: "#/components/responses/VotedAlready"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
+    delete:
+      operationId: cancel_downvote
+      tags:
+        - users
+      description: "Remove your downvote from a resource on the platform."
+      summary: "Cancel downvotes"
+      parameters:
+        - $ref: "#/components/parameters/resourceIdPath"
+      responses:
+        default:
+          $ref: "#/components/responses/ErrorMessage"
+        "204":
+          $ref: "#/components/responses/VoteRemoved"
+        "401":
+          $ref: "#/components/responses/LoginRequired"
+        "403":
+          $ref: "#/components/responses/InsufficientAuthorisation"
+        "404":
+          $ref: "#/components/responses/NoVotePresent"
+        "410":
+          $ref: "#/components/responses/PermanentlyRemoved"
+        "451":
+          $ref: "#/components/responses/PermanentlyRemoved"
   /lemmas:
     get:
       operationId: get_lemmas
@@ -202,6 +299,7 @@ paths:
         - open
       security:
         - {}
+        - APIKey: []
       description: "Query recorded vocabulary."
       summary: "Retrieve lemmas"
       parameters:
@@ -229,8 +327,6 @@ paths:
       operationId: post_lemmas
       tags:
         - staff
-      security:
-        - APIKey: []
       description: "Add new lemmas to recorded vocabulary."
       summary: "Post new vocabulary"
       requestBody:
@@ -265,8 +361,6 @@ paths:
       operationId: put_lemma
       tags:
         - staff
-      security:
-        - APIKey: []
       description: "Add or replace lemmas."
       summary: "Add or replace lemmas"
       requestBody:
@@ -291,8 +385,6 @@ paths:
       operationId: patch_lemmas
       tags:
         - staff
-      security:
-        - APIKey: []
       description: "Modify data on a lemma."
       summary: "Edit lemma data"
       parameters:
@@ -305,12 +397,14 @@ paths:
         content:
           "application/json":
             schema:
-              type: array
+              type: object
               items:
                 anyOf:
-                  - $ref: "#/components/schemas/Lemma/properties"
-                not:
-                  $ref: "#/components/schemas/Lemma/properties/id"
+                  - $ref: "#/components/schemas/Lemma/properties/content"
+                  - $ref: "#/components/schemas/Lemma/properties/lemma_type"
+              example:
+                content: "开"
+                lemma_type: "verb"
       responses:
         default:
           $ref: "#/components/responses/ErrorMessage"
@@ -326,8 +420,6 @@ paths:
       operationId: delete_lemmas
       tags:
         - staff
-      security:
-        - APIKey: []
       description: "Delete one or more lemmas."
       summary: "Delete lemmas"
       parameters:
@@ -383,7 +475,6 @@ paths:
         - open
       security:
         - {}
-        - APIKey: []
       description: "Register a new user."
       summary: "Register users"
       requestBody:
@@ -404,8 +495,6 @@ paths:
       operationId: put_user
       tags:
         - staff
-      security:
-        - APIKey: []
       description: "Add or replace a user."
       summary: "Add or replace users"
       requestBody:
@@ -429,8 +518,6 @@ paths:
       tags:
         - staff
         - users
-      security:
-        - APIKey: []
       description: "Modify data on a user. Users can only modify some data of their own account."
       summary: "Edit user data"
       parameters:
@@ -443,9 +530,14 @@ paths:
               type: array
               items:
                 anyOf:
-                  - $ref: "#/components/schemas/User/properties"
-                not:
-                  $ref: "#/components/schemas/User/properties/id"
+                  - $ref: "#/components/schemas/User/properties/email"
+                  - $ref: "#/components/schemas/User/properties/lemmas"
+              example:
+                email: "newemail@dugongchinese.com"
+                lemmas:
+                  - "普通话"
+                  - "德国"
+                  - "泰国"
       responses:
         default:
           $ref: "#/components/responses/ErrorMessage"
@@ -466,8 +558,6 @@ paths:
       tags:
         - staff
         - users
-      security:
-        - APIKey: []
       description: "Delete a user. Users can only delete their own account."
       summary: "Delete users"
       parameters:
@@ -509,8 +599,6 @@ paths:
       operationId: delete_key
       tags:
         - users
-      security:
-        - APIKey: []
       description: "Invalidate the current API-Key. Logging in with the same user will generate a new one."
       summary: "Invalidate API-Keys"
       responses:
@@ -562,8 +650,6 @@ paths:
       operationId: post_tag
       tags:
         - staff
-      security:
-        - APIKey: []
       description: "Register a new resource tag."
       summary: "Register tags"
       requestBody:
@@ -596,8 +682,6 @@ paths:
       operationId: put_tags
       tags:
         - staff
-      security:
-        - APIKey: []
       description: "Add or replace a tag."
       summary: "Add or replace tags"
       requestBody:
@@ -606,7 +690,7 @@ paths:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/Tag/properties"
+                $ref: "#/components/schemas/Tag"
       responses:
         default:
           $ref: "#/components/responses/ErrorMessage"
@@ -622,8 +706,6 @@ paths:
       operationId: delete_tag
       tags:
         - staff
-      security:
-        - APIKey: []
       description: "Delete a tag."
       summary: "Delete tags"
       parameters:
@@ -682,8 +764,6 @@ paths:
       operationId: post_review
       tags:
         - users
-      security:
-        - APIKey: []
       description: "Add a review on a resource."
       summary: "Post new reviews"
       requestBody:
@@ -708,6 +788,7 @@ paths:
             "application/json":
               schema:
                 type: string
+                example: "Only one review per user per resource is allowed. Use PATCH to edit existing."
         "410":
           $ref: "#/components/responses/PermanentlyRemoved"
         "451":
@@ -716,8 +797,6 @@ paths:
       operationId: patch_review
       tags:
         - users
-      security:
-        - APIKey: []
       description: "Modify the contents of a review."
       summary: "Edit review contents"
       parameters:
@@ -728,6 +807,7 @@ paths:
           "application/json":
             schema:
               type: string
+              example: "Literally too good, INTEGER_OVERFLOW/10."
       responses:
         default:
           $ref: "#/components/responses/ErrorMessage"
@@ -748,8 +828,6 @@ paths:
       tags:
         - users
         - staff
-      security:
-        - APIKey: []
       description: "Delete a review. Users can only delete owned reviews."
       summary: "Delete reviews"
       parameters:
@@ -775,17 +853,51 @@ components:
       scheme: "bearer"
       bearerFormat: "Bearer APIKEY"
   schemas:
+    # Primitives
+    Id:
+      type: integer
+      format: int64
+      readOnly: true
+      example: 8
+    CreationDate:
+      type: string
+      format: date-time
+      readOnly: true
+      example: "1985-04-12T23:20:50.52Z"
+    ModifiedDate:
+      type: string
+      format: date-time
+      readOnly: true
+      nullable: true
+      example: "2020-06-18T16:02:58.12Z"
+    Vote:
+      type: integer
+      minimum: 0
+      example: 36
+    ResourceName:
+      type: string
+      nullable: false
+      example: "Dugong Chinese"
+    ResourceURL:
+      type: string
+      nullable: false
+      example: "https://www.dugongchinese.com/"
+    APIKey:
+      type: string
+      nullable: false
+      readOnly: true
+      example: "40F3C32A056C38EF4B422E424392FA2D5C9F2FC2565FD36F612E3E7BC555CD19"
+    # Models
     Lemma:
       type: object
       description: "A single lemma: a word, idiom, expression or grammatical construction."
       properties:
         id:
-          type: integer
-          format: int64
-          readOnly: true
+          $ref: "#/components/schemas/Id"
         content:
           type: string
           nullable: false
+          example: "普通话"
         lemma_type:
           type: array
           items:
@@ -796,68 +908,35 @@ components:
               - verb
               - particle
               - idiom
+            example: noun
     User:
       type: object
       description: "A user on the platform."
       properties:
         id:
-          type: integer
-          format: int64
-          readOnly: true
+          $ref: "#/components/schemas/Id"
         creation_date:
-          type: string
-          format: date-time
-          readOnly: true
+          $ref: "#/components/schemas/CreationDate"
         email:
           type: string
           nullable: false
+          example: "dugong@dugongchinese.com"
         lemmas:
           type: array
           items:
             $ref: "#/components/schemas/Lemma"
-    APIKey:
-      type: object
-      description: "An API-key associated to a user and needed to access some parts the API or lift some limitations."
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        creation_date:
-          type: string
-          format: date-time
-          readOnly: true
-        key:
-          type: string
-          nullable: false
-          readOnly: true
-        user_id:
-          $ref: "#/components/schemas/User/properties/id"
-        level:
-          type: string
-          description: "Permission level of the key regarding resources."
-          enum:
-            - revoked
-            - read
-            - edit
-            - create
-            - admin
     Resource:
       type: object
       description: "A learning resource on the platform."
       properties:
         id:
-          type: integer
-          format: int64
-          readOnly: true
+          $ref: "#/components/schemas/Id"
         creation_date:
-          type: string
-          format: date-time
-          readOnly: true
+          $ref: "#/components/schemas/CreationDate"
         upvotes:
-          type: integer
+          $ref: "#/components/schemas/Vote"
         downvotes:
-          type: integer
+          $ref: "#/components/schemas/Vote"
         names:
           type: array
           items:
@@ -869,66 +948,33 @@ components:
         tags:
           type: array
           items:
-            $ref: "#/components/schemas/Tag"
+            $ref: "#/components/schemas/Tag/properties/value"
         parent_id:
-          $ref: "#/components/schemas/Resource/properties/id"
-    ResourceName:
-      type: object
-      description: "Name for a resource on the platform."
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        value:
-          type: string
-          nullable: false
-        resource_id:
-          $ref: "#/components/schemas/Resource/properties/id"
-    ResourceURL:
-      type: object
-      description: "URL for a resource on the platform."
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        value:
-          type: string
-          nullable: false
-        resource_id:
           $ref: "#/components/schemas/Resource/properties/id"
     Tag:
       type: object
       description: "Tag to classify learning resources."
       properties:
         id:
-          type: integer
-          format: int64
-          readOnly: true
+          $ref: "#/components/schemas/Id"
         value:
           type: string
           nullable: false
+          example: "website"
     Review:
       type: object
       description: "User review on a learning resource."
       properties:
         id:
-          type: integer
-          format: int64
-          readOnly: true
+          $ref: "#/components/schemas/Id"
         creation_date:
-          type: string
-          format: date-time
-          readOnly: true
+          $ref: "#/components/schemas/CreationDate"
         modified_date:
-          type: string
-          format: date-time
-          nullable: true
-          readOnly: true
+          $ref: "#/components/schemas/ModifiedDate"
         content:
           type: string
           nullable: false
+          example: "Learned Chinese by accident. 10/10 IGN would recommend."
         resource_id:
           $ref: "#/components/schemas/Resource/properties/id"
         user_id:
@@ -971,7 +1017,29 @@ components:
         "application/json":
           schema:
             type: integer
-            example: 3
+            example: 12
+    VotePosted:
+      description: "Vote successfully posted on the resource."
+      content:
+        "application/json": {}
+    VotedAlready:
+      description: "Only one up/downvote per user per resource is allowed."
+      content:
+        "application/json":
+          schema:
+            type: string
+            example: "Only one up/downvote per user per resource is allowed."
+    VoteRemoved:
+      description: "Vote successfully removed from the resource."
+      content:
+        "application/json": {}
+    NoVotePresent:
+      description: "No vote found on this resource or vote is of wrong kind."
+      content:
+        "application/json":
+          schema:
+            type: string
+            example: "No vote on this resource by this user or vote is of opposite type."
     ModifiedMultiple:
       description: "Successfully modified items."
       content:
@@ -989,6 +1057,7 @@ components:
         "application/json":
           schema:
             type: integer
+            example: 8
     DeletedOne:
       description: "Item successfully deleted."
       content:
@@ -1018,6 +1087,12 @@ components:
       content:
         "application/json": {}
   parameters:
+    resourceIdPath:
+      in: path
+      name: resourceId
+      required: true
+      schema:
+        $ref: "#/components/schemas/Resource/properties/id"
     page:
       in: query
       name: page
@@ -1027,6 +1102,7 @@ components:
         type: integer
         default: 1
         minimum: 1
+        example: 2
     tagId:
       in: query
       name: tag_id
@@ -1154,3 +1230,4 @@ components:
       required: false
       schema:
         type: string
+        example: "would recommend"
