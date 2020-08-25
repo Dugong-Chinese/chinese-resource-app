@@ -31,3 +31,6 @@ settings = {
 
 for k, initial in Flask(__name__).config.items():
     settings[k] = os.environ.get(k, settings.get(k, initial))
+    
+if not settings["SECRET_KEY"]:
+    raise Exception("A secret key MUST be set for security reasons!")

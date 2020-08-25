@@ -623,8 +623,6 @@ paths:
                 example: "API-Key revoked successfully. A new login will generate a new key with basic permissions."
         "401":
           $ref: "#/components/responses/LoginRequired"
-        "403":
-          $ref: "#/components/responses/InsufficientAuthorisation"
         "404":
           $ref: "#/components/responses/NoMatch"
   /tags:
