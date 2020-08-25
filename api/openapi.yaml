@@ -485,7 +485,7 @@ paths:
       responses:
         default:
           $ref: "#/components/responses/ErrorMessage"
-        "200":
+        "201":
           $ref: "#/components/responses/SuccessfulLogin"
         "409":
           description: "User already exists."
@@ -583,6 +583,16 @@ paths:
         - {}
       description: "Log in as a user, obtaining a corresponding API-Key. If the current key has been revoked, a new key with basic permissions is generated."
       summary: "Authenticate"
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              type: object
+              properties:
+                email:
+                  $ref: "#/components/schemas/User/properties/email"
+                password:
+                  $ref: "#/components/schemas/User/properties/password"
       responses:
         default:
           $ref: "#/components/responses/ErrorMessage"
@@ -923,8 +933,14 @@ components:
           example: "dugong@dugongchinese.com"
         lemmas:
           type: array
+          nullable: true
           items:
             $ref: "#/components/schemas/Lemma"
+        password:
+            type: string
+            nullable: false
+            writeOnly: true
+            example: "hunter2"
     Resource:
       type: object
       description: "A learning resource on the platform."

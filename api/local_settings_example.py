@@ -17,7 +17,10 @@ from flask import Flask
 DEBUG = False
 
 settings = {
-    # For Flask-JWT
+    # For security. DO NOT reuse the same secret key in production as in development
+    # DO NOT divulge nor include in version control.
+    # NOTE: Changing the secret key causes all existing registered users to fail
+    #  authentication.
     "SECRET_KEY": "",
     # Flask-SQLAlchemy
     # Format: protocol+backend://user:password@host:port/database, many parts optional

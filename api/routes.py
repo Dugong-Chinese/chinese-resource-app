@@ -1,12 +1,17 @@
-"""Define the main routes of the app."""
+"""Define the main routes of the app.
 
-from flask import Blueprint, request
+Documentation for the API, 1.0.0:
+    https://app.swaggerhub.com/apis-docs/berzi/dugong-chinese/1.0.0
+"""
+
+from flask import Blueprint, request as flask_request
 from flask_restful import Resource, abort, Api
 from functools import wraps
 from flask_jwt import jwt_required, current_identity
+from models import User, APIKey
+from security import hash_password
 
 
-# TODO consider when implementing auth routes: https://tools.ietf.org/html/rfc6750
 routes = Blueprint(
     "routes",
     __name__,
@@ -16,6 +21,31 @@ routes = Blueprint(
 )
 
 api = Api(routes)
+
+
+class Login(Resource):
+    """Routes for login purposes."""
+    
+    def post(self, request):
+        req_data = request.get_json()
+        user = User.query.filter_by(email=req_data["username"]).first()
+        
+        # To prevent timing attacks, get fake data and effect normal check operations
+        #  even if the user is not found. getattr() is used because user could be None.
+        stored_password = getattr(user, "password", "N/A")
+        salt = getattr(user, "salt", "N/A")
+        
+        hashed_input = hash_password(req_data["password"], salt)
+        
+        if hashed_input == stored_password:
+            apikey = APIKey.query.filter_by(user_id=user.id).first()
+            return {"APIKey": apikey.key}, 200
+        
+        return {}, 401
+
+
+api.add_resource(Login, "login")
+# TODO delete below this
 
 
 def checkuser(func):
@@ -57,7 +87,7 @@ class ParamExample(Resource):
     def get(self):
         """Usage: /api/add?add1=5&add2=7 will return 12"""
         # NOTE: come out as strings
-        args = request.args
+        args = flask_request.args
         add1 = args["add1"]
         add2 = args["add2"]
 
