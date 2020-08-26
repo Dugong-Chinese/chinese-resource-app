@@ -614,7 +614,7 @@ paths:
       responses:
         default:
           $ref: "#/components/responses/ErrorMessage"
-        "200":
+        "204":
           description: "API-Key successfully revoked."
           content:
             "application/json":
@@ -1024,7 +1024,7 @@ components:
         "application/json":
           schema:
             type: string
-            example: "You have reached the limit for number of requests today. Wait 24 hours or become a premium user to lift the limit."
+            example: "You have reached the limit for number of requests today. Wait 24 hours or obtain/upgrade your account to lift the limit."
     Created:
       description: "Successfully added items."
       content:

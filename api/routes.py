@@ -4,10 +4,8 @@ Documentation for the API, 1.0.0:
     https://app.swaggerhub.com/apis-docs/berzi/dugong-chinese/1.0.0
 """
 
-from flask import Blueprint, request as flask_request
-from flask_restful import Resource, abort, Api
-from functools import wraps
-from flask_jwt import jwt_required, current_identity
+from flask import Blueprint, request
+from flask_restful import Resource, Api
 from models import db, User, APIKey, PermLevel
 from security import hash_password, generate_apikey
 
@@ -26,7 +24,7 @@ api = Api(routes)
 class Login(Resource):
     """Routes for login purposes."""
     
-    def post(self, request):
+    def post(self):
         req_data = request.get_json()
         user = User.query.filter_by(email=req_data["username"]).first()
         
@@ -55,7 +53,7 @@ class Login(Resource):
         
         return ("Password is incorrect or the username entered is not registered.", 401)
     
-    def delete(self, request):
+    def delete(self):
         key_parts = request.headers.get("Authorization", "")
         # A correct header looks like `Bearer APIKEYHERE`
         key_type, _, key = key_parts.partition(" ")
@@ -78,57 +76,30 @@ class Login(Resource):
                 " basic permissions.", 200)
 
 
+class Users(Resource):
+    """Routes to retrieve and manage user accounts."""
+    
+    def get(self):
+        user_id = request.args.get("user_id", None, type=int)
+        email = request.args.get("email", None)
+        
+        if not user_id and not email:
+            return ("A user_id or email GET parameter must be specified."), 400
+        
+        user = User.query.filter(
+            (User.email == email) | (User.id == user_id)
+        )
+        
+        if not user:
+            return {}, 404
+        
+        return {
+            "id": user.id,
+            "creation_date": user.creation_date,
+            "email": user.email,
+            "lemmas": user.lemmas,
+        }, 200
+
+
 api.add_resource(Login, "login")
-# TODO delete below this
-
-
-def checkuser(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        if current_identity.username == "user1":
-            return func(*args, **kwargs)
-        return abort(401)
-
-    return wrapper
-
-
-class SimpleExample(Resource):
-    """Demonstrates simple GET + POST requests."""
-
-    decorators = [checkuser, jwt_required()]
-
-    def get(self):
-        # simply have the function name be 'get' and return a dict with the name
-        # ("response") and the text that you will send
-        return {"response": f"Hello {current_identity.username}!"}
-
-    def post(self, request):
-        # get POST data with request.get_json()
-        some_json = request.get_json()  # whatever was posted
-        return {"you sent": some_json}
-
-
-class ComplexExample(Resource):
-    """Demonstrates a GET request with a dynamic route."""
-
-    def get(self, num):  # unlimited number of arguments
-        return {"result": num * 10}
-
-
-class ParamExample(Resource):
-    """Demonstrates a GET request with parameters."""
-
-    def get(self):
-        """Usage: /api/add?add1=5&add2=7 will return 12"""
-        # NOTE: come out as strings
-        args = flask_request.args
-        add1 = args["add1"]
-        add2 = args["add2"]
-
-        return {"result": int(add1) + int(add2)}
-
-
-# add resources within Blueprint
-api.add_resource(ComplexExample, "multiply/<int:num>")
-api.add_resource(SimpleExample, "test")
-api.add_resource(ParamExample, "add")
+api.add_resource(Users, "users")
