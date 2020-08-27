@@ -3,7 +3,7 @@
 import hashlib
 import secrets
 from local_settings import settings
-from typing import Union
+from typing import Union, Literal
 from models import db, User, APIKey, PermLevel
 
 
@@ -44,7 +44,8 @@ def generate_random_salt() -> bytes:
 def get_or_create_api_key(user: User) -> APIKey:
     """Get the API key for the selected user or create a new one if needed.
     
-    Since the user ID is needed, the user must be already committed to the database.
+    Since the user ID is needed, the user object must have already been committed to the
+    database.
     """
 
     if not user.id:
@@ -64,3 +65,25 @@ def get_or_create_api_key(user: User) -> APIKey:
         db.session.commit()
 
     return apikey
+
+
+def verify_api_key(auth_header: str) -> Union[Literal[False], APIKey]:
+    """Check an Authorization token for an API key. Return the key if valid and found in
+    the database, False otherwise.
+    """
+
+    # A correct header looks like `Bearer APIKEYHERE`
+    key_type, _, key = auth_header.partition(" ")
+
+    if not key or key_type != "Bearer":
+        return False
+
+    key = key.strip()
+
+    # First, check if the key belongs to any user
+    key_in_db = APIKey.query.filter_by(key=key).first()
+
+    if not key_in_db:
+        return False
+
+    return key_in_db

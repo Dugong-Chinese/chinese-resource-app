@@ -541,7 +541,7 @@ paths:
       responses:
         default:
           $ref: "#/components/responses/ErrorMessage"
-        "200":
+        "204":
           $ref: "#/components/responses/ModifiedOne"
         "401":
           $ref: "#/components/responses/LoginRequired"
@@ -566,7 +566,7 @@ paths:
       responses:
         default:
           $ref: "#/components/responses/ErrorMessage"
-        "200":
+        "204":
           $ref: "#/components/responses/DeletedOne"
         "401":
           $ref: "#/components/responses/LoginRequired"
