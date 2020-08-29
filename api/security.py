@@ -2,12 +2,23 @@
 
 import hashlib
 import secrets
+from functools import wraps
+from flask import request
 from local_settings import settings
-from typing import Union, Literal
-from models import db, User, APIKey, PermLevel
+from typing import Tuple, Union, Literal
+from models import db, User, APIKey, PermLevel, query_users
 
 
 ENCODING = "utf-8"
+
+
+class AuthorisationError(Exception):
+    def __init__(self, message: str, code: int):
+        self.message = message
+        self.code = code
+
+    def as_tuple(self) -> Tuple[str, int]:
+        return self.message, self.code
 
 
 def utf8_to_bytes(string: str) -> bytes:
@@ -87,3 +98,70 @@ def verify_api_key(auth_header: str) -> Union[Literal[False], APIKey]:
         return False
 
     return key_in_db
+
+
+def get_api_key_or_raise():
+    """Get the API key value from the request header. Raise AuthorisationError if
+     not valid.
+    """
+
+    key_parts = request.headers.get("Authorization", "")
+    key = verify_api_key(key_parts)
+    if not key or key.level == PermLevel.REVOKED.value:
+        raise AuthorisationError("Login is required for this operation.", 401)
+
+    return key
+
+
+def only_users(func):
+    """Decorator for endpoints that require an API key to be accessed.
+    Requires the endpoint to accept a keyword argument `apikey`.
+    """
+
+    @wraps(func)
+    def wrapped(*args, **kwargs):
+        try:
+            key = get_api_key_or_raise()
+        except AuthorisationError as e:
+            return e.as_tuple()
+
+        return func(*args, apikey=key, **kwargs)
+
+    return wrapped
+
+
+def only_admin_or_self(func):
+    """Decorator for endpoints that users can only apply to themselves unless admin.
+    Requires the endpoint to accept a keyword argument `user` or **kwargs.
+    """
+
+    @wraps(func)
+    def wrapped(*args, **kwargs):
+        try:
+            key = get_api_key_or_raise()
+        except AuthorisationError as e:
+            return e.as_tuple()
+
+        user_id = request.args.get("user_id", None, type=int)
+        email = request.args.get("email", None)
+
+        if not user_id and not email:
+            return "A user_id or email GET parameter must be specified.", 400
+
+        user = query_users(user_id, email).first()
+        if not user:
+            return {}, 404
+
+        # If not admin, can only patch own account.
+        if key.level < PermLevel.ADMIN:
+            calling_user = User.query.get(key.user_id)
+            if calling_user != user:
+                return (
+                    "Insufficient authorization. You can only patch your own"
+                    " account.",
+                    403,
+                )
+
+        return func(*args, user=user, **kwargs)
+
+    return wrapped

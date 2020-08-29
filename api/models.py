@@ -1,6 +1,7 @@
 """Database models for the RESTful API."""
+from typing import Optional
 
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import BaseQuery, SQLAlchemy
 from sqlalchemy.sql import text
 from sqlalchemy.dialects.postgresql import ARRAY
 import enum
@@ -197,3 +198,9 @@ class Review(BaseModel, DatedModel, ModifiableModel, db.Model):
         db.ForeignKey("user.id", onupdate="CASCADE", ondelete="CASCADE"),
         nullable=False,
     )
+
+
+# Utility functions to avoid code repetition.
+def query_users(user_id: Optional[int], email: Optional[str]) -> BaseQuery:
+    """Find a user by id and/or email and return the query."""
+    return User.query.filter((User.email == email) | (User.id == user_id))

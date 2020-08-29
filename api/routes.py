@@ -3,19 +3,18 @@
 Documentation for the API, 1.0.0:
     https://app.swaggerhub.com/apis-docs/berzi/dugong-chinese/1.0.0
 """
-from typing import Optional
 
 from flask import Blueprint, request
 from flask_restful import Resource, Api
 from sqlalchemy.exc import IntegrityError
-from flask_sqlalchemy import BaseQuery
 from models import db, Lemma, User, PermLevel
 from security import (
     generate_random_salt,
     hash_password,
     get_or_create_api_key,
     ENCODING,
-    verify_api_key,
+    only_users,
+    only_admin_or_self,
 )
 from validators import validate_password, ValidationError, validate_email
 
@@ -53,15 +52,10 @@ class Login(Resource):
 
         return ("Password is incorrect or the username entered is not registered.", 401)
 
-    def delete(self):
+    @only_users
+    def delete(self, apikey):
         """Invalidate the user's API key."""
-        key_parts = request.headers.get("Authorization", "")
-        key = verify_api_key(key_parts)
-
-        if not key or key.level == PermLevel.REVOKED.value:
-            return {}, 404
-
-        key.level = PermLevel.REVOKED.value
+        apikey.level = PermLevel.REVOKED.value
         db.session.commit()
 
         return (
@@ -73,11 +67,6 @@ class Login(Resource):
 
 class Users(Resource):
     """Routes to retrieve and manage user accounts."""
-
-    @staticmethod
-    def _query_users(user_id: Optional[int], email: Optional[str]) -> BaseQuery:
-        """Find a user by id and/or email and return the query."""
-        return User.query.filter((User.email == email) | (User.id == user_id))
 
     def get(self):
         """Get data on users."""
@@ -161,35 +150,11 @@ class Users(Resource):
 
         return apikey, 201
 
-    def patch(self):
+    @only_admin_or_self
+    def patch(self, user):
         """Edit individual fields on a user. Non-admins can only edit some fields on
         their own account.
         """
-
-        key_parts = request.headers.get("Authorization", "")
-        key = verify_api_key(key_parts)
-        if not key or key.level == PermLevel.REVOKED.value:
-            return "Login is required for this operation.", 401
-
-        user_id = request.args.get("user_id", None, type=int)
-        email = request.args.get("email", None)
-
-        if not user_id and not email:
-            return ("A user_id or email GET parameter must be specified."), 400
-
-        user = self._query_users(user_id, email).first()
-        if not user:
-            return {}, 404
-
-        # If not admin, can only patch own account.
-        if key.level < PermLevel.ADMIN:
-            calling_user = User.query.get(key.user_id)
-            if calling_user != user:
-                return (
-                    "Insufficient authorization. You can only patch your own"
-                    " account.",
-                    403,
-                )
 
         req_data = request.get_json()
         invalid_fields = []
@@ -227,38 +192,14 @@ class Users(Resource):
         if invalid_fields:
             return f"Invalid fields: {', '.join(invalid_fields)}", 400
 
-        db.session.add(user)
         db.session.commit()
 
         return {}, 204
 
-    def delete(self):
+    @only_admin_or_self
+    def delete(self, user):
         """Delete the user account."""
-        key_parts = request.headers.get("Authorization", "")
-        key = verify_api_key(key_parts)
-        if not key or key.level == PermLevel.REVOKED.value:
-            return "Login is required for this operation.", 401
-
-        user_id = request.args.get("user_id", None, type=int)
-        email = request.args.get("email", None)
-        if not user_id and not email:
-            return ("A user_id or email GET parameter must be specified."), 400
-
-        user_to_delete = self._query_users(user_id, email).first()
-        if not user_to_delete:
-            return {}, 404
-
-        # If not admin, can only delete own account.
-        if key.level < PermLevel.ADMIN:
-            calling_user = User.query.get(key.user_id)
-            if calling_user != user_to_delete:
-                return (
-                    "Insufficient authorization. You can only delete your own"
-                    " account.",
-                    403,
-                )
-
-        db.session.delete(user_to_delete)
+        db.session.delete(user)
         db.session.commit()
 
         return {}, 204
