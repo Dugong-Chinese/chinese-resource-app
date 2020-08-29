@@ -64,8 +64,12 @@ def validate_email(value: str):
 
 def validate_password(value: str):
     """Verify that the input is a reasonably secure password."""
-    if not value or len(value) < 12:
+    pass_length = 0 if value is None else len(value)
+    if pass_length < 12:
         raise ValidationError("Password is too short.")
+
+    if pass_length > 255:
+        raise ValidationError("Password is too long.")
 
     if any(re.search(condition, value) for condition in PASSWORD_MUST_HAVE):
         raise ValidationError("Password does not have all necessary minimum symbols.")

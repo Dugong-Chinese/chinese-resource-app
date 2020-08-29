@@ -531,7 +531,8 @@ paths:
               items:
                 anyOf:
                   - $ref: "#/components/schemas/User/properties/email"
-                  - $ref: "#/components/schemas/User/properties/lemmas"
+                  - $ref: "#/components/schemas/LemmasArray"
+
               example:
                 email: "newemail@dugongchinese.com"
                 lemmas:
@@ -895,10 +896,17 @@ components:
       nullable: false
       readOnly: true
       example: "40F3C32A056C38EF4B422E424392FA2D5C9F2FC2565FD36F612E3E7BC555CD19"
+    LemmasArray:
+      type: array
+      nullable: true
+      items:
+        oneOf:
+          - $ref: "#/components/schemas/Lemma/properties/id"
+          - $ref: "#/components/schemas/Lemma/properties/content"
     # Models
     Lemma:
       type: object
-      description: "A single lemma: a word, idiom, expression or grammatical construction."
+      description: "A single lemma: a word, idiom, expression, or grammatical construction."
       properties:
         id:
           $ref: "#/components/schemas/Id"

@@ -8,7 +8,8 @@ from typing import Optional
 from flask import Blueprint, request
 from flask_restful import Resource, Api
 from sqlalchemy.exc import IntegrityError
-from models import db, User, PermLevel
+from flask_sqlalchemy import BaseQuery
+from models import db, Lemma, User, PermLevel
 from security import (
     generate_random_salt,
     hash_password,
@@ -74,15 +75,9 @@ class Users(Resource):
     """Routes to retrieve and manage user accounts."""
 
     @staticmethod
-    def _find_user(user_id: Optional[int], email: Optional[str]) -> Optional[User]:
-        """Find a user by id and/or email and return the first result if found, or None
-        otherwise.
-        """
-
-        if not user_id and not email:
-            return None
-
-        return User.query.filter((User.email == email) | (User.id == user_id)).first()
+    def _query_users(user_id: Optional[int], email: Optional[str]) -> BaseQuery:
+        """Find a user by id and/or email and return the query."""
+        return User.query.filter((User.email == email) | (User.id == user_id))
 
     def get(self):
         """Get data on users."""
@@ -92,18 +87,21 @@ class Users(Resource):
         if not user_id and not email:
             return ("A user_id or email GET parameter must be specified."), 400
 
-        user = self._find_user(user_id, email)
+        users = self._query_users(user_id, email).all()
 
-        if not user:
+        if not users:
             return {}, 404
 
         return (
-            {
-                "id": user.id,
-                "creation_date": user.creation_date,
-                "email": user.email,
-                "lemmas": user.lemmas,
-            },
+            [
+                {
+                    "id": u.id,
+                    "creation_date": u.creation_date,
+                    "email": u.email,
+                    "lemmas": u.lemmas,
+                }
+                for u in users
+            ],
             200,
         )
 
@@ -163,11 +161,81 @@ class Users(Resource):
 
         return apikey, 201
 
+    def patch(self):
+        """Edit individual fields on a user. Non-admins can only edit some fields on
+        their own account.
+        """
+
+        key_parts = request.headers.get("Authorization", "")
+        key = verify_api_key(key_parts)
+        if not key or key.level == PermLevel.REVOKED.value:
+            return "Login is required for this operation.", 401
+
+        user_id = request.args.get("user_id", None, type=int)
+        email = request.args.get("email", None)
+
+        if not user_id and not email:
+            return ("A user_id or email GET parameter must be specified."), 400
+
+        user = self._query_users(user_id, email).first()
+        if not user:
+            return {}, 404
+
+        # If not admin, can only patch own account.
+        if key.level < PermLevel.ADMIN:
+            calling_user = User.query.get(key.user_id)
+            if calling_user != user:
+                return (
+                    "Insufficient authorization. You can only patch your own"
+                    " account.",
+                    403,
+                )
+
+        req_data = request.get_json()
+        invalid_fields = []
+        for key in req_data:
+            if not hasattr(user, key) or key in ("id", "salt"):
+                invalid_fields.append(key)
+                continue
+
+            if not invalid_fields:
+                if key == "email":
+                    new_email = req_data[key]
+                    try:
+                        validate_email(new_email)
+                    except ValidationError:
+                        return "Invalid format for email address.", 400
+                    user.email = new_email
+                elif key == "password":
+                    new_password = req_data[key]
+                    try:
+                        validate_password(new_password)
+                    except ValidationError:
+                        return "New password is not secure enough or too long.", 400
+                    new_salt = generate_random_salt()
+                    user.password = hash_password(new_password, new_salt)
+                    user.salt = new_salt
+                elif key == "lemmas":
+                    lemma_refs = req_data[key]
+                    if isinstance(lemma_refs[0], int):
+                        lemma_filter = Lemma.id.in_(lemma_refs)
+                    else:
+                        lemma_filter = Lemma.content.in_(lemma_refs)
+                    lemmas = Lemma.query.filter(lemma_filter)
+                    user.lemmas.extend(lemmas)
+
+        if invalid_fields:
+            return f"Invalid fields: {', '.join(invalid_fields)}", 400
+
+        db.session.add(user)
+        db.session.commit()
+
+        return {}, 204
+
     def delete(self):
         """Delete the user account."""
         key_parts = request.headers.get("Authorization", "")
         key = verify_api_key(key_parts)
-
         if not key or key.level == PermLevel.REVOKED.value:
             return "Login is required for this operation.", 401
 
@@ -176,7 +244,7 @@ class Users(Resource):
         if not user_id and not email:
             return ("A user_id or email GET parameter must be specified."), 400
 
-        user_to_delete = self._find_user(user_id, email)
+        user_to_delete = self._query_users(user_id, email).first()
         if not user_to_delete:
             return {}, 404
 
