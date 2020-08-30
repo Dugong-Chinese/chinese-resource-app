@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Modal, Button, Image, Form, Input, Checkbox } from "antd";
+import Logo from '../../DugongLogo.png'
+
 
 class Login extends Component {
   isNavLinkActive = link => {
@@ -34,10 +36,10 @@ class Login extends Component {
           title="Welcome Back"
           centered
           visible={this.state.loginModal}
-          onOk={() => this.isModalVisable(false)}
           onCancel={() => this.isModalVisable(false)}
         >
-          <Image width={200} src="../../logo.svg" />
+          <Image width={100} src={Logo} />
+          <br></br>
           <Form name="basic" initialValues={{ remember: true }}>
             <Form.Item
               label="Username"
