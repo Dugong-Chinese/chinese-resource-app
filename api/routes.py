@@ -7,7 +7,16 @@ Documentation for the API, 1.0.0:
 from flask import Blueprint, request
 from flask_restful import Resource, Api
 from sqlalchemy.exc import IntegrityError
-from models import db, Lemma, User, PermLevel
+from models import (
+    db,
+    Lemma,
+    ResourceName,
+    User,
+    PermLevel,
+    Resource as LearningResource,
+    Tag,
+)
+from validators import validate_password, ValidationError, validate_email
 from security import (
     generate_random_salt,
     hash_password,
@@ -16,7 +25,9 @@ from security import (
     only_users,
     only_admin_or_self,
 )
-from validators import validate_password, ValidationError, validate_email
+
+
+RESULTS_PER_PAGE = 100
 
 
 routes = Blueprint(
@@ -81,18 +92,7 @@ class Users(Resource):
         if not users:
             return {}, 404
 
-        return (
-            [
-                {
-                    "id": u.id,
-                    "creation_date": u.creation_date,
-                    "email": u.email,
-                    "lemmas": u.lemmas,
-                }
-                for u in users
-            ],
-            200,
-        )
+        return [u.as_dict() for u in users], 200
 
     def post(self):
         """Register a new user."""
@@ -158,6 +158,7 @@ class Users(Resource):
 
         req_data = request.get_json()
         invalid_fields = []
+        modified = 0
         for key in req_data:
             if not hasattr(user, key) or key in ("id", "salt"):
                 invalid_fields.append(key)
@@ -171,6 +172,7 @@ class Users(Resource):
                     except ValidationError:
                         return "Invalid format for email address.", 400
                     user.email = new_email
+                    modified += 1
                 elif key == "password":
                     new_password = req_data[key]
                     try:
@@ -180,6 +182,7 @@ class Users(Resource):
                     new_salt = generate_random_salt()
                     user.password = hash_password(new_password, new_salt)
                     user.salt = new_salt
+                    modified += 1
                 elif key == "lemmas":
                     lemma_refs = req_data[key]
                     if isinstance(lemma_refs[0], int):
@@ -188,9 +191,13 @@ class Users(Resource):
                         lemma_filter = Lemma.content.in_(lemma_refs)
                     lemmas = Lemma.query.filter(lemma_filter)
                     user.lemmas.extend(lemmas)
+                    modified += 1
 
         if invalid_fields:
             return f"Invalid fields: {', '.join(invalid_fields)}", 400
+
+        if not modified:
+            return "No valid field specified.", 400
 
         db.session.commit()
 
@@ -205,5 +212,64 @@ class Users(Resource):
         return {}, 204
 
 
+class Resources(Resource):
+    """Routes to retrieve and manage learning resources."""
+
+    def get(self):
+        """Get resources corresponding to search criteria. Paginated; rate limited."""
+        # TODO rate limiting
+        if resource_id := request.args.get("resource_id", None, type=int):
+            output = LearningResource.query.get(resource_id)
+            if not output:
+                return {}, 404
+            output = [output]
+        else:
+            page = request.args.get("page", 1, type=int)
+            search_args = {
+                "name": request.args.get("name", None),
+                "includes_tags": request.args.get("includes_tags", None, type=list),
+                "excludes_tags": request.args.get("excludes_tags", None, type=list),
+                "has_parent": request.args.get("has_parent", None, type=bool),
+                "parent_id": request.args.get("parent_id", None, type=int),
+            }
+
+            resources = LearningResource.query
+            for search_arg, search_value in search_args.items():
+                if search_value is None:
+                    continue
+
+                if search_arg == "includes_tags":
+                    filter_ = Tag.value.in_(search_value)
+                elif search_arg == "excludes_tags":
+                    filter_ = Tag.value.notin_(search_value)
+                elif search_arg == "name":
+                    filter_ = ResourceName.value == search_value
+                elif search_arg == "has_parent":
+                    if search_value is True:
+                        filter_ = LearningResource.parent_id.isnot(None)
+                    else:
+                        filter_ = LearningResource.parent_id.is_(None)
+                elif search_arg == "parent_id":
+                    filter_ = LearningResource.parent_id == search_value
+                else:
+                    continue
+
+                resources.filter(filter_)
+
+            resources = (
+                resources.all()
+                .offset(RESULTS_PER_PAGE * page - 1)
+                .limit(RESULTS_PER_PAGE)
+            )
+
+            if not resources:
+                return {}, 404
+
+            output = [resource.as_dict() for resource in resources]
+
+        return output, 200
+
+
 api.add_resource(Login, "login")
 api.add_resource(Users, "users")
+api.add_resource(Resources, "resources")

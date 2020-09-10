@@ -5,9 +5,22 @@ from flask_sqlalchemy import BaseQuery, SQLAlchemy
 from sqlalchemy.sql import text
 from sqlalchemy.dialects.postgresql import ARRAY
 import enum
+from abc import ABC, abstractmethod
 
 
 db = SQLAlchemy()
+
+
+class ResourceABC(ABC):
+    """Abstract base class for models meant to be exposed by the API."""
+
+    @abstractmethod
+    def as_dict(self) -> dict:
+        """Return a dict with this model's publicly exposable properties as values
+        and their respective names (as indicated by the API specification) as keys.
+        """
+
+        return {}
 
 
 class BaseModel:
@@ -68,7 +81,7 @@ class Lemma(BaseModel, db.Model):
     # TODO difficulty index, depending on how we decide to implement that
 
 
-class User(BaseModel, DatedModel, db.Model):
+class User(BaseModel, DatedModel, db.Model, ResourceABC):
     """A user on the platform."""
 
     email = db.Column(db.String, unique=True, nullable=False)
@@ -80,6 +93,14 @@ class User(BaseModel, DatedModel, db.Model):
 
     def __repr__(self):
         return f"<Users {self.email}>"
+
+    def as_dict(self) -> dict:
+        return {
+            "id": self.id,
+            "creation_date": self.creation_date,
+            "email": self.email,
+            "lemmas": self.lemmas,
+        }
 
 
 class PermLevel(enum.IntEnum):
@@ -130,7 +151,7 @@ tags_helper = db.Table(
 )
 
 
-class Resource(BaseModel, DatedModel, db.Model):
+class Resource(BaseModel, DatedModel, db.Model, ResourceABC):
     """A learning resource on the platform."""
 
     upvotes = db.Column(db.Integer, nullable=False, default=0)
@@ -145,6 +166,17 @@ class Resource(BaseModel, DatedModel, db.Model):
         db.ForeignKey("resource.id", onupdate="CASCADE", ondelete="CASCADE"),
         nullable=True,
     )
+
+    def as_dict(self) -> dict:
+        return {
+            "id": self.id,
+            "creation_date": self.creation_date,
+            "upvotes": self.upvotes,
+            "downvotes": self.downvotes,
+            "names": self.names,
+            "urls": self.urls,
+            "tags": self.tags,
+        }
 
 
 class ResourceName(BaseModel, db.Model):
