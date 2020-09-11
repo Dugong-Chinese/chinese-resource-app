@@ -25,6 +25,7 @@ from security import (
     only_users,
     only_admin_or_self,
 )
+from rate_limiting import rate_limited
 
 
 RESULTS_PER_PAGE = 100
@@ -215,9 +216,9 @@ class Users(Resource):
 class Resources(Resource):
     """Routes to retrieve and manage learning resources."""
 
+    @rate_limited
     def get(self):
         """Get resources corresponding to search criteria. Paginated; rate limited."""
-        # TODO rate limiting
         if resource_id := request.args.get("resource_id", None, type=int):
             output = LearningResource.query.get(resource_id)
             if not output:

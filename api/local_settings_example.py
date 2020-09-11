@@ -12,11 +12,18 @@ Check Flask setting names here:
 
 import os
 from flask import Flask
+from collections import defaultdict
+from typing import Any, DefaultDict
 
 
 DEBUG = False
 
-settings = {
+settings: DefaultDict[str, Any] = defaultdict(lambda: None)
+"""Dictionary of settings by name. Conventionally in UPPER_SNAKE_CASE. Expect None for
+missing options.
+"""
+
+settings.update({
     # For security. DO NOT reuse the same secret key in production as in development
     # DO NOT divulge nor include in version control.
     # NOTE: Changing the secret key causes all existing registered users to fail
@@ -27,7 +34,10 @@ settings = {
     "SQLALCHEMY_DATABASE_URI": "postgresql://localhost:5432",
     "SQLALCHEMY_ECHO": DEBUG,
     "SQLALCHEMY_TRACK_MODIFICATIONS": False,  # Removes unneeded overhead.
-}
+    "USERS_RATE_LIMIT": None,
+    "GUESTS_RATE_LIMIT": 100,
+    "RATE_LIMIT_REFRESH_HOURS": 8,
+})
 
 for k, initial in Flask(__name__).config.items():
     settings[k] = os.environ.get(k, settings.get(k, initial))

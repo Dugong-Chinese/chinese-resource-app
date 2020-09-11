@@ -100,7 +100,7 @@ def verify_api_key(auth_header: str) -> Union[Literal[False], APIKey]:
     return key_in_db
 
 
-def get_api_key_or_raise():
+def get_api_key_or_raise() -> APIKey:
     """Get the API key value from the request header. Raise AuthorisationError if
      not valid.
     """
