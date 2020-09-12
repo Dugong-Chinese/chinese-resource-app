@@ -23,21 +23,23 @@ settings: DefaultDict[str, Any] = defaultdict(lambda: None)
 missing options.
 """
 
-settings.update({
-    # For security. DO NOT reuse the same secret key in production as in development
-    # DO NOT divulge nor include in version control.
-    # NOTE: Changing the secret key causes all existing registered users to fail
-    #  authentication.
-    "SECRET_KEY": "",
-    # Flask-SQLAlchemy
-    # Format: protocol+backend://user:password@host:port/database, many parts optional
-    "SQLALCHEMY_DATABASE_URI": "postgresql://localhost:5432",
-    "SQLALCHEMY_ECHO": DEBUG,
-    "SQLALCHEMY_TRACK_MODIFICATIONS": False,  # Removes unneeded overhead.
-    "USERS_RATE_LIMIT": None,
-    "GUESTS_RATE_LIMIT": 100,
-    "RATE_LIMIT_REFRESH_HOURS": 8,
-})
+settings.update(
+    {
+        # For security. DO NOT reuse the same secret key in production as in development
+        # DO NOT divulge nor include in version control.
+        # NOTE: Changing the secret key causes all existing registered users to fail
+        #  authentication.
+        "SECRET_KEY": "",
+        # Flask-SQLAlchemy
+        # Format: protocol+backend://user:password@host:port/database, many parts optional
+        "SQLALCHEMY_DATABASE_URI": "postgresql://localhost:5432",
+        "SQLALCHEMY_ECHO": DEBUG,
+        "SQLALCHEMY_TRACK_MODIFICATIONS": False,  # Removes unneeded overhead.
+        "USERS_RATE_LIMIT": None,
+        "GUESTS_RATE_LIMIT": 100,
+        "RATE_LIMIT_REFRESH_HOURS": 8,
+    }
+)
 
 for k, initial in Flask(__name__).config.items():
     settings[k] = os.environ.get(k, settings.get(k, initial))

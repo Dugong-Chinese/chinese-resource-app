@@ -6,6 +6,7 @@ Documentation for the API, 1.0.0:
 
 from flask import Blueprint, request
 from flask_restful import Resource, Api
+from sqlalchemy import and_
 from sqlalchemy.exc import IntegrityError
 from models import (
     db,
@@ -271,6 +272,53 @@ class Resources(Resource):
         return output, 200
 
 
+class Lemmas(Resource):
+    """Routes to retrieve and manage vocabulary."""
+
+    @rate_limited
+    def get(self):
+        if lemma_id := request.args.get("lemma_id", None, type=int):
+            output = Lemma.query.get(lemma_id)
+            if not output:
+                return {}, 404
+            output = [output]
+        else:
+            page = request.args.get("page", 1, type=int)
+            search_args = {
+                "type": request.args.get("type", None, type=list),
+                "content_is": request.args.get("content_is", None),
+                "content_like": request.args.get("content_like", None),
+            }
+
+            lemmas = Lemma.query
+            for search_arg, search_value in search_args.items():
+                if search_value is None:
+                    continue
+
+                if search_arg == "type":
+                    filter_ = and_(*[Lemma.type_.any(t) for t in search_value])
+                elif search_arg == "content_is":
+                    filter_ = Lemma.content == search_value
+                elif search_arg == "content_like":
+                    filter_ = Lemma.content.contains(search_value)
+                else:
+                    continue
+
+                lemmas.filter(filter_)
+
+            lemmas = (
+                lemmas.all().offset(RESULTS_PER_PAGE * page - 1).limit(RESULTS_PER_PAGE)
+            )
+
+            if not lemmas:
+                return {}, 404
+
+            output = [lemma.as_dict() for lemma in lemmas]
+
+        return output, 200
+
+
 api.add_resource(Login, "login")
 api.add_resource(Users, "users")
 api.add_resource(Resources, "resources")
+api.add_resource(Resources, "lemmas")

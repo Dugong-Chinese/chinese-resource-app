@@ -68,7 +68,7 @@ class LemmaType(enum.Enum):
     IDIOM = 5
 
 
-class Lemma(BaseModel, db.Model):
+class Lemma(BaseModel, db.Model, ResourceABC):
     """A single lemma: a word, idiom, expression or grammatical construction."""
 
     # `content` is not set as unique because there might be lemmas of different kinds
@@ -79,6 +79,13 @@ class Lemma(BaseModel, db.Model):
     #  issues due to SQLAlchemy and PostgreSQL.
     type_ = db.Column(ARRAY(db.SmallInteger), name="type", default=[])
     # TODO difficulty index, depending on how we decide to implement that
+
+    def as_dict(self):
+        return {
+            "id": self.id,
+            "content": self.content,
+            "lemma_type": self.type_,
+        }
 
 
 class User(BaseModel, DatedModel, db.Model, ResourceABC):

@@ -26,7 +26,7 @@ def _flush_register():
         sleep_time = rate_limit_refresh * 60 * 60
     else:
         return
-    
+
     while True:
         sleep(sleep_time)
         rate_register.clear()
@@ -42,39 +42,42 @@ def rate_limited(func):
     """Decorator for routes that count towards the rate limit for requests by
     unauthenticated users.
     """
-    
+
     @wraps(func)
     def wrapped(*args, **kwargs):
         user_ip = request.remote_addr
-        
+
         try:
             apikey = get_api_key_or_raise()
         except AuthorisationError:
             apikey = None
-        
+
         if apikey and apikey.level >= PermLevel.ADMIN:
             return func(*args, **kwargs)
-        
+
         if apikey and apikey.level < PermLevel.ADMIN:
             limit = settings["USERS_RATE_LIMIT"]
         else:
             limit = settings["GUESTS_RATE_LIMIT"]
-        
+
         if limit is None:
             return func(*args, **kwargs)
-        
+
         if rate_register[user_ip] > limit:
             if refresh_time := settings["RATE_LIMIT_REFRESH_HOURS"]:
                 refresh_time = f" {refresh_time} hours "
-            
-            return f"Rate limited. Authenticate, upgrade, or wait" \
-                   f"{refresh_time or ' '}" \
-                   f"to lift the limit.", 429
-        
+
+            return (
+                f"Rate limited. Authenticate, upgrade, or wait"
+                f"{refresh_time or ' '}"
+                f"to lift the limit.",
+                429,
+            )
+
         rate_register[user_ip] += 1
-        
+
         return func(*args, **kwargs)
-    
+
     return wrapped
 
 
