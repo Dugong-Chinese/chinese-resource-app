@@ -214,13 +214,19 @@ class ResourceUrl(BaseModel, db.Model):
         return f"<Resource URL for ID {self.resource_id}: {self.value}>"
 
 
-class Tag(BaseModel, db.Model):
+class Tag(BaseModel, db.Model, ResourceABC):
     """A tag to classify learning resources."""
 
     value = db.Column(db.String, unique=True, nullable=False)
 
     def __repr__(self):
         return f"<Tag {self.value}>"
+
+    def as_dict(self):
+        return {
+            "id": self.id,
+            "value": self.value,
+        }
 
 
 class Review(BaseModel, DatedModel, ModifiableModel, db.Model):

@@ -318,6 +318,49 @@ class Lemmas(Resource):
         return output, 200
 
 
+class Tags(Resource):
+    """Routes to retrieve and manage resource tags."""
+
+    @rate_limited
+    def get(self):
+        if tag_id := request.args.get("tag_id", None, type=int):
+            output = Lemma.query.get(tag_id)
+            if not output:
+                return {}, 404
+            output = [output]
+        else:
+            page = request.args.get("page", 1, type=int)
+            search_args = {
+                "content_is": request.args.get("content_is", None),
+                "content_like": request.args.get("content_like", None),
+            }
+
+            tags = Tag.query
+            for search_arg, search_value in search_args.items():
+                if search_value is None:
+                    continue
+
+                if search_arg == "content_is":
+                    filter_ = Lemma.content == search_value
+                elif search_arg == "content_like":
+                    filter_ = Lemma.content.contains(search_value)
+                else:
+                    continue
+
+                tags.filter(filter_)
+
+            tags = (
+                tags.all().offset(RESULTS_PER_PAGE * page - 1).limit(RESULTS_PER_PAGE)
+            )
+
+            if not tags:
+                return {}, 404
+
+            output = [tag.as_dict() for tag in tags]
+
+        return output, 200
+
+
 api.add_resource(Login, "login")
 api.add_resource(Users, "users")
 api.add_resource(Resources, "resources")
