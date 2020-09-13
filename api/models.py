@@ -11,7 +11,7 @@ from abc import ABC, abstractmethod
 db = SQLAlchemy()
 
 
-class ResourceABC(ABC):
+class ResourceABC(object):
     """Abstract base class for models meant to be exposed by the API."""
 
     @abstractmethod
@@ -20,7 +20,7 @@ class ResourceABC(ABC):
         and their respective names (as indicated by the API specification) as keys.
         """
 
-        return {}
+        raise NotImplementedError
 
 
 class BaseModel:
