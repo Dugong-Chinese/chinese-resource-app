@@ -7,8 +7,8 @@ Documentation for the API, 1.0.0:
 from flask import Blueprint, request
 from flask_restful import Resource, Api
 from sqlalchemy.exc import IntegrityError
-from models import (
-    db,
+from db import db
+from db.models import (
     Lemma,
     ResourceName,
     User,

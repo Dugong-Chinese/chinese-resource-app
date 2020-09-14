@@ -4,7 +4,7 @@ from time import sleep
 from typing import DefaultDict
 from functools import wraps
 from collections import defaultdict
-from models import PermLevel
+from db.models import PermLevel
 from flask import request
 from security import get_api_key_or_raise, AuthorisationError
 from local_settings import settings

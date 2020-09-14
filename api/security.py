@@ -6,7 +6,9 @@ from functools import wraps
 from flask import request
 from local_settings import settings
 from typing import Tuple, Union, Literal
-from models import db, User, APIKey, PermLevel, query_users
+from db import db
+from db.models import User, APIKey, PermLevel
+from db.utils import query_users
 
 
 ENCODING = "utf-8"
