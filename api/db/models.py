@@ -1,17 +1,15 @@
 """Database models for the RESTful API."""
-from typing import Optional
 
-from flask_sqlalchemy import BaseQuery, SQLAlchemy
 from sqlalchemy.sql import text
 from sqlalchemy.dialects.postgresql import ARRAY
 import enum
 from abc import ABC, abstractmethod
 
 
-db = SQLAlchemy()
+from . import db
 
 
-class ResourceABC(ABC):
+class ResourceABC(object):
     """Abstract base class for models meant to be exposed by the API."""
 
     @abstractmethod
@@ -20,7 +18,7 @@ class ResourceABC(ABC):
         and their respective names (as indicated by the API specification) as keys.
         """
 
-        return {}
+        raise NotImplementedError
 
 
 class BaseModel:
@@ -164,7 +162,7 @@ class Resource(BaseModel, DatedModel, db.Model, ResourceABC):
     upvotes = db.Column(db.Integer, nullable=False, default=0)
     downvotes = db.Column(db.Integer, nullable=False, default=0)
     names = db.relationship("ResourceName", backref="resource", lazy=True)
-    urls = db.relationship("ResourceURL", backref="resource", lazy=True)
+    urls = db.relationship("ResourceUrl", backref="resource", lazy=True)
     tags = db.relationship(
         "Tag", secondary=tags_helper, lazy="subquery", backref="resources"
     )
@@ -244,8 +242,3 @@ class Review(BaseModel, DatedModel, ModifiableModel, db.Model):
         nullable=False,
     )
 
-
-# Utility functions to avoid code repetition.
-def query_users(user_id: Optional[int], email: Optional[str]) -> BaseQuery:
-    """Find a user by id and/or email and return the query."""
-    return User.query.filter((User.email == email) | (User.id == user_id))

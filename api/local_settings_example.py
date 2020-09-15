@@ -38,6 +38,10 @@ settings.update(
         "USERS_RATE_LIMIT": None,
         "GUESTS_RATE_LIMIT": 100,
         "RATE_LIMIT_REFRESH_HOURS": 8,
+        # A dict, iterable, or string in the format of https://flask-cors.readthedocs.io/en/latest/api.html#flask_cors.CORS.
+        # Example: {r"/*": {"origins": r"*"}}
+        # Default: Empty string
+        "CORS_RESOURCES": "",
     }
 )
 

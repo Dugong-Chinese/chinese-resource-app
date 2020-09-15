@@ -3,7 +3,7 @@
 from flask import Flask
 from flask_restful import Api
 from flask_migrate import Migrate
-from models import db
+from db import db
 from cors import cors
 from reroutes import reroutes
 from routes import routes
@@ -77,7 +77,7 @@ def register_extensions(app: Flask):
     """Register the database, any blueprint and other extensions."""
     db.init_app(app)
     Migrate(app, db)
-    cors.init_app(app)
+    cors.init_app(app, resources=app.config["CORS_RESOURCES"])
 
     JWT(app, authentication_handler=authenticate, identity_handler=identity)
 

@@ -8,8 +8,8 @@ from flask import Blueprint, request
 from flask_restful import Resource, Api
 from sqlalchemy import and_
 from sqlalchemy.exc import IntegrityError
-from models import (
-    db,
+from db import db
+from db.models import (
     Lemma,
     ResourceName,
     User,

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { Router, Switch, Redirect, Route } from "react-router-dom";
+import Login from '../../components/Login/Login';
+
 
 import { Config } from '../../utils/Config';
 
@@ -42,6 +44,7 @@ class AppScreen extends Component {
             </NavDropdown>
             <Nav.Link onClick={() => { history.push('/search'); }} active={this.isNavLinkActive('/search')}>Contact</Nav.Link>
             {!!true && <Nav.Link onClick={this.logout}>Logout</Nav.Link>}
+            <Login></Login>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

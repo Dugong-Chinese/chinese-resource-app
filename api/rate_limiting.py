@@ -4,11 +4,11 @@ from time import sleep
 from typing import DefaultDict
 from functools import wraps
 from collections import defaultdict
-from models import PermLevel
+from db.models import PermLevel
 from flask import request
 from security import get_api_key_or_raise, AuthorisationError
 from local_settings import settings
-import threading
+import threading, os
 
 
 rate_register: DefaultDict[str, int] = defaultdict(int)
@@ -80,6 +80,8 @@ def rate_limited(func):
 
     return wrapped
 
-
-if not _flush_loop_started:
+# https://stackoverflow.com/questions/5085656/how-to-get-the-current-port-number-in-flask
+# Only run this cache eviction loop if the web server is active, i.e. it shouldn't run on 
+# commands beginning with flask db
+if not _flush_loop_started and 'WERKZEUG_SERVER_FD' in os.environ:
     _start_flush_loop()
