@@ -71,7 +71,7 @@ def validate_password(value: str):
     if pass_length > 255:
         raise ValidationError("Password is too long.")
 
-    if any(re.search(condition, value) for condition in PASSWORD_MUST_HAVE):
+    if not all(re.search(condition, value) for condition in PASSWORD_MUST_HAVE):
         raise ValidationError("Password does not have all necessary minimum symbols.")
 
     if any(re.search(condition, value) for condition in PASSWORD_MUST_NOT_HAVE):

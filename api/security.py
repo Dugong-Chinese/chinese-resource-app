@@ -25,14 +25,14 @@ def utf8_to_bytes(string: str) -> bytes:
     return bytes(string, encoding=ENCODING)
 
 
-def hash_password(password: str, salt: Union[str, bytes]) -> str:
+def hash_password(password: str, salt: str) -> str:
     """Hash a password with the given salt."""
     hasher = hashlib.sha3_256()
     hasher.update(utf8_to_bytes(password))
-    hasher.update(utf8_to_bytes(salt) if isinstance(salt, str) else salt)
+    hasher.update(utf8_to_bytes(salt))
     hasher.update(utf8_to_bytes(settings["SECRET_KEY"]))
 
-    return str(hasher.digest(), encoding=ENCODING)
+    return hasher.hexdigest()
 
 
 def generate_apikey(user_email: str) -> str:
@@ -41,15 +41,15 @@ def generate_apikey(user_email: str) -> str:
     hasher.update(utf8_to_bytes(user_email))
     hasher.update(secrets.token_bytes())
 
-    return str(hasher.digest(), encoding=ENCODING)
+    return hasher.hexdigest()
 
 
-def generate_random_salt() -> bytes:
+def generate_random_salt() -> str:
     """Generate a random salt for use with hashing passwords."""
     hasher = hashlib.sha3_256()
     hasher.update(secrets.token_bytes(256))
 
-    return hasher.digest()
+    return hasher.hexdigest()
 
 
 def get_or_create_api_key(user: User) -> APIKey:
