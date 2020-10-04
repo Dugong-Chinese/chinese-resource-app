@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { withStyles } from '@material-ui/core/styles';
 import { grey } from '@material-ui/core/colors';
 
-import AppleIcon from '@material-ui/icons/Apple';
 import Hidden from '@material-ui/core/Hidden';
 import Box from '@material-ui/core/Box';
 
@@ -45,11 +44,27 @@ const useStyles = theme => ({
     backgroundColor: '#212327'
   },
 
-  mdContainer: {
+  mainContainer: {
     display: 'flex',
-    flexDirection: 'row',
+    [theme.breakpoints.up('md')]: {
+      flexDirection: 'row',
+    },
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    },
     maxWidth: '80rem',
     padding: '1rem',
+  },
+
+  flexDescriptionRelatedContentContainer: {
+    flex: 0.6,
+    [theme.breakpoints.up('md')]: {
+      paddingTop: '23px',
+    }
+  },
+
+  flexTagsDownloadContainer: {
+    flex: 0.4
   },
 
   // tabs styling below here
@@ -110,10 +125,26 @@ const useStyles = theme => ({
   }
 });
 
-class ActionButton extends Component {
+const actionButtonStyles = theme => ({
+  button: {
+    margin: '5px',
+    flex: '1',
+    fontWeight: 'bold',
+    borderRadius: '10px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.9vw'
+    }
+  }
+});
+
+class _ActionButton extends Component {
   render() {
-    const { icon, name, color } = this.props;
-    return <Button style={{ margin: '5px', backgroundColor: color, borderColor: color, flex: '1', fontWeight: 'bold', borderRadius: '10px', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+    const { classes, icon, name, color } = this.props;
+    return <Button className={classes.button} style={{ backgroundColor: color, borderColor: color, }}>
       {/* <FavoriteIcon /> */}
       {icon}
       {!!icon && !!name && <div style={{ width: '5px', }} />}
@@ -121,6 +152,8 @@ class ActionButton extends Component {
     </Button>
   }
 }
+
+const ActionButton = withStyles(actionButtonStyles)(_ActionButton);
 
 const dataRowStyles = theme => ({
   leftContainer: {
@@ -183,10 +216,20 @@ class ResourceScreen extends Component {
     const { classes } = this.props;
     const { tabIndex } = this.state;
 
+    const resourceListingHeader = <>
+      <ResourceListingHeader />
+      {/* gradient divider */}
+      <div style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0) 15%, rgba(144,144,144,1) 40%, rgba(144,144,144,1) 60%, rgba(255,255,255,0) 85%)', height: '3px', marginBottom: '1rem' }} />
+    </>
     return <>
       <div className={classes.content}>
-        <div className={classes.mdContainer}>
-          <div style={{ flex: 0.6, paddingTop: '23px' }}>
+        <div className={classes.mainContainer}>
+
+          <Hidden mdUp>
+            {resourceListingHeader}
+          </Hidden>
+
+          <div className={classes.flexDescriptionRelatedContentContainer}>
             <Tabs selectedIndex={tabIndex}
               onSelect={index => this.setTabIndex(index)}>
 
@@ -262,7 +305,7 @@ class ResourceScreen extends Component {
             </Tabs>
           </div>
 
-          <div style={{ flex: 0.4 }}>
+          <div className={classes.flexTagsDownloadContainer}>
             {/* three buttons */}
             <div className={classes.actionBtnsContainer}>
               <ActionButton name={'Favorite'.toUpperCase()} color={'#9C253A'} icon={<FavoriteIcon />} />
@@ -271,9 +314,10 @@ class ResourceScreen extends Component {
             </div>
 
             <div className={`${classes.contentAreaBgColor} ${classes.rightResourceDetails}`} style={{ flex: 1, }}>
-              <ResourceListingHeader />
-              {/* gradient divider */}
-              <div style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0) 15%, rgba(144,144,144,1) 40%, rgba(144,144,144,1) 60%, rgba(255,255,255,0) 85%)', height: '3px', marginBottom: '1rem' }} />
+
+              <Hidden smDown>
+                {resourceListingHeader}
+              </Hidden>
 
               {/* beginning of the tags */}
               <DataRow leftText="Focus:" right={<ResourceTagContainer tagsList={DUMMY_TAGS.focus} />} />
