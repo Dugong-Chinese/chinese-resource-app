@@ -3,12 +3,15 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
 .App {
+  flex: 1;
   flex-direction: column;
   display: flex;
   touch-action: manipulation;
   /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
 }
 
-html, body, #root, .App {
-  height: 100%;
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
