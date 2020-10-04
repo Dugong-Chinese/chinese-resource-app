@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Carousel } from 'react-responsive-carousel';
 
 import { withStyles } from '@material-ui/core/styles';
 import { grey } from '@material-ui/core/colors';
