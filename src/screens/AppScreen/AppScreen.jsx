@@ -7,6 +7,7 @@ import Login from '../../components/Login/Login';
 import { Config } from '../../utils/Config';
 
 import HomeScreen from '../HomeScreen/HomeScreen';
+import ResourceScreen from '../ResourceScreen/ResourceScreen';
 
 class AppScreen extends Component {
 
@@ -52,7 +53,8 @@ class AppScreen extends Component {
       {/* navbar ends here, app container begins here */}
       {/* <div style={{flex: 0.95, overflow: 'scroll'}}> */}
         <Switch>
-          <Route path="/" component={HomeScreen} />
+          <Route exact path="/" component={HomeScreen} />
+          <Route path="/resource" component={ResourceScreen} />
         </Switch>
       {/* </div> */}
       </>

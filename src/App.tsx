@@ -15,6 +15,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
+import "./react-tabs.css";
+
 function App() {
   const [result, setResult] = useState(0);
   useEffect(() => {
@@ -58,7 +60,7 @@ function App() {
       <Provider store={store}>
         <Router history={history}>
           <ThemeProvider theme={theme}>
-            <CssBaseline/>
+            <CssBaseline />
             <Route path="/" component={AppScreen} />
           </ThemeProvider>
         </Router>
