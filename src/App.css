@@ -1,12 +1,14 @@
 @import '~antd/dist/antd.css';
 
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 .App {
-  /* flex-direction: column; */
-  /* display: flex; */
+  flex-direction: column;
+  display: flex;
   touch-action: manipulation;
   /* padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); */
 }
 
 html, body, #root, .App {
-  min-height: 100%;
+  height: 100%;
 }

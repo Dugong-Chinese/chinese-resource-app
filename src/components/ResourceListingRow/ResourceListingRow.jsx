@@ -171,12 +171,12 @@ class ResourceListingRow extends Component {
           <div className={classes.separator} />
           <CategoryAffix bgColor='#372C9A' fgColor='white' text='$100' />
 
-          <Typography variant="body" style={{ color: 'grey', fontWeight: 'bold' }}>
+          <Typography style={{ color: 'grey', fontWeight: 'bold' }}>
             ~ sub-content
         </Typography>
         </div>
 
-        <Typography variant="body" style={{ color: 'white', fontWeight: 'bold' }}>
+        <Typography style={{ color: 'white', fontWeight: 'bold' }}>
           {"This is a very long resource listing name that spans many lines".toUpperCase()}
         </Typography>
 
